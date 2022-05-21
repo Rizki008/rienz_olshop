@@ -13,8 +13,8 @@
                             <th>Harga Diskon</th>
                             <th>Setting</th>
                         </tr>
-                        <tr>
-                            <?php foreach ($diskon as $key => $value) { ?>
+                        <?php foreach ($diskon as $key => $value) { ?>
+                            <tr>
                                 <td><?= $value->nama_produk ?></td>
                                 <td><?= $value->nama_diskon ?></td>
                                 <td>
@@ -25,9 +25,9 @@
                                     <a href="#" data-toggle="modal" data-target="#WarningModalalert<?= $value->id_diskon ?>" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <a href="#" data-toggle="modal" data-target="#DangerModalalert<?= $value->id_diskon ?>" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                 </td>
-                            <?php }
-                            ?>
-                        </tr>
+                            </tr>
+                        <?php }
+                        ?>
                     </table>
                     <div class="custom-pagination">
                         <ul class="pagination">
