@@ -174,7 +174,7 @@
                                                     </li>
                                                     <li><a href="#"><span class="icon nalika-settings author-log-ic"></span> Settings</a>
                                                     </li>
-                                                    <li><a href="login.html"><span class="icon nalika-unlocked author-log-ic"></span> Log Out</a>
+                                                    <li><a href="<?= base_url('auth/logout') ?>"><span class="icon nalika-unlocked author-log-ic"></span> Log Out</a>
                                                     </li>
                                                 </ul>
                                             </li>
