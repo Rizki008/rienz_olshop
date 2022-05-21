@@ -20,19 +20,15 @@ class Master_produk extends CI_Controller
         );
         $this->load->view('backend/v_wrapper', $data, FALSE);
     }
-
     public function add_kategori()
     {
         $this->form_validation->set_rules('nama_kategori', 'Kategori Produk', 'required', array('required' => '%s Mohon Untuk Diisi'));
-
         if ($this->form_validation->run() == TRUE) {
-
             $config['upload_path'] = './assets/kategori';
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size']  = '5000';
             $this->upload->initialize($config);
             $field_name = "gambar";
-
             if (!$this->upload->do_upload($field_name)) {
                 $data = array(
                     'title' => 'Tambah Kategori',
@@ -63,15 +59,12 @@ class Master_produk extends CI_Controller
     public function edit_kategori($id_kategori = null)
     {
         $this->form_validation->set_rules('nama_kategori', 'Nama Kategori', 'required', array('required' => '%s Mohon Untuk Diisi'));
-
         if ($this->form_validation->run() == TRUE) {
-
             $config['upload_path'] = './assets/kategori';
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size']  = '5000';
             $this->upload->initialize($config);
             $field_name = "gambar";
-
             if (!$this->upload->do_upload($field_name)) {
                 $data = array(
                     'title' => 'Edit Kategori',
@@ -86,7 +79,6 @@ class Master_produk extends CI_Controller
                 if ($kategori->gambar !== "") {
                     unlink('./assets/kategori/' . $kategori->gambar);
                 }
-
                 $upload_data = array('uploads' => $this->upload->data());
                 $config['image_library'] = 'gd2';
                 $config['source_image'] = './assets/kategori/' . $upload_data['uploads']['file_name'];
@@ -115,7 +107,6 @@ class Master_produk extends CI_Controller
         );
         $this->load->view('backend/v_wrapper', $data, FALSE);
     }
-
     public function delete_kategori($id_kategori = null)
     {
         //hapus dari folder
@@ -129,5 +120,187 @@ class Master_produk extends CI_Controller
         $this->m_master_produk->hapus_kategori($data);
         $this->session->set_flashdata('pesan', 'Kategori Berhasil Dihapus');
         redirect('master_produk/kategori');
+    }
+
+    //produk
+    public function produk()
+    {
+        $data = array(
+            'title' => 'Data Produk',
+            'produk' => $this->m_master_produk->produk(),
+            'isi' => 'backend/produk/v_produk'
+        );
+        $this->load->view('backend/v_wrapper', $data, FALSE);
+    }
+    public function add_produk()
+    {
+        $this->form_validation->set_rules('nama_produk', 'Nama Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('id_kategori', 'Kategori Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('stock', 'Stock Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('harga', 'Harga Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+
+        if ($this->form_validation->run() == TRUE) {
+
+            $config['upload_path'] = './assets/produk';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size']  = '5000';
+            $this->upload->initialize($config);
+            $field_name = "images";
+
+            if (!$this->upload->do_upload($field_name)) {
+                $data = array(
+                    'title' => 'Tambah Produk',
+                    'kategori' => $this->m_master_produk->kategori(),
+                    'error_upload' => $this->upload->display_errors(),
+                    'isi' => 'backend/produk/v_add'
+                );
+                $this->load->view('backend/v_wrapper', $data, FALSE);
+            } else {
+                $upload_data = array('uploads' => $this->upload->data());
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/produk/' . $upload_data['uploads']['file_name'];
+                $this->load->library('image_lib', $config);
+                $data = array(
+                    'nama_produk' => $this->input->post('nama_produk'),
+                    'id_kategori' => $this->input->post('id_kategori'),
+                    'stock' => $this->input->post('stock'),
+                    'harga' => $this->input->post('harga'),
+                    'deskripsi' => $this->input->post('deskripsi'),
+                    'images' => $upload_data['uploads']['file_name'],
+                );
+                $this->m_master_produk->add_produk($data);
+
+                //menambahkan data ke tabel diskon otomatis
+                $id = $this->m_master_produk->id_produk();
+                $i = $id->id;
+                $diskon = array(
+                    'id_produk' => $i,
+                    'nama_diskon' => '0',
+                    'diskon' => '0'
+                );
+                $this->m_master_produk->add_diskon($diskon);
+                $this->session->set_flashdata('pesan', 'Produk Berhasil Ditambahkan');
+                redirect('master_produk/produk');
+            }
+        }
+        $data = array(
+            'title' => 'Tambah Produk',
+            'kategori' => $this->m_master_produk->kategori(),
+            'isi' => 'backend/produk/v_add'
+        );
+        $this->load->view('backend/v_wrapper', $data, FALSE);
+    }
+    public function edit_produk($id_produk = null)
+    {
+        $this->form_validation->set_rules('nama_produk', 'Nama Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('id_kategori', 'Kategori Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('stock', 'Stock Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('harga', 'Harga Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+
+        if ($this->form_validation->run() == TRUE) {
+
+            $config['upload_path'] = './assets/produk';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size']  = '5000';
+            $this->upload->initialize($config);
+            $field_name = "images";
+
+            if (!$this->upload->do_upload($field_name)) {
+                $data = array(
+                    'title' => 'Edit Produk',
+                    'kategori' => $this->m_master_produk->kategori(),
+                    'produk' => $this->m_master_produk->detail_produk($id_produk),
+                    'error_upload' => $this->upload->display_errors(),
+                    'isi' => 'backend/produk/v_edit'
+                );
+                $this->load->view('backend/v_wrapper', $data, FALSE);
+            } else {
+                //hapus dari folder
+                $produk = $this->m_master_produk->detail_produk($id_produk);
+                if ($produk->images !== "") {
+                    unlink('./assets/produk/' . $produk->images);
+                }
+                $upload_data = array('uploads' => $this->upload->data());
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/produk/' . $upload_data['uploads']['file_name'];
+                $this->load->library('image_lib', $config);
+                $data = array(
+                    'id_produk' => $id_produk,
+                    'nama_produk' => $this->input->post('nama_produk'),
+                    'id_kategori' => $this->input->post('id_kategori'),
+                    'stock' => $this->input->post('stock'),
+                    'harga' => $this->input->post('harga'),
+                    'deskripsi' => $this->input->post('deskripsi'),
+                    'images' => $upload_data['uploads']['file_name'],
+                );
+                $this->m_master_produk->edit_produk($data);
+                $this->session->set_flashdata('pesan', 'Produk Berhasil Update');
+                redirect('master_produk/produk');
+            }
+            $data = array(
+                'id_produk' => $id_produk,
+                'nama_produk' => $this->input->post('nama_produk'),
+                'id_kategori' => $this->input->post('id_kategori'),
+                'stock' => $this->input->post('stock'),
+                'harga' => $this->input->post('harga'),
+                'deskripsi' => $this->input->post('deskripsi'),
+            );
+            $this->m_master_produk->edit_produk($data);
+            $this->session->set_flashdata('pesan', 'Produk Berhasil Update');
+            redirect('master_produk/produk');
+        }
+        $data = array(
+            'title' => 'Edit Produk',
+            'kategori' => $this->m_master_produk->kategori(),
+            'produk' => $this->m_master_produk->detail_produk($id_produk),
+            'isi' => 'backend/produk/v_edit'
+        );
+        $this->load->view('backend/v_wrapper', $data, FALSE);
+    }
+    public function delete_produk($id_produk = null)
+    {
+        $produk = $this->m_master_produk->detail_produk($id_produk);
+        if ($produk->images !== "") {
+            unlink('./assets/produk/' . $produk->images);
+        }
+        $data = array(
+            'id_produk' => $id_produk,
+        );
+        $this->m_master_produk->delete_produk($data);
+        $this->session->set_flashdata('pesan', 'Produk Berhasil Dihapus');
+        redirect('master_produk/produk');
+    }
+
+    //diskon
+    public function diskon()
+    {
+        $data = array(
+            'title' => 'Data Diskon',
+            'diskon' => $this->m_master_produk->diskon(),
+            'isi' => 'backend/diskon/v_diskon'
+        );
+        $this->load->view('backend/v_wrapper', $data, FALSE);
+    }
+    public function edit_diskon($id_diskon = null)
+    {
+        $data = array(
+            'id_diskon' => $id_diskon,
+            'nama_diskon' => $this->input->post('nama_diskon'),
+            'diskon' => $this->input->post('diskon')
+        );
+        $this->m_master_produk->edit_diskon($data);
+        $this->session->set_flashdata('pesan', 'Diskon berhasil Diupdate');
+        redirect('master_produk/diskon');
+    }
+    public function delete_diskon($id_diskon = null)
+    {
+        $data = array(
+            'id_diskon' => $id_diskon,
+        );
+        $this->m_master_produk->delete_diskon($data);
+        $this->session->set_flashdata('pesan', 'Diskon berhasil Diupdate');
+        redirect('master_produk/diskon');
     }
 }
