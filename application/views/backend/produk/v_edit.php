@@ -11,7 +11,22 @@
                         </ul>
                         <div id="myTabContent" class="tab-content custom-product-edit">
                             <div class="product-tab-list tab-pane fade active in" id="description">
-                                <?php echo form_open_multipart('master_produk/edit_produk/' . $produk->id_produk) ?>
+                                <?php
+                                ///notifikasi form kosong
+                                echo validation_errors('<div class="alert alert-warning alert-st-three alert-st-bg2 alert-st-bg13" role="alert">
+                                <i class="fa fa-exclamation-triangle adminpro-warning-danger admin-check-pro admin-check-pro-clr2 admin-check-pro-clr13" aria-hidden="true"></i>
+                                <p class="message-mg-rt"><strong>Warning!</strong>', '</p></div>');
+
+                                //notifikasi gagal upload gambar
+                                if (isset($error_upload)) {
+                                    echo '<div class="alert alert-warning alert-success-style3 alert-st-bg2">
+                                    <button type="button" class="close sucess-op" data-dismiss="alert" aria-label="Close">
+                                            <span class="icon-sc-cl" aria-hidden="true">&times;</span>
+                                        </button>
+                                    <i class="fa fa-exclamation-triangle adminpro-warning-danger admin-check-pro admin-check-pro-clr2" aria-hidden="true"></i>
+                                    <p><strong>Warning!</strong>' . $error_upload . '</p></div>';
+                                }
+                                echo form_open_multipart('master_produk/edit_produk/' . $produk->id_produk) ?>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="review-content-section">

@@ -13,15 +13,18 @@
                             <div class="product-tab-list tab-pane fade active in" id="description">
                                 <?php
                                 //notifikasi form kosong
-                                echo validation_errors('<div class="alert alert-warning alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h5><i class="icon fas fa-exclamation-triangle"></i>', '</h5></div>');
+                                echo validation_errors('<div class="alert alert-warning alert-st-three alert-st-bg2 alert-st-bg13" role="alert">
+                                <i class="fa fa-exclamation-triangle adminpro-warning-danger admin-check-pro admin-check-pro-clr2 admin-check-pro-clr13" aria-hidden="true"></i>
+                                <p class="message-mg-rt"><strong>Warning!</strong>', '</p></div>');
 
                                 //notifikasi gagal upload gambar
                                 if (isset($error_upload)) {
-                                    echo '<div class="alert alert-warning alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h5><i class="icon fas fa-exclamation-triangle"></i>' . $error_upload . '</h5></div>';
+                                    echo '<div class="alert alert-warning alert-success-style3 alert-st-bg2">
+                                    <button type="button" class="close sucess-op" data-dismiss="alert" aria-label="Close">
+                                            <span class="icon-sc-cl" aria-hidden="true">&times;</span>
+                                        </button>
+                                    <i class="fa fa-exclamation-triangle adminpro-warning-danger admin-check-pro admin-check-pro-clr2" aria-hidden="true"></i>
+                                    <p><strong>Warning!</strong>' . $error_upload . '</p></div>';
                                 }
                                 echo form_open_multipart('master_produk/edit_kategori/' . $kategori->id_kategori) ?>
                                 <div class="row">
