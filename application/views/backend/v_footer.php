@@ -57,6 +57,13 @@
 <script src="<?= base_url() ?>backend/js/flot/jquery.flot.resize.js"></script>
 <script src="<?= base_url() ?>backend/js/flot/curvedLines.js"></script>
 <script src="<?= base_url() ?>backend/js/flot/flot-active.js"></script>
+<!-- tab JS
+		============================================ -->
+<script src="<?= base_url() ?>backend/js/tab.js"></script>
+<!-- wizard JS
+		============================================ -->
+<script src="<?= base_url() ?>backend/js/wizard/jquery.steps.js"></script>
+<script src="<?= base_url() ?>backend/js/wizard/steps-active.js"></script>
 <!-- plugins JS
 		============================================ -->
 <script src="<?= base_url() ?>backend/js/plugins.js"></script>
