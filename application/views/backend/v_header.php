@@ -41,13 +41,9 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non">Miscellaneous</span></a>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non">Setting Lokasi</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">File Manager</span></a></li>
-                            <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
-                            <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Blog Details</span></a></li>
-                            <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
-                            <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
+                            <li><a title="File Manager" href="<?= base_url('Lokasitoko/lokasi') ?>"><span class="mini-sub-pro">Lokasi Toko</span></a></li>
                         </ul>
                     </li>
                     <li>
