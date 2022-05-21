@@ -6,26 +6,40 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_admin extends CI_Model
 {
-
-
-    // List all your items
-    public function index()
+    public function user()
     {
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->order_by('id_user', 'desc');
+        return $this->db->get()->result();
+    }
+    public function add($data)
+    {
+        $this->db->insert('user', $data);
+    }
+    public function update($data)
+    {
+        $this->db->where('id_user', $data['id_user']);
+        $this->db->update('user', $data);
+    }
+    public function delete($data)
+    {
+        $this->db->where('id_user', $data['id_user']);
+        $this->db->delete('user');
     }
 
-    // Add a new item
-    public function add()
+    //lokasi
+    public function data_lokasi()
     {
+        $this->db->select('*');
+        $this->db->from('lokasi');
+        $this->db->where('id', 1);
+        return $this->db->get()->row();
     }
-
-    //Update one item
-    public function update($id = NULL)
+    public function edit($data)
     {
-    }
-
-    //Delete one item
-    public function delete($id = NULL)
-    {
+        $this->db->where('id', $data['id']);
+        $this->db->update('lokasi', $data);
     }
 }
 
