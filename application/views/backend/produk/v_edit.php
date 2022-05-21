@@ -1,0 +1,69 @@
+<!-- Single pro tab start-->
+<div class="single-product-tab-area mg-b-30">
+    <!-- Single pro tab review Start-->
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="review-tab-pro-inner">
+                        <ul id="myTab3" class="tab-review-design">
+                            <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i> <?= $title ?></a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content custom-product-edit">
+                            <div class="product-tab-list tab-pane fade active in" id="description">
+                                <?php echo form_open_multipart('master_produk/edit_produk/' . $produk->id_produk) ?>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="review-content-section">
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control" name="nama_produk" value="<?= $produk->nama_produk ?>" placeholder="Nama Produk">
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
+                                                <input type="number" class="form-control" name="stock" value="<?= $produk->stock ?>" placeholder="Stock">
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                <input type="file" name="images" id="preview_gambar" class="form-control" placeholder="Regular Price">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="review-content-section">
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control" name="harga" value="<?= $produk->harga ?>" placeholder="Harga Produk">
+                                            </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="icon nalika-new-file" aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control" name="deskripsi" value="<?= $produk->deskripsi ?>" placeholder="Product Description">
+                                            </div>
+                                            <select name="id_kategori" class="form-control pro-edt-select form-control-primary">
+                                                <option value="<?= $produk->id_kategori ?>"><?= $produk->nama_kategori ?></option>
+                                                <?php foreach ($kategori as $key => $value) { ?>
+                                                    <option value="<?= $value->id_kategori ?>"><?= $value->nama_kategori ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="text-center custom-pro-edt-ds">
+                                            <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Save
+                                            </button>
+                                            <a href="<?= base_url('master_produk/produk') ?>" class="btn btn-ctl-bt waves-effect waves-light">Kembali
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php echo form_close() ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
