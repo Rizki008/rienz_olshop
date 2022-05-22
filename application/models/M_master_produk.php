@@ -93,4 +93,30 @@ class M_master_produk extends CI_Model
         $this->db->where('id_diskon', $data['id_diskon']);
         $this->db->delete('diskon');
     }
+
+    //size data produk
+    public function size($id_produk)
+    {
+        $this->db->select('*');
+        $this->db->from('size');
+        $this->db->join('produk', 'size.id_produk = produk.id_produk', 'left');
+        $this->db->where('produk.id_produk', $id_produk);
+        $data['size'] = $this->db->get()->result();
+        $data['produk'] = $this->db->get_where('produk', array('id_produk' => $id_produk))->row();
+        return $data;
+    }
+    public function add_size($data)
+    {
+        $this->db->insert('size', $data);
+    }
+    public function edit_size($data)
+    {
+        $this->db->where('id_size', $data['id_size']);
+        $this->db->update('size', $data);
+    }
+    public function delete_size($data)
+    {
+        $this->db->where('id_size', $data['id_size']);
+        $this->db->delete('size');
+    }
 }

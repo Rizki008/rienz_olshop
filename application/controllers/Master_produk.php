@@ -303,4 +303,32 @@ class Master_produk extends CI_Controller
         $this->session->set_flashdata('pesan', 'Diskon berhasil Diupdate');
         redirect('master_produk/diskon');
     }
+
+    //size produk
+    public function size_produk($id_produk)
+    {
+        $this->form_validation->set_rules('size', 'Size', 'required');
+        $this->form_validation->set_rules('stock', 'Stock', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required');
+
+
+        if ($this->form_validation->run() == FALSE) {
+            $data = array(
+                'title' => 'Ukuran Produk',
+                'size' => $this->m_master_produk->size($id_produk),
+                'isi' => 'backend/size/v_size'
+            );
+            $this->load->view('backend/v_wrapper', $data, FALSE);
+        } else {
+            $data = array(
+                'id_produk' => $id_produk,
+                'size' => $this->input->post('size'),
+                'stock' => $this->input->post('stock'),
+                'harga' => $this->input->post('harga'),
+            );
+            $this->m_master_produk->add_size($data);
+            $this->session->set_flashdata('pesan', 'Data Size Berhasil Disimpan');
+            redirect('master_produk/size_produk/' . $id_produk);
+        }
+    }
 }
