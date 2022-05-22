@@ -35,10 +35,6 @@
                                                 <input type="text" class="form-control" name="nama_produk" value="<?= $produk->nama_produk ?>" placeholder="Nama Produk">
                                             </div>
                                             <div class="input-group mg-b-pro-edt">
-                                                <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
-                                                <input type="number" class="form-control" name="stock" value="<?= $produk->stock ?>" placeholder="Stock">
-                                            </div>
-                                            <div class="input-group mg-b-pro-edt">
                                                 <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
                                                 <input type="file" name="images" id="preview_gambar" class="form-control" placeholder="Regular Price">
                                             </div>
@@ -46,10 +42,6 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="review-content-section">
-                                            <div class="input-group mg-b-pro-edt">
-                                                <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" name="harga" value="<?= $produk->harga ?>" placeholder="Harga Produk">
-                                            </div>
                                             <div class="input-group mg-b-pro-edt">
                                                 <span class="input-group-addon"><i class="icon nalika-new-file" aria-hidden="true"></i></span>
                                                 <input type="text" class="form-control" name="deskripsi" value="<?= $produk->deskripsi ?>" placeholder="Product Description">
