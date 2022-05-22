@@ -7,24 +7,54 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class M_transaksi extends CI_Model
 {
 
-    // List all your items
-    public function index()
+    public function simpan_transaksi($data)
     {
+        $this->db->insert('transaksi', $data);
     }
 
-    // Add a new item
-    public function add()
+    public function simpan_rinci_transaksi($data_rinci)
     {
+        $this->db->insert('rinci_transaksi', $data_rinci);
     }
 
-    //Update one item
-    public function update($id = NULL)
+    public function belum_bayar()
     {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+        $this->db->where('status_order=0');
+        $this->db->order_by('id_transaksi', 'desc');
+        return $this->db->get()->result();
     }
 
-    //Delete one item
-    public function delete($id = NULL)
+    public function diproses()
     {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+        $this->db->where('status_order=1');
+        $this->db->order_by('id_transaksi', 'desc');
+        return $this->db->get()->result();
+    }
+
+    public function dikirim()
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+        $this->db->where('status_order=2');
+        $this->db->order_by('id_transaksi', 'desc');
+        return $this->db->get()->result();
+    }
+
+    public function selesai()
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+        $this->db->where('status_order=3');
+        $this->db->order_by('id_transaksi', 'desc');
+        return $this->db->get()->result();
     }
 }
 
