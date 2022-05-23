@@ -21,22 +21,13 @@
                                 <td>Rp. <?= number_format($value->harga, 0) ?></td>
                                 <td><?= $value->stock ?></td>
                                 <td>
-                                    <a href="<?= base_url('master_produk/edit_produk/' . $value->id_produk) ?>" data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <a href="<?= base_url('master_produk/delete_produk/' . $value->id_produk) ?>" data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    <a href="<?= base_url('master_produk/edit_size/' . $value->id_size . '/' . $value->id_produk) ?>" data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href="<?= base_url('master_produk/delete_size/' . $value->id_size . '/' . $value->id_produk) ?>" data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                         <?php }
                         ?>
                     </table>
-                    <div class="custom-pagination">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">

@@ -95,28 +95,48 @@ class M_master_produk extends CI_Model
     }
 
     //size data produk
-    public function size($id_produk)
+    public function size($id)
     {
         $this->db->select('*');
         $this->db->from('size');
         $this->db->join('produk', 'size.id_produk = produk.id_produk', 'left');
-        $this->db->where('produk.id_produk', $id_produk);
+        $this->db->where('produk.id_produk', $id);
         $data['size'] = $this->db->get()->result();
-        $data['produk'] = $this->db->get_where('produk', array('id_produk' => $id_produk))->row();
+        $data['produk'] = $this->db->get_where('produk', array('id_produk' => $id))->row();
         return $data;
     }
     public function add_size($data)
     {
         $this->db->insert('size', $data);
     }
-    public function edit_size($data)
+    public function size_detail($id)
     {
-        $this->db->where('id_size', $data['id_size']);
+        $this->db->select('*');
+        $this->db->from('size');
+        $this->db->join('produk', 'size.id_produk = produk.id_produk', 'left');
+        $this->db->where('size.id_size', $id);
+        return $this->db->get()->row();
+    }
+    public function update_size($id, $data)
+    {
+        $this->db->where('id_size', $id);
         $this->db->update('size', $data);
     }
-    public function delete_size($data)
+    public function delete_size($id)
     {
-        $this->db->where('id_size', $data['id_size']);
+        $this->db->where('id_size', $id);
         $this->db->delete('size');
+    }
+    //jika produk di hapus maka semua data size di hapus
+    public function delete_size_all($data)
+    {
+        $this->db->where('id_produk', $data['id_produk']);
+        $this->db->delete('size');
+    }
+    //jika produk di hapus maka produk di diskon pun terhapus
+    public function delete_diskon_all($data)
+    {
+        $this->db->where('id_produk', $data['id_produk']);
+        $this->db->delete('diskon');
     }
 }

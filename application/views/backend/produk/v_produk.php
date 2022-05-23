@@ -12,6 +12,7 @@
                             <th>Image</th>
                             <th>Nama Produk</th>
                             <th>Nama Kategori</th>
+                            <th>Berat Produk</th>
                             <th>Deskripsi</th>
                             <th>Setting</th>
                         </tr>
@@ -20,10 +21,11 @@
                                 <td><img src="<?= base_url('assets/produk/' . $value->images) ?>" alt="" /></td>
                                 <td><?= $value->nama_produk ?></td>
                                 <td><?= $value->nama_kategori ?></td>
+                                <td><?= $value->berat ?> Gr</td>
                                 <td><?= $value->deskripsi ?></td>
                                 <td>
-                                    <a href="<?= base_url('master_produk/edit_produk/' . $value->id_produk) ?>" data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <a href="<?= base_url('master_produk/size_produk/' . $value->id_produk) ?>" data-toggle="tooltip" title="Size" class="pd-setting-ed"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    <a href="<?= base_url('master_produk/edit_produk/' . $value->id_produk) ?>" data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <a href="<?= base_url('master_produk/delete_produk/' . $value->id_produk) ?>" data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                 </td>
                             </tr>

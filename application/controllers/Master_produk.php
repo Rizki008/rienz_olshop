@@ -136,8 +136,7 @@ class Master_produk extends CI_Controller
     {
         $this->form_validation->set_rules('nama_produk', 'Nama Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
         $this->form_validation->set_rules('id_kategori', 'Kategori Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-        $this->form_validation->set_rules('stock', 'Stock Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-        $this->form_validation->set_rules('harga', 'Harga Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('berat', 'Berat Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
         $this->form_validation->set_rules('deskripsi', 'Deskripsi Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 
         if ($this->form_validation->run() == TRUE) {
@@ -164,8 +163,7 @@ class Master_produk extends CI_Controller
                 $data = array(
                     'nama_produk' => $this->input->post('nama_produk'),
                     'id_kategori' => $this->input->post('id_kategori'),
-                    'stock' => $this->input->post('stock'),
-                    'harga' => $this->input->post('harga'),
+                    'berat' => $this->input->post('berat'),
                     'deskripsi' => $this->input->post('deskripsi'),
                     'images' => $upload_data['uploads']['file_name'],
                 );
@@ -195,8 +193,7 @@ class Master_produk extends CI_Controller
     {
         $this->form_validation->set_rules('nama_produk', 'Nama Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
         $this->form_validation->set_rules('id_kategori', 'Kategori Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-        $this->form_validation->set_rules('stock', 'Stock Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-        $this->form_validation->set_rules('harga', 'Harga Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        $this->form_validation->set_rules('berat', 'Berat Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
         $this->form_validation->set_rules('deskripsi', 'Deskripsi Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 
         if ($this->form_validation->run() == TRUE) {
@@ -230,8 +227,7 @@ class Master_produk extends CI_Controller
                     'id_produk' => $id_produk,
                     'nama_produk' => $this->input->post('nama_produk'),
                     'id_kategori' => $this->input->post('id_kategori'),
-                    'stock' => $this->input->post('stock'),
-                    'harga' => $this->input->post('harga'),
+                    'berat' => $this->input->post('berat'),
                     'deskripsi' => $this->input->post('deskripsi'),
                     'images' => $upload_data['uploads']['file_name'],
                 );
@@ -243,8 +239,7 @@ class Master_produk extends CI_Controller
                 'id_produk' => $id_produk,
                 'nama_produk' => $this->input->post('nama_produk'),
                 'id_kategori' => $this->input->post('id_kategori'),
-                'stock' => $this->input->post('stock'),
-                'harga' => $this->input->post('harga'),
+                'berat' => $this->input->post('berat'),
                 'deskripsi' => $this->input->post('deskripsi'),
             );
             $this->m_master_produk->edit_produk($data);
@@ -269,6 +264,8 @@ class Master_produk extends CI_Controller
             'id_produk' => $id_produk,
         );
         $this->m_master_produk->delete_produk($data);
+        $this->m_master_produk->delete_size_all($data);
+        $this->m_master_produk->delete_diskon_all($data);
         $this->session->set_flashdata('pesan', 'Produk Berhasil Dihapus');
         redirect('master_produk/produk');
     }
@@ -305,7 +302,7 @@ class Master_produk extends CI_Controller
     }
 
     //size produk
-    public function size_produk($id_produk)
+    public function size_produk($id)
     {
         $this->form_validation->set_rules('size', 'Size', 'required');
         $this->form_validation->set_rules('stock', 'Stock', 'required');
@@ -315,20 +312,51 @@ class Master_produk extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $data = array(
                 'title' => 'Ukuran Produk',
-                'size' => $this->m_master_produk->size($id_produk),
+                'size' => $this->m_master_produk->size($id),
                 'isi' => 'backend/size/v_size'
             );
             $this->load->view('backend/v_wrapper', $data, FALSE);
         } else {
             $data = array(
-                'id_produk' => $id_produk,
+                'id_produk' => $id,
                 'size' => $this->input->post('size'),
                 'stock' => $this->input->post('stock'),
                 'harga' => $this->input->post('harga'),
             );
             $this->m_master_produk->add_size($data);
             $this->session->set_flashdata('pesan', 'Data Size Berhasil Disimpan');
+            redirect('master_produk/size_produk/' . $id);
+        }
+    }
+    public function edit_size($id, $id_produk)
+    {
+        $this->form_validation->set_rules('size', 'Size', 'required');
+        $this->form_validation->set_rules('stock', 'Stock', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data = array(
+                'title' => 'Update Size Produk',
+                'size' => $this->m_master_produk->size_detail($id),
+                'isi' => 'backend/size/v_edit'
+            );
+            $this->load->view('backend/v_wrapper', $data, FALSE);
+        } else {
+            $data = array(
+                'size' => $this->input->post('size'),
+                'stock' => $this->input->post('stock'),
+                'harga' => $this->input->post('harga'),
+            );
+            $this->m_master_produk->update_size($id, $data);
+            $this->session->set_flashdata('pesan', 'Data Size Berhasil Diperbarui');
             redirect('master_produk/size_produk/' . $id_produk);
         }
+    }
+    public function delete_size($id, $id_produk)
+    {
+        $this->m_master_produk->delete_size($id);
+        $this->session->set_flashdata('pesan', 'Data Ukuran Berhasil Dihapus');
+
+        redirect('master_produk/size_produk/' . $id_produk);
     }
 }

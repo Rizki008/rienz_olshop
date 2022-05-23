@@ -38,6 +38,10 @@
                                                 <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
                                                 <input type="file" name="images" id="preview_gambar" class="form-control" placeholder="Regular Price">
                                             </div>
+                                            <div class="input-group mg-b-pro-edt">
+                                                <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                <input type="number" class="form-control" name="berat" value="<?= set_value('berat') ?>" placeholder="Nama Produk">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
