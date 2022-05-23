@@ -213,8 +213,8 @@
                                     <?php $total_berat = 0;
                                     $total = 0;
                                     foreach ($this->cart->contents() as $items) {
-                                        $produk = $this->m_home->detail_produk($items['id']);
-                                        $berat = $items['qty'] * $produk->berat;
+                                        // $produk = $this->m_home->detail_produk($items['id']);
+                                        $berat = $items['qty'] * $items['netto'];
                                         $total_berat = $total_berat + $berat ?>
                                         <li><?php echo $items['name'] ?> <span>Rp. <?= number_format($items['subtotal'], 0); ?></span></li>
                                         <?php $i++; ?>

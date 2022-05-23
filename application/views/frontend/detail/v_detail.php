@@ -36,7 +36,7 @@
                     </div>
                     <div class="product__details__slider__content">
                         <div class="product__details__pic__slider owl-carousel">
-                            <img data-hash="product-1" class="product__big__img" src="<?= base_url('assets/produk/' . $produk->images) ?>" alt="">
+                            <img data-hash="product-1" class="product__big__img" src="<?= base_url('assets/produk/' . $data['produk']->images) ?>" alt="">
                             <img data-hash="product-2" class="product__big__img" src="img/product/details/product-3.jpg" alt="">
                             <img data-hash="product-3" class="product__big__img" src="img/product/details/product-2.jpg" alt="">
                             <img data-hash="product-4" class="product__big__img" src="img/product/details/product-4.jpg" alt="">
@@ -45,13 +45,20 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <?php echo form_open('belanja/add');
-                echo form_hidden('id', $produk->id_produk);
-                echo form_hidden('price', $produk->harga - $produk->diskon);
-                echo form_hidden('name', $produk->nama_produk);
-                echo form_hidden('redirect_page', str_replace('index.php/', '', current_url())); ?>
+                <?php
+                echo form_open('belanja/add');
+                echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
+                ?>
+                <input type="hidden" name="id" value="<?= $data['produk']->id_produk ?>">
+                <input type="hidden" class="price" name="price" value="<?= $data['produk']->harga - ($data['produk']->diskon / 100 * $data['produk']->harga) ?>">
+                <input type="hidden" name="name" value="<?= $data['produk']->nama_produk ?>">
+                <input type="hidden" name="qty" value="1">
+                <input type="hidden" class="size" name="size" value="<?= $data['produk']->size ?>">
+                <input type="hidden" class="stock" name="stock" value="<?= $data['produk']->stock ?>">
+                <input type="hidden" name="images" value="<?= $data['produk']->images ?>">
+                <input type="hidden" name="netto" value="<?= $data['produk']->berat ?>">
                 <div class="product__details__text">
-                    <h3><?= $produk->nama_produk ?> <span>Brand: <?= $produk->nama_kategori ?></span></h3>
+                    <h3><?= $data['produk']->nama_produk ?> <span>Brand: <?= $data['produk']->nama_kategori ?></span></h3>
                     <div class="rating">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -60,20 +67,21 @@
                         <i class="fa fa-star"></i>
                         <span>( 138 reviews )</span>
                     </div>
-                    <div class="product__details__price">Rp. <?= number_format($produk->harga - $produk->diskon, 0) ?> <span>Rp. <?= number_format($produk->harga, 0) ?></span></div>
-                    <p><?= $produk->deskripsi ?></p>
+                    <div class="product__details__price price-view">Rp. <?= number_format($data['produk']->harga - $data['produk']->diskon / 100 * $data['produk']->harga, 0) ?> <span>Rp. <?= number_format($data['produk']->harga, 0) ?></span></div>
+                    <?php if ($data['produk']->diskon != 0) { ?>
+                        <del class="diskon">Rp. <?= number_format($data['produk']->harga, 0) ?></del><span class="disc badge bg-warning">Disc <?= $data['produk']->diskon ?>%</span>
+                    <?php } ?>
+                    <p><?= $data['produk']->deskripsi ?></p>
                     <div class="product__details__button">
                         <div class="quantity">
                             <span>Quantity:</span>
                             <div class="pro-qty">
-                                <input type="number" id="quantity" name="qty" value="1" min="1" max="<?= $produk->stock ?>">
-                                <input type="number" id="quantity" name="qty" class="form-control" value="1" min="1" max="<?= $produk->stock ?>">
+                                <input type="number" id="quantity" name="qty" value="1">
+                                <!-- <input type="number" id="quantity" name="qty" class="form-control" value="1" min="1" max="<?= $data['produk']->stock ?>"> -->
                             </div>
                         </div>
-                        <a href="#" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</a>
+                        <button type="submit" data-images="<?= $data['produk']->images ?>" data-size="<?= $data['produk']->size ?>" data-stock="<?= $data['produk']->stock ?>" data-netto="<?= $data['produk']->berat ?>" data-name="<?= $data['produk']->nama_produk ?>" data-price="<?= ($data['produk']->diskon > 0) ? ($data['produk']->harga - $data['produk']->diskon) : $data['produk']->harga ?>" data-id="<?= $data['produk']->id_produk ?>" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</button>
                         <ul>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_adjust-horiz"></span></a></li>
                         </ul>
                     </div>
                     <div class="product__details__widget">
@@ -81,54 +89,22 @@
                             <li>
                                 <span>Availability:</span>
                                 <div class="stock__checkbox">
-                                    <label for="stockin">
-                                        In Stock
-                                        <input type="checkbox" id="stockin">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                    In Stock
                                 </div>
                             </li>
                             <li>
-                                <span>Available color:</span>
-                                <div class="color__checkbox">
-                                    <label for="red">
-                                        <input type="radio" name="color__radio" id="red" checked>
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label for="black">
-                                        <input type="radio" name="color__radio" id="black">
-                                        <span class="checkmark black-bg"></span>
-                                    </label>
-                                    <label for="grey">
-                                        <input type="radio" name="color__radio" id="grey">
-                                        <span class="checkmark grey-bg"></span>
-                                    </label>
-                                </div>
                             </li>
                             <li>
                                 <span>Available size:</span>
                                 <div class="size__btn">
-                                    <label for="xs-btn" class="active">
-                                        <input type="radio" id="xs-btn">
-                                        xs
-                                    </label>
-                                    <label for="s-btn">
-                                        <input type="radio" id="s-btn">
-                                        s
-                                    </label>
-                                    <label for="m-btn">
-                                        <input type="radio" id="m-btn">
-                                        m
-                                    </label>
-                                    <label for="l-btn">
-                                        <input type="radio" id="l-btn">
-                                        l
-                                    </label>
+                                    <select name="id" id="produk">
+                                        <?php foreach ($data['size'] as $key => $value) { ?>
+                                            <option data-stock="<?= $value->stock ?>" data-size="<?= $value->size ?>" data-diskon="Rp. <?= number_format($value->harga, 0) ?>" data-price-view="Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga), 0) ?>" data-price="<?= $value->harga - ($value->diskon / 100 * $value->harga) ?>" value="<?= $value->id_size ?>"><?= $value->size ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                             </li>
                             <li>
-                                <span>Promotions:</span>
-                                <p>Free shipping</p>
                             </li>
                         </ul>
                     </div>
@@ -148,7 +124,7 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <h6>Description</h6>
-                            <p><?= $produk->deskripsi ?></p>
+                            <p><?= $data['produk']->deskripsi ?></p>
                         </div>
                         <div class="tab-pane" id="tabs-3" role="tabpanel">
                             <h6>Reviews ( 2 )</h6>
@@ -177,17 +153,22 @@
                 <?php foreach ($related_produk as $product) : ?>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <?php echo form_open('belanja/add');
-                        echo form_hidden('id', $product->id_produk);
-                        echo form_hidden('price', $product->harga);
-                        echo form_hidden('name', $product->nama_produk);
+                        echo form_hidden('id', $value->id_size);
+                        echo form_hidden('qty', 1);
+                        echo form_hidden('price', $value->harga - ($value->diskon / 100 * $value->harga));
+                        echo form_hidden('size', $value->size);
+                        echo form_hidden('stock', $value->stock);
+                        echo form_hidden('netto', $value->berat);
+                        echo form_hidden('images', $value->images);
+                        echo form_hidden('name', $value->nama_produk);
                         echo form_hidden('redirect_page', str_replace('index.php/', '', current_url())); ?>
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="<?= base_url('assets/produk/' . $product->images) ?>">
                                 <div class="label new">New</div>
                                 <ul class="product__hover">
                                     <li><a href="<?= base_url('assets/produk/' . $product->images) ?>" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                    <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                    <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                    <li><a href="<?= base_url('home/detail_produk/' . $product->id_produk) ?>"><span class="icon_heart_alt"></span></a></li>
+                                    <li><button type="submit"><span class="icon_bag_alt"></span></button></li>
                                 </ul>
                             </div>
                             <div class="product__item__text">

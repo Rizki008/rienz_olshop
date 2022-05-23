@@ -29,8 +29,12 @@ class Belanja extends CI_Controller
         $data = array(
             'id' => $this->input->post('id'),
             'qty' => $this->input->post('qty'),
+            'size' => $this->input->post('size'),
             'price' => $this->input->post('price'),
             'name' => $this->input->post('name'),
+            'images' => $this->input->post('images'),
+            'stock' => $this->input->post('stock'),
+            'netto' => $this->input->post('netto')
         );
         $this->cart->insert($data);
         redirect($redirect_page);

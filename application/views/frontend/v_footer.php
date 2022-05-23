@@ -150,6 +150,25 @@
 <script src="<?= base_url() ?>frontend/js/owl.carousel.min.js"></script>
 <script src="<?= base_url() ?>frontend/js/jquery.nicescroll.min.js"></script>
 <script src="<?= base_url() ?>frontend/js/main.js"></script>
+
+<script>
+    $("#produk").on('change', function() {
+        $(".price-view").html($(this).find(':selected').attr('data-price-view'));
+        $(".price-view").val($(this).find(':selected').attr('data-price-view'));
+
+        $(".price").html($(this).find(':selected').attr('data-price'));
+        $(".price").val($(this).find(':selected').attr('data-price'));
+
+        $(".diskon").html($(this).find(':selected').attr('data-diskon'));
+        $(".diskon").val($(this).find(':selected').attr('data-diskon'));
+
+        $(".size").html($(this).find(':selected').attr('data-size'));
+        $(".size").val($(this).find(':selected').attr('data-size'));
+
+        $(".stock").html($(this).find(':selected').attr('data-stock'));
+        $(".stock").val($(this).find(':selected').attr('data-stock'));
+    })
+</script>
 </body>
 
 </html>

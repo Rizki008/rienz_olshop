@@ -24,6 +24,7 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
+                                <th>Size</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
@@ -35,16 +36,17 @@
                             <?php $total_berat = 0;
                             $total = 0;
                             foreach ($this->cart->contents() as $items) {
-                                $produk = $this->m_home->detail_produk($items['id']);
-                                $berat = $items['qty'] * $produk->berat;
+                                // $produk = $this->m_home->detail_produk($items['id']);
+                                $berat = $items['qty'] * $items['netto'];
                                 $total_berat = $total_berat + $berat ?>
                                 <tr>
                                     <td class="cart__product__item">
-                                        <img src="<?= base_url('assets/produk/' . $produk->images) ?>" alt="" width="70px">
+                                        <img src="<?php echo base_url('assets/produk/' . $items['images']) ?>" alt="" width="70px">
                                         <div class="cart__product__item__title">
                                             <h6><?php echo $items['name'] ?></h6>
                                         </div>
                                     </td>
+                                    <td class="cart__price"><?php echo $items['size'] ?></td>
                                     <td class="cart__price">Rp. <?= number_format($items['price'], 0); ?></td>
                                     <td class="cart__quantity">
                                         <div class="pro-qty">

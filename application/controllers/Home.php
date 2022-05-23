@@ -15,7 +15,7 @@ class Home extends CI_Controller
     {
         $data = array(
             'title' => 'Rienz Olshop',
-            'produk' => $this->m_master_produk->produk(),
+            'produk' => $this->m_home->produk(),
             'produk_baru' => $this->m_home->produk_baru(),
             'produk_bagus' => $this->m_home->produk_bagus(),
             'diskon' => $this->m_home->diskon(),
@@ -25,12 +25,12 @@ class Home extends CI_Controller
         $this->load->view('frontend/v_wrapper', $data, FALSE);
     }
 
-    public function detail_produk($id_produk = null)
+    public function detail_produk($id = null)
     {
         $data = array(
             'title' => 'Detail Produk',
-            'produk' => $this->m_home->detail_produk($id_produk),
-            'related_produk' => $this->m_home->related_produk($id_produk),
+            'data' => $this->m_home->detail_produk($id),
+            'related_produk' => $this->m_home->related_produk($id),
             'isi' => 'frontend/detail/v_detail'
         );
         $this->load->view('frontend/v_wrapper', $data, FALSE);
