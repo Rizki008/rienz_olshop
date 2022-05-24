@@ -31,6 +31,7 @@
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="Inbox" href="<?= base_url('master_produk/kategori') ?>"><span class="mini-sub-pro">Kategori</span></a></li>
                             <li><a title="View Mail" href="<?= base_url('master_produk/produk') ?>"><span class="mini-sub-pro">Produk</span></a></li>
+                            <li><a title="View Mail" href="<?= base_url('master_produk/gambar') ?>"><span class="mini-sub-pro">Gambar</span></a></li>
                             <li><a title="Compose Mail" href="<?= base_url('master_produk/diskon') ?>"><span class="mini-sub-pro">Diskon</span></a></li>
                         </ul>
                     </li>
