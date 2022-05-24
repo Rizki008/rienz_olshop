@@ -38,6 +38,13 @@ class M_home extends CI_Model
         $data['produk'] = $this->db->query("SELECT * FROM produk JOIN kategori ON produk.id_kategori=kategori.id_kategori JOIN size ON produk.id_produk=size.id_produk JOIN diskon ON produk.id_produk=diskon.id_produk WHERE produk.id_produk='" . $id . "'")->row();
         return $data;
     }
+    public function gambar_produk($id)
+    {
+        $this->db->select('*');
+        $this->db->from('gambar');
+        $this->db->where('id_produk', $id);
+        return $this->db->get()->result();
+    }
 
     public function produk_bagus()
     {

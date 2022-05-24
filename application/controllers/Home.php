@@ -30,6 +30,7 @@ class Home extends CI_Controller
         $data = array(
             'title' => 'Detail Produk',
             'data' => $this->m_home->detail_produk($id),
+            'gambar' => $this->m_home->gambar_produk($id),
             'related_produk' => $this->m_home->related_produk($id),
             'isi' => 'frontend/detail/v_detail'
         );
