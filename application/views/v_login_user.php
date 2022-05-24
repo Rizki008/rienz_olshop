@@ -130,7 +130,6 @@
                 <span class="help-block small">Yur strong password</span>
               </div>
               <button class="btn btn-success btn-block loginbtn">Login</button>
-              <a class="btn btn-default btn-block" href="#">Register</a>
             </form>
           </div>
         </div>
