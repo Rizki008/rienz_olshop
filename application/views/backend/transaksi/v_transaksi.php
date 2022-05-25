@@ -42,7 +42,7 @@
                                                 </td>
                                                 <td>
                                                     <?php if ($value->status_bayar == 1) { ?>
-                                                        <a href="<?= base_url('transaksi/detail/' . $value->no_order) ?>" data-toggle="tooltip" title="Detail Pembayaran" class="pd-setting-ed"><i class="fa fa-database" aria-hidden="true"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#WarningModalalert<?= $value->no_order ?>" title="Edit" class="pd-setting-ed"><i class="fa fa-money" aria-hidden="true"></i></a>
                                                         <a href="<?= base_url('transaksi/proses/' . $value->id_transaksi) ?>" data-toggle="tooltip" title="Verifikasi" class="pd-setting-ed"><i class="fa fa-check" aria-hidden="true"></i></a>
                                                     <?php } ?>
                                                 </td>
@@ -185,3 +185,49 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<?php foreach ($pesanan as $key => $value) { ?>
+    <div id="WarningModalalert<?= $value->no_order ?>" class="modal modal-adminpro-general Customwidth-popup-WarningModal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-close-area modal-close-df">
+                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                </div>
+
+                <?php echo form_open('transaksi/detail/' . $value->no_order) ?>
+                <div class="modal-body">
+                    <span class="adminpro-icon adminpro-warning-danger modal-check-pro information-icon-pro"></span>
+                    <h2><?= $value->no_order ?></h2>
+                    <div class="input-group mg-b-pro-edt">
+                        <tr>
+                            <th>
+                                Nama Pembayar:
+                            </th>
+                            <th><?= $value->atas_nama ?></th>
+                        </tr>
+                    </div>
+                    <div class="input-group mg-b-pro-edt">
+                        <tr>
+                            <th>
+                                Nama Bank:
+                            </th>
+                            <th><?= $value->nama_bank ?></th>
+                        </tr>
+                    </div>
+                    <div class="input-group mg-b-pro-edt">
+                        <tr>
+                            <th>
+                                Bukti Bayar :
+                            </th>
+                            <img src="<?= base_url('assets/bukti_bayar/' . $value->bukti_bayar) ?>" width="100px" alt="">
+                        </tr>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a data-dismiss="modal" href="#">Cancel</a>
+                </div>
+                <?php echo form_close() ?>
+            </div>
+        </div>
+    </div>
+<?php } ?>

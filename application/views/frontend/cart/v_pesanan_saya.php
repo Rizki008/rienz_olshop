@@ -43,7 +43,6 @@
                                 <th>Expedisi</th>
                                 <th>Biaya Ongkir</th>
                                 <th>Total Bayar</th>
-                                <th>No Resi</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -86,8 +85,6 @@
                                 <th>Expedisi</th>
                                 <th>Biaya Ongkir</th>
                                 <th>Total Bayar</th>
-                                <th>No Resi</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -100,9 +97,6 @@
                                     <td>Rp. <?= number_format($value->total_bayar, 0) ?><br>
                                         <label class="badge badge-info">Diproses</label>
                                     </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -162,11 +156,11 @@
                                     <td><?= $value->tgl_order ?></td>
                                     <td><?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?></td>
                                     <td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
-                                    <td>Rp. <?= number_format($value->total_bayar, 0) ?>
+                                    <td>Rp. <?= number_format($value->total_bayar, 0) ?><br>
                                         <label class="badge badge-success">Selesai</label>
                                     </td>
                                     <td class="text-info"><?= $value->no_resi ?></td>
-                                    <td></td>
+                                    <td><a href="<?= base_url('pesanan_saya/riview/' . $value->id_transaksi) ?>" class="btn btn-success btn-sm">Riviews</a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
