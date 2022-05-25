@@ -61,7 +61,6 @@ class Pesanan_saya extends CI_Controller
                     'id_transaksi' => $id_transaksi,
                     'atas_nama' => $this->input->post('atas_nama'),
                     'nama_bank' => $this->input->post('nama_bank'),
-                    'jml_bayar' => $this->input->post('jml_bayar'),
                     'status_bayar' => '1',
                     'bukti_bayar' => $upload_data['uploads']['file_name'],
                 );

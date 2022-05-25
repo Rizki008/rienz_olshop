@@ -56,6 +56,7 @@
                                 <a href="<?= base_url('pelanggan/register') ?>">Register</a>
                             <?php } else { ?>
                                 <a href="#"><?= $this->session->userdata('nama_pelanggan'); ?></a>
+                                <a href="<?= base_url('pesanan_saya') ?>">Pesanan</a>
                                 <a href="<?= base_url('pelanggan/logout') ?>">Logout</a>
                             <?php } ?>
                         </div>
