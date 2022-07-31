@@ -5,9 +5,8 @@
             <div class="col-lg-6 p-0">
                 <div class="categories__item categories__large__item set-bg" data-setbg="<?= base_url() ?>frontend/img/categories/category-1.jpg">
                     <div class="categories__text">
-                        <h1>Women’s fashion</h1>
-                        <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore
-                            edolore magna aliquapendisse ultrices gravida.</p>
+                        <h1>Produk Terlaris</h1>
+                        <p>Produk Terlaris di toko kami</p>
                         <a href="#">Shop now</a>
                     </div>
                 </div>
@@ -19,8 +18,8 @@
                             <div class="categories__item set-bg" data-setbg="<?= base_url('assets/kategori/' . $value->gambar) ?>">
                                 <div class="categories__text">
                                     <h4><?= $value->nama_kategori ?></h4>
-                                    <p>358 items</p>
-                                    <a href="#">Shop now</a>
+                                    <!-- <p>358 items</p> -->
+                                    <a href="<?= base_url('home/kategori/' . $value->id_kategori) ?>">Shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -31,6 +30,7 @@
     </div>
 </section>
 <!-- Categories Section End -->
+
 <!-- Product Section Begin -->
 <section class="product spad">
     <div class="container">
@@ -65,18 +65,11 @@
                             <ul class="product__hover">
                                 <li><a href="<?= base_url('assets/produk/' . $value->images) ?>" class="image-popup"><span class="arrow_expand"></span></a></li>
                                 <li><a href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><span class="icon_heart_alt"></span></a></li>
-                                <li><button type="submit"><span class="icon_bag_alt"></span></button></li>
+                                <!-- <li><button type="submit"><span class="icon_bag_alt"></span></button></li> -->
                             </ul>
                         </div>
                         <div class="product__item__text">
                             <h6><a href="#"><?= $value->nama_produk ?></a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
                             <div class="product__price">Rp. <?= number_format($value->harga, 0) ?></div>
                         </div>
                         <?php echo form_close() ?>
@@ -96,22 +89,22 @@
                 <div class="banner__slider owl-carousel">
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
+                            <span>Koleksi Di Toko Kami</span>
+                            <h1>Pembuatan Gamis</h1>
                             <a href="#">Shop now</a>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
+                            <span>Koleksi Di Toko Kami</span>
+                            <h1>Pembuatan Gamis</h1>
                             <a href="#">Shop now</a>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
+                            <span>Koleksi Di Toko Kami</span>
+                            <h1>Pembuatan Gamis</h1>
                             <a href="#">Shop now</a>
                         </div>
                     </div>
@@ -129,7 +122,7 @@
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="trend__content">
                     <div class="section-title">
-                        <h4>Hot Trend</h4>
+                        <h4>Produk Terbaru</h4>
                     </div>
                     <?php foreach ($produk_baru as $key => $value) { ?>
                         <div class="trend__item">
@@ -138,13 +131,6 @@
                             </div>
                             <div class="trend__item__text">
                                 <h6><?= $value->nama_produk ?></h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                                 <div class="product__price">Rp. <?= number_format($value->harga) ?></div>
                             </div>
                         </div>
@@ -154,7 +140,7 @@
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="trend__content">
                     <div class="section-title">
-                        <h4>Best seller</h4>
+                        <h4>Produk Bagus</h4>
                     </div>
                     <?php if (count($produk_bagus) > 0) : ?>
                         <?php foreach ($produk_bagus as $key => $value) { ?>
@@ -164,13 +150,6 @@
                                 </div>
                                 <div class="trend__item__text">
                                     <h6><?= $value->nama_produk ?></h6>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
                                     <div class="product__price">Rp. <?= number_format($value->harga, 0) ?></div>
                                 </div>
                             </div>
@@ -182,7 +161,7 @@
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="trend__content">
                     <div class="section-title">
-                        <h4>Discount</h4>
+                        <h4>Diskon Produk</h4>
                     </div>
                     <?php foreach ($diskon as $key => $value) { ?>
                         <div class="trend__item">
@@ -191,13 +170,6 @@
                             </div>
                             <div class="trend__item__text">
                                 <h6><?= $value->nama_produk ?></h6>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                                 <div class="product__price">Rp. <?= number_format($value->harga, 0) ?></div>
                             </div>
                         </div>
@@ -222,8 +194,8 @@
                 <div class="discount__text">
                     <div class="discount__text__title">
                         <span>Discount</span>
-                        <h2>Summer 2019</h2>
-                        <h5><span>Sale</span> 50%</h5>
+                        <h2>Hari Kemerdekaan 2022</h2>
+                        <h5><span>Diskon Sampai</span> 50%</h5>
                     </div>
                     <div class="discount__countdown" id="countdown-time">
                         <div class="countdown__item">
