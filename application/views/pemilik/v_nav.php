@@ -166,14 +166,6 @@
                                                     <i class="icon nalika-down-arrow nalika-angle-dw"></i>
                                                 </a>
                                                 <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                    <li><a href="register.html"><span class="icon nalika-home author-log-ic"></span> Register</a>
-                                                    </li>
-                                                    <li><a href="#"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
-                                                    </li>
-                                                    <li><a href="lock.html"><span class="icon nalika-diamond author-log-ic"></span> Lock</a>
-                                                    </li>
-                                                    <li><a href="#"><span class="icon nalika-settings author-log-ic"></span> Settings</a>
-                                                    </li>
                                                     <li><a href="<?= base_url('auth/logout') ?>"><span class="icon nalika-unlocked author-log-ic"></span> Log Out</a>
                                                     </li>
                                                 </ul>
