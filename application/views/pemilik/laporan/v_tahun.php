@@ -18,7 +18,7 @@
                                             <div class="card-block">
                                                 <div class="input-group mg-b-15">
                                                     <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                                                    <select name="tanggal" class="form-control" id="">
+                                                    <select name="tahun" class="form-control" id="">
                                                         <?php $mulai = date('Y') - 1;
                                                         for ($i = $mulai; $i < $mulai + 10; $i++) {
                                                             $sel = $i == date('Y') ? 'selected="selected"' : '';

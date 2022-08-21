@@ -9,12 +9,14 @@ class Laporan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_laporan');
+        $this->load->model('m_transaksi');
     }
 
     public function hari()
     {
         $data = array(
             'title' => 'Data Laporan harian',
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'isi' => 'pemilik/laporan/v_hari'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
@@ -24,6 +26,7 @@ class Laporan extends CI_Controller
     {
         $data = array(
             'title' => 'Data Laporan harian',
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'isi' => 'pemilik/laporan/v_bulan'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
@@ -32,6 +35,7 @@ class Laporan extends CI_Controller
     {
         $data = array(
             'title' => 'Data Laporan harian',
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'isi' => 'pemilik/laporan/v_tahun'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
@@ -49,6 +53,7 @@ class Laporan extends CI_Controller
             'bulan' => $bulan,
             'tahun' => $tahun,
             'laporan' => $this->m_laporan->lap_hari($tanggal, $bulan, $tahun),
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'isi' => 'pemilik/laporan/data_laporan/v_lap_hari'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
@@ -62,6 +67,8 @@ class Laporan extends CI_Controller
             'title' => 'Laporan Perbulan',
             'bulan' => $bulan,
             'tahun' => $tahun,
+            'laporan' => $this->m_laporan->lap_bulan($bulan, $tahun),
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'isi' => 'pemilik/laporan/data_laporan/v_lap_bulan'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
@@ -73,6 +80,8 @@ class Laporan extends CI_Controller
         $data = array(
             'title' => 'Laporan Pertahun',
             'tahun' => $tahun,
+            'laporan' => $this->m_laporan->lap_tahun($tahun),
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'isi' => 'pemilik/laporan/data_laporan/v_lap_tahun'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);

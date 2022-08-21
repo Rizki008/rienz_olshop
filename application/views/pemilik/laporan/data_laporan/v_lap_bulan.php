@@ -60,7 +60,7 @@
 
                     <div class="panel-footer text-right">
                         <div class="btn-group">
-                            <a href="<?= base_url('laporan/hari') ?>" class="btn btn-default"><i class="fa fa-reply"></i> Kembali</a>
+                            <a href="<?= base_url('laporan/bulan') ?>" class="btn btn-default"><i class="fa fa-reply"></i> Kembali</a>
                             <button class="btn btn-default" onclick="window.print()"><i class="fa fa-print"></i> Print</button>
                         </div>
                     </div>

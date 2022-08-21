@@ -15,6 +15,7 @@ class M_laporan extends CI_Model
         $this->db->where('DAY(transaksi.tgl_order)', $tanggal);
         $this->db->where('MONTH(transaksi.tgl_order)', $bulan);
         $this->db->where('YEAR(transaksi.tgl_order)', $tahun);
+        $this->db->where('status_bayar=1');
         $this->db->order_by('qty', 'desc');
         return $this->db->get()->result();
     }
@@ -27,6 +28,7 @@ class M_laporan extends CI_Model
         $this->db->join('size', 'produk.id_produk = size.id_produk', 'left');
         $this->db->where('MONTH(transaksi.tgl_order)', $bulan);
         $this->db->where('YEAR(transaksi.tgl_order)', $tahun);
+        $this->db->where('status_bayar=1');
         $this->db->order_by('qty', 'desc');
         return $this->db->get()->result();
     }
@@ -38,6 +40,7 @@ class M_laporan extends CI_Model
         $this->db->join('produk', 'rinci_transaksi.id_produk = produk.id_produk', 'left');
         $this->db->join('size', 'produk.id_produk = size.id_produk', 'left');
         $this->db->where('YEAR(transaksi.tgl_order)', $tahun);
+        $this->db->where('status_bayar=1');
         $this->db->order_by('qty', 'desc');
         return $this->db->get()->result();
     }

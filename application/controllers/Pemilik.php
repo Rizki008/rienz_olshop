@@ -15,6 +15,7 @@ class Pemilik extends CI_Controller
     {
         $data = array(
             'title' => 'Dashboard',
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'isi' => 'v_pemilik'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
@@ -26,6 +27,7 @@ class Pemilik extends CI_Controller
         $data = array(
             'title' => 'Data User',
             'user' => $this->m_admin->user(),
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'isi' => 'pemilik/user/v_user'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
