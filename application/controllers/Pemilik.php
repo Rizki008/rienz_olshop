@@ -8,6 +8,7 @@ class Pemilik extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_admin');
+        $this->load->model('m_transaksi');
     }
 
     public function index()
@@ -60,5 +61,15 @@ class Pemilik extends CI_Controller
         $this->m_admin->delete($data);
         $this->session->set_flashdata('pesan', 'Berhasil Dihapus');
         redirect('pemilik/user');
+    }
+
+    public function analisis_pelanggan()
+    {
+        $data = array(
+            'title' => 'Analisis Pelanggan Loyal',
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
+            'isi' => 'pemilik/analisis/v_pelanggan'
+        );
+        $this->load->view('pemilik/v_wrapper', $data, FALSE);
     }
 }
