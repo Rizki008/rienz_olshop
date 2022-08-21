@@ -29,8 +29,8 @@
                                     <div class="header-top-menu tabl-d-n hd-search-rp">
                                         <div class="breadcome-heading">
                                             <form role="search" class="">
-                                                <input type="text" placeholder="Search..." class="form-control">
-                                                <a href=""><i class="fa fa-search"></i></a>
+                                                <!-- <input type="text" placeholder="Search..." class="form-control"> -->
+                                                <!-- <a href=""><i class="fa fa-search"></i></a> -->
                                             </form>
                                         </div>
                                     </div>
