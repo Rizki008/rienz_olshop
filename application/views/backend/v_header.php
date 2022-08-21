@@ -11,9 +11,9 @@
             </div>
             <div class="profile-social-dtl">
                 <ul class="dtl-social">
-                    <li><a href="#"><i class="icon nalika-facebook"></i></a></li>
+                    <!-- <li><a href="#"><i class="icon nalika-facebook"></i></a></li>
                     <li><a href="#"><i class="icon nalika-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon nalika-linkedin"></i></a></li>
+                    <li><a href="#"><i class="icon nalika-linkedin"></i></a></li> -->
                 </ul>
             </div>
         </div>

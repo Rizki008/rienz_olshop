@@ -29,8 +29,8 @@
                                     <div class="header-top-menu tabl-d-n hd-search-rp">
                                         <div class="breadcome-heading">
                                             <form role="search" class="">
-                                                <input type="text" placeholder="Search..." class="form-control">
-                                                <a href=""><i class="fa fa-search"></i></a>
+                                                <!-- <input type="text" placeholder="Search..." class="form-control">
+                                                <a href=""><i class="fa fa-search"></i></a> -->
                                             </form>
                                         </div>
                                     </div>
@@ -38,7 +38,7 @@
                                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                     <div class="header-right-info">
                                         <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                            <li class="nav-item dropdown">
+                                            <!-- <li class="nav-item dropdown">
                                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-mail" aria-hidden="true"></i><span class="indicator-ms"></span></a>
                                                 <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
                                                     <div class="message-single-top">
@@ -158,7 +158,7 @@
                                                         <a href="#">View All Notification</a>
                                                     </div>
                                                 </div>
-                                            </li>
+                                            </li> -->
                                             <li class="nav-item">
                                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                     <i class="icon nalika-user"></i>
@@ -166,19 +166,19 @@
                                                     <i class="icon nalika-down-arrow nalika-angle-dw"></i>
                                                 </a>
                                                 <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                    <li><a href="register.html"><span class="icon nalika-home author-log-ic"></span> Register</a>
+                                                    <!-- <li><a href="register.html"><span class="icon nalika-home author-log-ic"></span> Register</a>
                                                     </li>
                                                     <li><a href="#"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
                                                     </li>
                                                     <li><a href="lock.html"><span class="icon nalika-diamond author-log-ic"></span> Lock</a>
                                                     </li>
                                                     <li><a href="#"><span class="icon nalika-settings author-log-ic"></span> Settings</a>
-                                                    </li>
+                                                    </li> -->
                                                     <li><a href="<?= base_url('auth/logout') ?>"><span class="icon nalika-unlocked author-log-ic"></span> Log Out</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-menu-task"></i></a>
+                                            <!-- <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-menu-task"></i></a>
 
                                                 <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
                                                     <ul class="nav nav-tabs custon-set-tab">
@@ -557,7 +557,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
                                 </div>
