@@ -1,12 +1,12 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a href="<?= base_url('pemilik') ?>"><img class="main-logo" src="<?= base_url() ?>backend/img/logo/logo.png" alt="" /></a>
+            <a href="<?= base_url('pemilik') ?>"><img class="main-logo" src="<?= base_url() ?>backend/img/logo/ngewe.png" alt="" /></a>
             <strong><img src="<?= base_url() ?>backend/img/logo/logosn.png" alt="" /></strong>
         </div>
         <div class="nalika-profile">
             <div class="profile-dtl">
-                <a href="#"><img src="<?= base_url() ?>backend/img/notification/4.jpg" alt="" /></a>
+                <a href="#"><img src="<?= base_url() ?>backend/img/notification/avatar2.png" alt="" /></a>
                 <h2><?= $this->session->userdata('username'); ?> </h2>
             </div>
             <div class="profile-social-dtl">

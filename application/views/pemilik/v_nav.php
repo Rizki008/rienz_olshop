@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="logo-pro">
-                    <a href="<?= base_url('pemilik') ?>"><img class="main-logo" src="<?= base_url() ?>backend/img/logo/logo.png" alt="" /></a>
+                    <a href="<?= base_url('pemilik') ?>"><img class="main-logo" src="<?= base_url() ?>backend/img/logo/ngewe.png" alt="" /></a>
                 </div>
             </div>
         </div>
