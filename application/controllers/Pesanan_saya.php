@@ -79,14 +79,44 @@ class Pesanan_saya extends CI_Controller
         $this->load->view('frontend/v_wrapper', $data, FALSE);
     }
 
-    public function diterima($id_transaksi)
+    // public function diterima($id_transaksi)
+    // {
+    //     $data = array(
+    //         'id_transaksi' => $id_transaksi,
+    //         'status_order' => 3
+    //     );
+    //     $this->m_pesanan_masuk->update_order($data);
+    //     $this->session->set_flashdata('pesan', 'Pesanan Telah Diterima');
+    //     redirect('pesanan_saya');
+    // }
+
+    public function diterima($id)
     {
+        $id_pelanggan = $this->input->post('pelanggan');
+        $pelanggan = $this->m_pesanan_masuk->pelanggan($id_pelanggan);
+        $point_sebelumnya = $pelanggan->point;
+
+        $point_update = $point_sebelumnya + $this->input->post('point');
+        //update level member
+        if ($point_update <= 1000) {
+            $member = '3';
+        } else if ($point_update >= 1000) {
+            $member = '2';
+        } else if ($point_update >= 10000) {
+            $member = '1';
+        }
         $data = array(
-            'id_transaksi' => $id_transaksi,
-            'status_order' => 3
+            'point' => $point_update,
+            'level_member' => $member
         );
-        $this->m_pesanan_masuk->update_order($data);
-        $this->session->set_flashdata('pesan', 'Pesanan Telah Diterima');
+        $this->m_pesanan_masuk->update_point($id_pelanggan, $data);
+
+        $status_order = array(
+            'status_order' => '3'
+        );
+        $this->db->where('id_transaksi', $id);
+        $this->db->update('transaksi', $status_order);
+        $this->session->set_flashdata('success', 'Pesanan Sudah Diterima');
         redirect('pesanan_saya');
     }
 

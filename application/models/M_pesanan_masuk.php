@@ -13,6 +13,20 @@ class M_pesanan_masuk extends CI_Model
         $this->db->update('transaksi', $data);
     }
 
+    public function pelanggan($id)
+    {
+        $this->db->select('*');
+        $this->db->from('pelanggan');
+        $this->db->where('id_pelanggan', $id);
+        return $this->db->get()->row();
+    }
+
+    public function update_point($id, $data)
+    {
+        $this->db->where('id_pelanggan', $id);
+        $this->db->update('pelanggan', $data);
+    }
+
     public function pesanan()
     {
         $this->db->select('*');

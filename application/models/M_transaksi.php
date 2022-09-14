@@ -79,13 +79,14 @@ class M_transaksi extends CI_Model
 
     public function pesanan_detail($no_order)
     {
-        $this->db->select('*');
-        $this->db->from('transaksi');
-        $this->db->join('rinci_transaksi', 'transaksi.no_order = rinci_transaksi.no_order', 'left');
-        $this->db->join('produk', 'rinci_transaksi.id_produk = produk.id_produk', 'left');
-        $this->db->join('size', 'produk.id_produk = size.id_produk', 'left');
-        $this->db->where('transaksi.no_order', $no_order);
-        return $this->db->get()->result();
+        // $this->db->select('*');
+        // $this->db->from('transaksi');
+        // $this->db->join('rinci_transaksi', 'transaksi.no_order = rinci_transaksi.no_order', 'left');
+        // $this->db->join('produk', 'rinci_transaksi.id_produk = produk.id_produk', 'left');
+        // $this->db->join('size', 'produk.id_produk = size.id_produk', 'left');
+        // $this->db->where('transaksi.no_order', $no_order);
+        // return $this->db->get()->result();
+        return $this->db->query("SELECT * FROM `transaksi` JOIN rinci_transaksi ON transaksi.no_order=rinci_transaksi.no_order JOIN produk ON rinci_transaksi.id_produk=produk.id_produk JOIN size ON produk.id_produk=size.id_produk WHERE transaksi.no_order='" . $no_order . "'")->result();
     }
 
     public function detail_pesanan($id_transaksi)
@@ -101,6 +102,30 @@ class M_transaksi extends CI_Model
         $this->db->select('*');
         $this->db->from('rekening');
         return $this->db->get()->result();
+    }
+
+    public function info($no_order)
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->join('pelanggan', 'transaksi.id_pelanggan = pelanggan.id_pelanggan', 'left');
+        $this->db->group_by('pelanggan.id_pelanggan');
+
+        $this->db->where('no_order', $no_order);
+        return $this->db->get()->result();
+    }
+
+    public function insert_riview()
+    {
+        $data = array(
+            'id_pelanggan' => $this->session->userdata('id_pelanggan'),
+            'id_produk' => $this->input->post('id_produk'),
+            'nama_pelanggan' => $this->session->userdata('nama_pelanggan'),
+            'tanggal' => date('Y-m-d'),
+            'isi' => $this->input->post('isi'),
+            'status' => 1,
+        );
+        $this->db->insert('riview', $data);
     }
 
     public function grafik_pelanggan()
