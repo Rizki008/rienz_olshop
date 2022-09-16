@@ -59,6 +59,7 @@
   <!-- responsive CSS
 		============================================ -->
   <link rel="stylesheet" href="<?= base_url() ?>backend/css/responsive.css">
+  <script src="<?= base_url() ?>backend/dist/Chart.min.js"></script>
   <!-- modernizr JS
 		============================================ -->
   <script src="<?= base_url() ?>backend/js/vendor/modernizr-2.8.3.min.js"></script>

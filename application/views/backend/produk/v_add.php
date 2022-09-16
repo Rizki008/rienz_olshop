@@ -40,7 +40,7 @@
                                             </div>
                                             <div class="input-group mg-b-pro-edt">
                                                 <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
-                                                <input type="number" class="form-control" name="berat" value="<?= set_value('berat') ?>" placeholder="Nama Produk">
+                                                <input type="number" class="form-control" name="berat" value="<?= set_value('berat') ?>" placeholder="Berat Produk">
                                             </div>
                                         </div>
                                     </div>

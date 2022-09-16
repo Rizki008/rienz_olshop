@@ -40,6 +40,7 @@
                             <input type="email" name="email" value="<?= set_value('email') ?>" placeholder="Email">
                             <input type="password" name="password" value="<?= set_value('password') ?>" placeholder="Password">
                             <input type="password" name="ulangi_password" value="<?= set_value('ulangi_password') ?>" placeholder="Ulangi Password">
+                            <input type="text" name="alamat" value="<?= set_value('alamat') ?>" placeholder="Alamat Lengkap">
                             <button type="submit" class="site-btn">Register</button>
                         </form>
                     </div>

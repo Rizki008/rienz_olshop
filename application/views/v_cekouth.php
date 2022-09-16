@@ -147,22 +147,22 @@
                     <div class="col-lg-8">
                         <h5>Billing detail</h5>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="col-lg-12 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>First Name <span>*</span></p>
-                                    <input type="text" name="nama_depan">
+                                    <input type="text" name="id_pelanggan" name="id_pelanggan" value="<?= $this->session->userdata('nama_pelanggan'); ?>">
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <!-- <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
-                                    <p>Last Name <span>*</span></p>
-                                    <input type="text" name="nama_belakang">
+                                    <p>Alamat Lengkap<span>*</span></p>
+                                    <input type="text" name="alamat" value="<?= $this->session->userdata('alamat'); ?>">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-lg-12">
                                 <div class="checkout__form__input">
                                     <p>Address <span>*</span></p>
-                                    <input type="text" name="alamat" placeholder="Street Address">
+                                    <input type="text" name="alamat" placeholder="" value="<?= $this->session->userdata('alamat'); ?>">
                                 </div>
                                 <div class="checkout__form__input">
                                     <p>Province <span>*</span></p>
@@ -177,13 +177,13 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Postcode/Zip <span>*</span></p>
-                                    <input type="text" name="kode_pos">
+                                    <input type="text" name="kode_pos" value="<?= $this->session->userdata('kode_pos'); ?>">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Phone <span>*</span></p>
-                                    <input type="number" name="no_tlpn">
+                                    <input type="number" name="no_tlpn" value="<?= $this->session->userdata('no_tlpn'); ?>">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">

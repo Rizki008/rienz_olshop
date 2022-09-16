@@ -22,6 +22,7 @@ class Lokasitoko extends CI_Controller
             $data = array(
                 'title' => 'Setting Lokasi Toko',
                 'lokasi' => $this->m_admin->data_lokasi(),
+                'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
                 'isi' => 'backend/lokasi/v_lokasi'
             );
             $this->load->view('backend/v_wrapper', $data, FALSE);

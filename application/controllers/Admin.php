@@ -10,6 +10,7 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_admin');
+        $this->load->model('m_transaksi');
     }
 
     // List all your items
@@ -17,6 +18,7 @@ class Admin extends CI_Controller
     {
         $data = array(
             'title' => 'Dashboard',
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'isi' => 'v_admin'
         );
         $this->load->view('backend/v_wrapper', $data, FALSE);
