@@ -10,6 +10,7 @@ class Lokasitoko extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_admin');
+        $this->load->model('m_transaksi');
     }
     //lokasi toko
     public function lokasi()
@@ -23,6 +24,7 @@ class Lokasitoko extends CI_Controller
                 'title' => 'Setting Lokasi Toko',
                 'lokasi' => $this->m_admin->data_lokasi(),
                 'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
+                'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
                 'isi' => 'backend/lokasi/v_lokasi'
             );
             $this->load->view('backend/v_wrapper', $data, FALSE);

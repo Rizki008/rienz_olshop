@@ -34,12 +34,12 @@
                             <li><a title="Compose Mail" href="<?= base_url('laporan/tahun') ?>"><span class="mini-sub-pro">Laporan Tahun</span></a></li>
                         </ul>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non">Master Analisis</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="Google Map" href="<?= base_url('pemilik/analisis_pelanggan') ?>"><span class="mini-sub-pro">Histori Analisis Transaksi</span></a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non">User</span></a>
                         <ul class="submenu-angle" aria-expanded="false">

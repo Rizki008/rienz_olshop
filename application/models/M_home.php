@@ -27,13 +27,6 @@ class M_home extends CI_Model
 
     public function detail_produk($id)
     {
-        // $this->db->select('*');
-        // $this->db->from('produk');
-        // $this->db->join('kategori', 'produk.id_kategori = kategori.id_kategori', 'left');
-        // $this->db->join('diskon', 'produk.id_produk = diskon.id_produk', 'left');
-        // $this->db->join('size', 'produk.id_produk = size.id_produk', 'left');
-        // $this->db->where('produk.id_produk', $id_produk);
-        // return $this->db->get()->row();
         $data['size'] = $this->db->query("SELECT * FROM produk JOIN kategori ON produk.id_kategori=kategori.id_kategori JOIN size ON produk.id_produk=size.id_produk JOIN diskon ON produk.id_produk=diskon.id_produk WHERE produk.id_produk='" . $id . "'")->result();
         $data['produk'] = $this->db->query("SELECT * FROM produk JOIN kategori ON produk.id_kategori=kategori.id_kategori JOIN size ON produk.id_produk=size.id_produk JOIN diskon ON produk.id_produk=diskon.id_produk WHERE produk.id_produk='" . $id . "'")->row();
         return $data;
@@ -117,5 +110,30 @@ class M_home extends CI_Model
         $this->db->order_by('diskon', 'desc');
         $this->db->limit(1);
         return $this->db->get()->row();
+    }
+
+    public function katalog()
+    {
+        if ($this->session->userdata('member') == '') {
+            $data['menu'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk WHERE diskon.member='3'")->result();
+        } else {
+            $data['menu'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk WHERE diskon.member='" . $this->session->userdata('member') . "'")->result();
+        }
+
+        return $data;
+    }
+    public function produk_best()
+    {
+        return $this->db->query("SELECT SUM(qty) as qty, produk.id_produk, nama_produk, size.harga, images FROM `rinci_transaksi` JOIN diskon ON rinci_transaksi.id_diskon = diskon.id_diskon JOIN produk on produk.id_produk = diskon.id_produk JOIN size on produk.id_produk = size.id_produk GROUP BY produk.id_produk ORDER BY qty desc")->result();
+    }
+    public function menu_paket()
+    {
+        if ($this->session->userdata('member') == '') {
+            $data['paket'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk JOIN size ON produk.id_produk = size.id_produk WHERE diskon.member='3'")->result();
+        } else {
+            $data['paket'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk JOIN size ON produk.id_produk = size.id_produk WHERE diskon.member='" . $this->session->userdata('member') . "'")->result();
+        }
+
+        return $data;
     }
 }

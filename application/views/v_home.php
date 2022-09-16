@@ -46,7 +46,9 @@
             </div>
         </div>
         <div class="row property__gallery">
-            <?php foreach ($produk as $key => $value) { ?>
+            <?php
+            foreach ($menu['paket'] as $key => $value) {
+            ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix women">
                     <div class="product__item">
                         <?php
@@ -144,8 +146,10 @@
                     <div class="section-title">
                         <h4>Produk Bagus</h4>
                     </div>
-                    <?php if (count($produk_bagus) > 0) : ?>
-                        <?php foreach ($produk_bagus as $key => $value) { ?>
+                    <?php if (count($best) > 0) : ?>
+                        <?php
+                        foreach ($best as $key => $value) {
+                        ?>
                             <div class="trend__item">
                                 <div class="trend__item__pic">
                                     <img src="<?= base_url('assets/produk/' . $value->images) ?>" alt="" width="70px">

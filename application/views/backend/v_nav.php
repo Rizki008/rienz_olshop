@@ -162,7 +162,7 @@
                                             <li class="nav-item">
                                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                     <i class="icon nalika-user"></i>
-                                                    <span class="admin-name">Advanda Cro</span>
+                                                    <span class="admin-name"><?= $this->session->userdata('username'); ?></span>
                                                     <i class="icon nalika-down-arrow nalika-angle-dw"></i>
                                                 </a>
                                                 <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">

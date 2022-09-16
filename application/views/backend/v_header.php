@@ -7,7 +7,7 @@
         <div class="nalika-profile">
             <div class="profile-dtl">
                 <a href="#"><img src="<?= base_url() ?>backend/img/notification/avatar2.png" alt="" /></a>
-                <h2>Lakian <span class="min-dtn">Das</span></h2>
+                <h2><?= $this->session->userdata('username'); ?> <span class="min-dtn">Das</span></h2>
             </div>
             <div class="profile-social-dtl">
                 <ul class="dtl-social">

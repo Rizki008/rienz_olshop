@@ -15,6 +15,11 @@ class Home extends CI_Controller
     {
         $data = array(
             'title' => 'Rienz Olshop',
+
+            'best' => $this->m_home->produk_best(),
+            'menu' => $this->m_home->menu_paket(),
+
+
             'produk' => $this->m_home->produk(),
             'produk_baru' => $this->m_home->produk_baru(),
             'produk_bagus' => $this->m_home->produk_bagus(),

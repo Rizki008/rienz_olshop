@@ -19,10 +19,12 @@ class Transaksi extends CI_Controller
     {
         $data = array(
             'title' => 'Data Transaksi Pelanggan',
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
             'pesanan' => $this->m_pesanan_masuk->pesanan(),
             'pesanan_diproses' => $this->m_pesanan_masuk->pesanan_diproses(),
             'pesanan_dikirim' => $this->m_pesanan_masuk->pesanan_dikirim(),
             'pesanan_selesai' => $this->m_pesanan_masuk->pesanan_selesai(),
+            'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
             'proses_kirim' => $this->m_pesanan_masuk->proses_kirim(),
             'isi' => 'backend/transaksi/v_transaksi'
         );
@@ -33,6 +35,8 @@ class Transaksi extends CI_Controller
     {
         $data = array(
             'title' => 'Detail Pesanan Pembeli',
+            'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
+            'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
             'pesanan' => $this->m_transaksi->pesanan($no_order),
             'pesanan_detail' => $this->m_transaksi->pesanan_detail($no_order),
             'pesanan_diproses' => $this->m_pesanan_masuk->pesanan_diproses(),

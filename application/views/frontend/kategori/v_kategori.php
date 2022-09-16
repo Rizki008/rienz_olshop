@@ -127,6 +127,8 @@
                                 <?php
                                 echo form_open('belanja/add');
                                 echo form_hidden('id', $value->id_size);
+                                echo form_hidden('id_produk', $value->id_produk);
+                                echo form_hidden('id_diskon', $value->id_diskon);
                                 echo form_hidden('qty', 1);
                                 echo form_hidden('size', $value->size);
                                 echo form_hidden('stock', $value->stock);
@@ -146,13 +148,13 @@
                                     </div>
                                     <div class="product__item__text">
                                         <h6><a href="#"><?= $value->nama_produk ?></a></h6>
-                                        <div class="rating">
+                                        <!-- <div class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
-                                        </div>
+                                        </div> -->
                                         <div class="product__price">Rp. <?= number_format($value->harga, 0) ?></div>
                                     </div>
                                 </div>

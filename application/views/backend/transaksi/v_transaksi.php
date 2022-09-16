@@ -23,7 +23,7 @@
                                         <?php foreach ($pesanan as $key => $value) { ?>
                                             <tr>
                                                 <td>
-                                                    <h3><?= $value->nama_depan ?> <?= $value->nama_belakang ?></h3>
+                                                    <h3><?= $value->nama_pelanggan ?></h3>
                                                 </td>
                                                 <td>
                                                     <h3><?= $value->no_order ?></h3>
@@ -71,7 +71,7 @@
                                         <?php foreach ($pesanan_diproses as $key => $value) { ?>
                                             <tr>
                                                 <td>
-                                                    <h3><?= $value->nama_depan ?> <?= $value->nama_belakang ?></h3>
+                                                    <h3><?= $value->nama_pelanggan ?></h3>
                                                 </td>
                                                 <td>
                                                     <h3><?= $value->no_order ?></h3>
@@ -113,7 +113,7 @@
                                         <?php foreach ($pesanan_dikirim as $key => $value) { ?>
                                             <tr>
                                                 <td>
-                                                    <h3><?= $value->nama_depan ?> <?= $value->nama_belakang ?></h3>
+                                                    <h3><?= $value->nama_pelanggan ?></h3>
                                                 </td>
                                                 <td>
                                                     <h3><?= $value->no_order ?></h3>
@@ -154,7 +154,7 @@
                                         <?php foreach ($pesanan_selesai as $key => $value) { ?>
                                             <tr>
                                                 <td>
-                                                    <h3><?= $value->nama_depan ?> <?= $value->nama_belakang ?></h3>
+                                                    <h3><?= $value->nama_pelanggan ?></h3>
                                                 </td>
                                                 <td>
                                                     <h3><?= $value->no_order ?></h3>

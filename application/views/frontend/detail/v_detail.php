@@ -42,10 +42,10 @@
                 echo form_open('belanja/add');
                 echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
                 ?>
-                <input type="text" name="id" value="<?= $data['produk']->id_produk ?>">
-                <input type="text" name="id_size" value="<?= $data['produk']->id_size ?>">
-                <input type="text" name="id_diskon" value="<?= $data['produk']->id_diskon ?>">
-                <input type="text" class="price" name="price" value="<?= $data['produk']->harga - ($data['produk']->diskon / 100 * $data['produk']->harga) ?>">
+                <input type="hidden" name="id" value="<?= $data['produk']->id_produk ?>">
+                <input type="hidden" name="id_size" value="<?= $data['produk']->id_size ?>">
+                <input type="hidden" name="id_diskon" value="<?= $data['produk']->id_diskon ?>">
+                <input type="hidden" class="price" name="price" value="<?= $data['produk']->harga - ($data['produk']->diskon / 100 * $data['produk']->harga) ?>">
                 <input type="hidden" name="name" value="<?= $data['produk']->nama_produk ?>">
                 <input type="hidden" name="qty" value="1">
                 <input type="hidden" class="size" name="size" value="<?= $data['produk']->size ?>">
