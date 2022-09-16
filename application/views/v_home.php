@@ -52,6 +52,8 @@
                         <?php
                         echo form_open('belanja/add');
                         echo form_hidden('id', $value->id_size);
+                        echo form_hidden('id_produk', $value->id_produk);
+                        echo form_hidden('id_diskon', $value->id_diskon);
                         echo form_hidden('qty', 1);
                         echo form_hidden('price', $value->harga - ($value->diskon / 100 * $value->harga));
                         echo form_hidden('size', $value->size);

@@ -42,8 +42,10 @@
                 echo form_open('belanja/add');
                 echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
                 ?>
-                <input type="hidden" name="id" value="<?= $data['produk']->id_produk ?>">
-                <input type="hidden" class="price" name="price" value="<?= $data['produk']->harga - ($data['produk']->diskon / 100 * $data['produk']->harga) ?>">
+                <input type="text" name="id" value="<?= $data['produk']->id_produk ?>">
+                <input type="text" name="id_size" value="<?= $data['produk']->id_size ?>">
+                <input type="text" name="id_diskon" value="<?= $data['produk']->id_diskon ?>">
+                <input type="text" class="price" name="price" value="<?= $data['produk']->harga - ($data['produk']->diskon / 100 * $data['produk']->harga) ?>">
                 <input type="hidden" name="name" value="<?= $data['produk']->nama_produk ?>">
                 <input type="hidden" name="qty" value="1">
                 <input type="hidden" class="size" name="size" value="<?= $data['produk']->size ?>">
@@ -73,7 +75,7 @@
                                 <!-- <input type="number" id="quantity" name="qty" class="form-control" value="1" min="1" max="<?= $data['produk']->stock ?>"> -->
                             </div>
                         </div>
-                        <button type="submit" data-images="<?= $data['produk']->images ?>" data-size="<?= $data['produk']->size ?>" data-stock="<?= $data['produk']->stock ?>" data-netto="<?= $data['produk']->berat ?>" data-name="<?= $data['produk']->nama_produk ?>" data-price="<?= ($data['produk']->diskon > 0) ? ($data['produk']->harga - $data['produk']->diskon) : $data['produk']->harga ?>" data-id="<?= $data['produk']->id_produk ?>" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</button>
+                        <button type="submit" data-images="<?= $data['produk']->images ?>" data-size="<?= $data['produk']->size ?>" data-stock="<?= $data['produk']->stock ?>" data-netto="<?= $data['produk']->berat ?>" data-name="<?= $data['produk']->nama_produk ?>" data-price="<?= ($data['produk']->diskon > 0) ? ($data['produk']->harga - $data['produk']->diskon) : $data['produk']->harga ?>" data-id="<?= $data['produk']->id_produk ?>" data-id="<?= $data['produk']->id_size ?>" data-id="<?= $data['produk']->id_diskon ?>" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</button>
                         <ul>
                         </ul>
                     </div>

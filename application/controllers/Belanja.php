@@ -28,6 +28,8 @@ class Belanja extends CI_Controller
         $redirect_page = $this->input->post('redirect_page');
         $data = array(
             'id' => $this->input->post('id'),
+            'id_size' => $this->input->post('id_size'),
+            'id_diskon' => $this->input->post('id_diskon'),
             'qty' => $this->input->post('qty'),
             'size' => $this->input->post('size'),
             'price' => $this->input->post('price'),
@@ -65,8 +67,8 @@ class Belanja extends CI_Controller
     {
         $this->pelanggan_login->proteksi_halaman();
 
-        $this->form_validation->set_rules('nama_depan', 'Nama Depan', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-        $this->form_validation->set_rules('nama_belakang', 'Nama Belakang', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        // $this->form_validation->set_rules('id_pelanggan', 'Nama Depan', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+        // $this->form_validation->set_rules('nama_belakang', 'Nama Belakang', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
         $this->form_validation->set_rules('provinsi', 'Provinsi Penerima', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
         $this->form_validation->set_rules('kota', 'Kota Penerima', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
         $this->form_validation->set_rules('expedisi', 'Expedisi', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
@@ -86,16 +88,16 @@ class Belanja extends CI_Controller
                 'id_pelanggan' => $this->session->userdata('id_pelanggan'),
                 'no_order' => $this->input->post('no_order'),
                 'tgl_order' => date('Y-m-d'),
-                'nama_depan' => $this->input->post('nama_depan'),
-                'nama_belakang' => $this->input->post('nama_belakang'),
-                'no_tlpn' => $this->input->post('no_tlpn'),
+                // 'nama_depan' => $this->input->post('nama_depan'),
+                // 'nama_belakang' => $this->input->post('nama_belakang'),
+                'no_tlpn' => $this->session->userdata('no_tlpn'),
                 'provinsi' => $this->input->post('provinsi'),
                 'kota' => $this->input->post('kota'),
                 'paket' => $this->input->post('paket'),
                 'expedisi' => $this->input->post('expedisi'),
                 'estimasi' => $this->input->post('estimasi'),
-                'alamat' => $this->input->post('alamat'),
-                'kode_pos' => $this->input->post('kode_pos'),
+                'alamat' => $this->session->userdata('alamat'),
+                'kode_pos' => $this->session->userdata('kode_pos'),
                 'ongkir' => $this->input->post('ongkir'),
                 'berat' => $this->input->post('berat'),
                 'grand_total' => $this->input->post('grand_total'),
@@ -111,6 +113,8 @@ class Belanja extends CI_Controller
                 $data_rinci = array(
                     'no_order' => $this->input->post('no_order'),
                     'id_produk' => $item['id'],
+                    'id_size' => $item['id_size'],
+                    'id_diskon' => $item['id_diskon'],
                     'qty' => $this->input->post('qty' . $i++),
                 );
                 $this->m_transaksi->simpan_rinci_transaksi($data_rinci);
