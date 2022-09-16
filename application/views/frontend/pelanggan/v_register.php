@@ -35,12 +35,14 @@
                             echo '</div>';
                         }
                         ?>
-                        <form action="<?= base_url('pelanggan/register') ?>" method="POST">
+                        <form action="<?= base_url('pelanggan/register') ?>" id="myform" method="POST">
                             <input type="text" name="nama_pelanggan" value="<?= set_value('nama_pelanggan') ?>" placeholder="Name">
                             <input type="email" name="email" value="<?= set_value('email') ?>" placeholder="Email">
-                            <input type="password" name="password" value="<?= set_value('password') ?>" placeholder="Password">
+                            <input type="password" name="password" value="<?= set_value('password') ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password">
+                            <span class="badge badge-warning">*Password minimal 8 karakter, dan harus menggunakan huruf kapital, angka, dan simbol</span><br>
                             <input type="password" name="ulangi_password" value="<?= set_value('ulangi_password') ?>" placeholder="Ulangi Password">
                             <input type="text" name="alamat" value="<?= set_value('alamat') ?>" placeholder="Alamat Lengkap">
+                            <input type="number" name="kode_pos" value="<?= set_value('kode_pos') ?>" placeholder="Kode Pos">
                             <button type="submit" class="site-btn">Register</button>
                         </form>
                     </div>

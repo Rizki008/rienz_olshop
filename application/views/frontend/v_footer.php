@@ -169,6 +169,20 @@
         $(".stock").val($(this).find(':selected').attr('data-stock'));
     })
 </script>
+
+<script>
+    const passwordField = document.querySelector("[name=password]");
+
+    passwordField.addEventListener("keyup", (event) => {
+        if (!passwordField.validity.valid) {
+            console.error("passowrd invalid");
+            document.getElementById("invalid-passowrd").style.display = "block";
+        } else {
+            console.info("passowrd valid");
+            document.getElementById("invalid-passowrd").style.display = "none";
+        }
+    });
+</script>
 </body>
 
 </html>
