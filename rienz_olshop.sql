@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Sep 2022 pada 07.45
+-- Waktu pembuatan: 16 Sep 2022 pada 10.42
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -44,8 +44,8 @@ INSERT INTO `diskon` (`id_diskon`, `id_produk`, `nama_diskon`, `diskon`, `tgl_se
 (6, 4, '0', '0', NULL, 1),
 (7, 4, '0', '0', NULL, 2),
 (8, 4, '0', '0', NULL, 3),
-(9, 5, 'ffg', '10', '2022-09-29', 1),
-(10, 5, 'Every Day', '5000', '2022-09-17', 2),
+(9, 5, 'hari raya', '30', '2022-09-21', 1),
+(10, 5, 'Every Day', '30', '2022-09-17', 2),
 (11, 5, '0', '0', NULL, 3);
 
 -- --------------------------------------------------------
@@ -134,10 +134,11 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `email`, `password`, `alamat`, `kode_pos`, `no_tlpn`, `point`, `level_member`) VALUES
-(1, 'siti', 'siti@gmail.com', '12345', NULL, NULL, NULL, 161080, 2),
-(2, 'andi', 'rizkihasbiallah06@gmail.com', '12345678', NULL, NULL, NULL, NULL, NULL),
-(3, 'sasa', 'silva@gmail.com', '12341234', 'Kuningan Jawa barat', '1234', '8372907302', NULL, NULL),
-(4, 'dadi', 'hai@gmail.com', 'sayakamu', 'Kuningan Jawa barat', '1234', '0921829108', NULL, NULL);
+(1, 'siti', 'siti@gmail.com', '12345', 'Kuningan Jawa barat', '1234', '8372907302', 161080, 2),
+(2, 'andi', 'rizkihasbiallah06@gmail.com', '12345678', 'Kuningan Jawa barat', '1234', '8372907302', 976, 3),
+(3, 'sasa', 'silva@gmail.com', '12341234', 'Kuningan Jawa barat', '1234', '8372907302', 161080, 2),
+(4, 'dadi', 'hai@gmail.com', 'sayakamu', 'Kuningan Jawa barat', '1234', '0921829108', 161080, 2),
+(5, 'ds', 'fauziatresnawati@gmail.com', 'A12345saya@', 'waduk darma', '41231', NULL, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -193,8 +194,19 @@ CREATE TABLE `rinci_transaksi` (
   `id_rinci` int(11) NOT NULL,
   `no_order` varchar(25) DEFAULT NULL,
   `id_diskon` int(11) DEFAULT NULL,
+  `id_produk` int(11) DEFAULT NULL,
+  `id_size` int(11) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `rinci_transaksi`
+--
+
+INSERT INTO `rinci_transaksi` (`id_rinci`, `no_order`, `id_diskon`, `id_produk`, `id_size`, `qty`) VALUES
+(1, '20220916G2N80NF4', 9, 4, 4, 1),
+(2, '20220916PNMGRX5S', 6, 3, 3, 5),
+(3, '20220916PNMGRX5S', 9, 4, 4, 8);
 
 -- --------------------------------------------------------
 
@@ -283,7 +295,9 @@ CREATE TABLE `transaksi` (
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_pelanggan`, `no_order`, `tgl_order`, `nama_depan`, `nama_belakang`, `no_tlpn`, `provinsi`, `kota`, `alamat`, `kode_pos`, `expedisi`, `paket`, `estimasi`, `ongkir`, `berat`, `grand_total`, `total_bayar`, `status_order`, `status_bayar`, `atas_nama`, `nama_bank`, `bukti_bayar`, `no_resi`) VALUES
 (1, 1, '20220523POYZMD6Q', '2022-05-23', 'siti', 'jamilah', '085731639595', 'Kalimantan Utara', 'Tana Tidung', 'Ciawilor', '45591', 'jne', 'OKE', '5-7 Hari', 73000, 270, 304050, 377050, 3, 1, 'opik', 'bri', 'thumb-1.jpg', '12981721'),
-(2, 1, '20220523MWFLORQX', '2022-05-23', 'siti', 'uud', '0871234567', 'Banten', 'Pandeglang', 'sindang barang', '452157', 'jne', 'OKE', '3-6 Hari', 18000, 280, 32198080, 32216080, 3, 1, 'wulan', 'bri', 'product-42.jpg', 'JNR3241542121');
+(2, 1, '20220523MWFLORQX', '2022-05-23', 'siti', 'uud', '0871234567', 'Banten', 'Pandeglang', 'sindang barang', '452157', 'jne', 'OKE', '3-6 Hari', 18000, 280, 32198080, 32216080, 3, 1, 'wulan', 'bri', 'product-42.jpg', 'JNR3241542121'),
+(3, 4, '20220916G2N80NF4', '2022-09-16', NULL, NULL, '0921829108', 'Bali', 'Badung', 'Kuningan Jawa barat', '1234', 'jne', 'OKE', '3-6 Hari', 30000, 20, 8400, 38400, 2, 1, 'andi', 'bri', 'product-43.jpg', '1234'),
+(4, 2, '20220916PNMGRX5S', '2022-09-16', NULL, NULL, '8372907302', 'Maluku Utara', 'Halmahera Selatan', 'Kuningan Jawa barat', '1234', 'jne', 'OKE', '5-7 Hari', 88000, 240, 107200, 195200, 3, 1, 'andi', 'bri', 'product-5.jpg', '1234');
 
 -- --------------------------------------------------------
 
@@ -414,7 +428,7 @@ ALTER TABLE `lokasi`
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
@@ -432,7 +446,7 @@ ALTER TABLE `rekening`
 -- AUTO_INCREMENT untuk tabel `rinci_transaksi`
 --
 ALTER TABLE `rinci_transaksi`
-  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rinci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `riview`
@@ -450,7 +464,7 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
