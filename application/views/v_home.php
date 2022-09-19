@@ -63,13 +63,14 @@
                         echo form_hidden('netto', $value->berat);
                         echo form_hidden('images', $value->images);
                         echo form_hidden('name', $value->nama_produk);
-                        echo form_hidden('redirect_page', str_replace('index.php/', '', current_url())); ?>
+                        echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
+                        ?>
                         <div class="product__item__pic set-bg" data-setbg="<?= base_url('assets/produk/' . $value->images) ?>">
                             <div class="label new">New</div>
                             <ul class="product__hover">
                                 <li><a href="<?= base_url('assets/produk/' . $value->images) ?>" class="image-popup"><span class="arrow_expand"></span></a></li>
                                 <li><a href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><span class="icon_heart_alt"></span></a></li>
-                                <!-- <li><button type="submit"><span class="icon_bag_alt"></span></button></li> -->
+                                <li><button type="submit"><span class="icon_bag_alt"></span></button></li>
                             </ul>
                         </div>
                         <div class="product__item__text">

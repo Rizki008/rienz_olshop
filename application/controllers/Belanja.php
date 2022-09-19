@@ -25,7 +25,7 @@ class Belanja extends CI_Controller
 
     public function add()
     {
-        $redirect_page = $this->input->post('redirect_page');
+        // $redirect_page = $this->input->post('redirect_page');
         $data = array(
             'id' => $this->input->post('id'),
             'id_size' => $this->input->post('id_size'),
@@ -39,7 +39,7 @@ class Belanja extends CI_Controller
             'netto' => $this->input->post('netto')
         );
         $this->cart->insert($data);
-        redirect($redirect_page);
+        redirect('belanja');
     }
 
     public function delete($rowid)
