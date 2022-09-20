@@ -53,8 +53,8 @@
                     <div class="product__item">
                         <?php
                         echo form_open('belanja/add');
-                        echo form_hidden('id', $value->id_size);
-                        echo form_hidden('id_produk', $value->id_produk);
+                        echo form_hidden('id', $value->id_produk);
+                        echo form_hidden('id_size', $value->id_size);
                         echo form_hidden('id_diskon', $value->id_diskon);
                         echo form_hidden('qty', 1);
                         echo form_hidden('price', $value->harga - ($value->diskon / 100 * $value->harga));
@@ -65,6 +65,7 @@
                         echo form_hidden('name', $value->nama_produk);
                         echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
                         ?>
+                        <input type="hidden" name="id_size" value="<?= $value->id_size ?>">
                         <div class="product__item__pic set-bg" data-setbg="<?= base_url('assets/produk/' . $value->images) ?>">
                             <div class="label new">New</div>
                             <ul class="product__hover">
@@ -75,6 +76,7 @@
                         </div>
                         <div class="product__item__text">
                             <h6><a href="#"><?= $value->nama_produk ?></a></h6>
+                            <h6><a href="#"><?= $value->size ?></a></h6>
                             <div class="product__price">Rp. <?= number_format($value->harga, 0) ?></div>
                         </div>
                         <?php echo form_close() ?>
