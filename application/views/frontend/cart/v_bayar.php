@@ -41,7 +41,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="checkout__form__input">
                             <p>Atas Nama <span>*</span></p>
-                            <input type="text" class="form-control" name="atas_nama" value="<?= set_value('atas_nama') ?>">
+                            <input type="text" class="form-control" name="id_pelanggan" value="<?= $this->session->userdata('nama_pelanggan') ?>">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
