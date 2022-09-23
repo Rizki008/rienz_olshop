@@ -114,10 +114,10 @@ class M_home extends CI_Model
 
     public function katalog()
     {
-        if ($this->session->userdata('member') == '') {
+        if ($this->session->userdata('level_member') == '') {
             $data['menu'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk WHERE diskon.member='3'")->result();
         } else {
-            $data['menu'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk WHERE diskon.member='" . $this->session->userdata('member') . "'")->result();
+            $data['menu'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk WHERE diskon.member='" . $this->session->userdata('level_member') . "'")->result();
         }
 
         return $data;
@@ -128,12 +128,20 @@ class M_home extends CI_Model
     }
     public function menu_paket()
     {
-        if ($this->session->userdata('member') == '') {
+        if ($this->session->userdata('level_member') == '') {
             $data['paket'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk JOIN size ON produk.id_produk = size.id_produk WHERE diskon.member='3'")->result();
         } else {
-            $data['paket'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk JOIN size ON produk.id_produk = size.id_produk WHERE diskon.member='" . $this->session->userdata('member') . "'")->result();
+            $data['paket'] = $this->db->query("SELECT * FROM `produk` JOIN diskon ON produk.id_produk = diskon.id_produk JOIN size ON produk.id_produk = size.id_produk WHERE diskon.member='" . $this->session->userdata('level_member') . "'")->result();
         }
 
         return $data;
+    }
+
+    public function pelanggan()
+    {
+        $this->db->select('*');
+        $this->db->from('pelanggan');
+        $this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+        return $this->db->get()->result();
     }
 }
