@@ -70,7 +70,13 @@
                         ?>
                         <form action="<?= base_url('pelanggan/login') ?>" method="POST">
                             <input type="email" name="email" value="<?= set_value('email') ?>" placeholder="Email">
-                            <input type="password" name="password" value="<?= set_value('password') ?>" placeholder="Password">
+                            <div class="input-group ipt_pass">
+                                <input type="password" class="form-control" name="password" value="<?= set_value('password') ?>" placeholder="Password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><a href="javascript:;"><i class="fa fa-eye-slash"></i></a></span>
+                                </div>
+                            </div>
+                            <br>
                             <button type="submit" class="site-btn">Login</button>
                             <a href="<?= base_url('pelanggan/register') ?>" class="site-btn">Register</a>
                         </form>

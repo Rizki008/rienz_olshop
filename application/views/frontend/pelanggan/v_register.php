@@ -38,9 +38,21 @@
                         <form action="<?= base_url('pelanggan/register') ?>" id="myform" method="POST">
                             <input type="text" name="nama_pelanggan" value="<?= set_value('nama_pelanggan') ?>" placeholder="Name">
                             <input type="email" name="email" value="<?= set_value('email') ?>" placeholder="Email">
-                            <input type="password" name="password" value="<?= set_value('password') ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password">
+                            <div class="input-group ipt_pass">
+                                <input type="password" class="form-control" name="password" id="password" value="<?= set_value('password') ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><a href="javascript:;"><i class="fa fa-eye-slash"></i></a></span>
+                                </div>
+                            </div>
+                            <!-- <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> -->
                             <span class="badge badge-warning">*Password minimal 8 karakter, dan harus menggunakan huruf kapital, angka, dan simbol</span><br>
-                            <input type="password" name="ulangi_password" value="<?= set_value('ulangi_password') ?>" placeholder="Ulangi Password">
+                            <div class="input-group ipt_pass">
+                                <input type="password" name="ulangi_password" class="form-control" value="<?= set_value('ulangi_password') ?>" placeholder="Ulangi Password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><a href="javascript:;"><i class="fa fa-eye-slash"></i></a></span>
+                                </div>
+                            </div>
+                            <br>
                             <input type="text" name="alamat" value="<?= set_value('alamat') ?>" placeholder="Alamat Lengkap">
                             <input type="number" name="kode_pos" value="<?= set_value('kode_pos') ?>" placeholder="Kode Pos">
                             <button type="submit" class="site-btn">Register</button>
