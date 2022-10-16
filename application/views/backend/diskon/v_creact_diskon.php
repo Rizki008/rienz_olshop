@@ -70,7 +70,7 @@
 																	} ?>>Silver</option>
 												<option value="3" <?php if (set_value('level') == '3') {
 																		echo 'selected';
-																	} ?>>Clasic</option>
+																	} ?>>Platinum</option>
 											</select>
 											<?= form_error('level', '<div id="defaultFormControlHelp" class="form-text">', '</div>') ?>
 										</div>

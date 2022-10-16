@@ -35,11 +35,11 @@
                                                 <input type="text" class="form-control" name="nama_produk" value="<?= $produk->nama_produk ?>" placeholder="Nama Produk">
                                             </div>
                                             <div class="input-group mg-b-pro-edt">
-                                                <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                <span class="input-group-addon"><i class="fa fa-image" aria-hidden="true"></i></span>
                                                 <input type="file" name="images" id="preview_gambar" class="form-control" placeholder="Regular Price">
                                             </div>
                                             <div class="input-group mg-b-pro-edt">
-                                                <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                <span class="input-group-addon"><i class="fa fa-balance-scale" aria-hidden="true"></i></span>
                                                 <input type="number" class="form-control" name="berat" value="<?= $produk->berat ?>" placeholder="Nama Produk">
                                             </div>
                                         </div>

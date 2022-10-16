@@ -29,7 +29,7 @@ class Pesanan_saya extends CI_Controller
 
     public function bayar($id_transaksi)
     {
-        $this->form_validation->set_rules('atas_nama', 'Atas Nama', 'required', array('required' => '%s Mohon Untuk Diisi !!!'));
+        $this->form_validation->set_rules('nama_bank', 'Nama bank', 'required', array('required' => '%s Mohon Untuk Diisi !!!'));
         // $this->form_validation->set_rules('no_rek', 'No Rekening', 'required|min_length[10]|max_length[16]', array(
         // 	'required' => '%s Mohon Untuk Diisi !!!',
         // 	'min_length' => '%s Minumal 10 Nomor !!!',
@@ -59,7 +59,8 @@ class Pesanan_saya extends CI_Controller
                 $this->load->library('image_lib', $config);
                 $data = array(
                     'id_transaksi' => $id_transaksi,
-                    'atas_nama' => $this->input->post('atas_nama'),
+                    'id_pelanggan' => $this->session->userdata('id_pelanggan'),
+                    // 'atas_nama' => $this->input->post('atas_nama'),
                     'nama_bank' => $this->input->post('nama_bank'),
                     'status_bayar' => '1',
                     'bukti_bayar' => $upload_data['uploads']['file_name'],

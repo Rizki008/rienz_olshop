@@ -121,13 +121,13 @@
             <form action="<?= base_url('auth/user_login') ?>" method="POST" id="loginForm">
               <div class="form-group">
                 <label class="control-label" for="username">Username</label>
-                <input type="text" placeholder="admin" name="username" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
-                <span class="help-block small">Your unique username to app</span>
+                <input type="text" placeholder="Input Username" name="username" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
+                <span class="help-block small"></span>
               </div>
               <div class="form-group">
                 <label class="control-label" for="password">Password</label>
-                <input type="password" name="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
-                <span class="help-block small">Yur strong password</span>
+                <input type="password" name="password" title="Please enter your password" placeholder="Input Password" required="" value="" name="password" id="password" class="form-control">
+                <span class="help-block small"></span>
               </div>
               <button class="btn btn-success btn-block loginbtn">Login</button>
             </form>

@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 p-0">
-                <div class="categories__item categories__large__item set-bg" data-setbg="<?= base_url() ?>frontend/img/categories/category-1.jpg">
+                <div class="categories__item categories__large__item set-bg" data-setbg="<?= base_url() ?>frontend/img/categories/ss.png">
                     <div class="categories__text">
                         <h1>Produk Terlaris</h1>
                         <p>Produk Terlaris di toko kami</p>
@@ -53,8 +53,8 @@
                     <div class="product__item">
                         <?php
                         echo form_open('belanja/add');
-                        echo form_hidden('id', $value->id_size);
-                        echo form_hidden('id_produk', $value->id_produk);
+                        echo form_hidden('id', $value->id_produk);
+                        echo form_hidden('id_size', $value->id_size);
                         echo form_hidden('id_diskon', $value->id_diskon);
                         echo form_hidden('qty', 1);
                         echo form_hidden('price', $value->harga - ($value->diskon / 100 * $value->harga));
@@ -69,11 +69,11 @@
                             <ul class="product__hover">
                                 <li><a href="<?= base_url('assets/produk/' . $value->images) ?>" class="image-popup"><span class="arrow_expand"></span></a></li>
                                 <li><a href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><span class="icon_heart_alt"></span></a></li>
-                                <!-- <li><button type="submit"><span class="icon_bag_alt"></span></button></li> -->
+                                <li><button type="submit"><span class="icon_bag_alt"></span></button></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6><a href="#"><?= $value->nama_produk ?></a></h6>
+                            <h6><a href="#"><?= $value->nama_produk ?></a></h6>                            <h6><a href="#"><?= $value->size ?></a></h6>
                             <div class="product__price">Rp. <?= number_format($value->harga, 0) ?></div>
                         </div>
                         <?php echo form_close() ?>

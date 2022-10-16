@@ -32,7 +32,7 @@
                                             </div>
                                             <?= form_error('diskon', '<div id="defaultFormControlHelp" class="form-text">', '</div>') ?>
                                             <div class="input-group mg-b-pro-edt">
-                                                <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                                                <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
                                                 <input type="date" value="<?= $diskon->tgl_selesai ?>" name="tgl" class="form-control" placeholder="Tanggal Selesai" />
                                             </div>
                                             <?= form_error('tgl', '<div id="defaultFormControlHelp" class="form-text">', '</div>') ?>
@@ -63,13 +63,13 @@
                                                 <option value="opt1">Pilih Level member</option>
                                                 <option value="1" <?php if ($diskon->member == '1') {
                                                                         echo 'selected';
-                                                                    } ?>>Gold</option>
+                                                                    } ?>>Platinum</option>
                                                 <option value="2" <?php if ($diskon->member == '2') {
                                                                         echo 'selected';
-                                                                    } ?>>Silver</option>
+                                                                    } ?>>Gold</option>
                                                 <option value="3" <?php if ($diskon->member == '3') {
                                                                         echo 'selected';
-                                                                    } ?>>Clasic</option>
+                                                                    } ?>>Silver</option>
                                             </select>
                                             <?= form_error('level', '<div id="defaultFormControlHelp" class="form-text">', '</div>') ?>
                                         </div>

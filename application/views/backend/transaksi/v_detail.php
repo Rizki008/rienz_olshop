@@ -31,7 +31,7 @@
                     <table>
                         <tr>
                             <th>Nama Pelanggan : </th>
-                            <td><?= $value->nama_depan ?> <?= $value->nama_belakang ?></td>
+                            <td><?= $value->nama_pelanggan ?></td>
                         </tr>
                         <tr>
                             <th>No Telphon : </th>

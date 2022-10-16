@@ -15,7 +15,7 @@
                     <div class="border-top border-left border-right bg-light">
                         <div class="p-m custom-address-mailbox">
                             <div>
-                                <span class="font-extra-bold">Date: </span> <?= $tahun ?>
+                                <!-- <span class="font-extra-bold">Date: </span> <?= $tahun ?> -->
                             </div>
                         </div>
                     </div>

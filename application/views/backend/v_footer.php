@@ -182,8 +182,15 @@ foreach ($grafik_pelanggan as $key => $value) {
 <!-- level member -->
 <?php
 foreach ($grafik_member as $key => $value) {
-	$level_member[] = $value->level_member;
-	$qty[] = $value->qty;
+	if($value->level_member == '3'){
+		$member = 'Silver';
+	}else if($value->level_member == '2'){
+		$member = 'Gold';
+	}else if($value->level_member == '1'){
+		$member = 'Platinum';
+	}
+	$level_member[] = $member;
+	$qty_member[] = $value->qty;
 }
 ?>
 
@@ -195,7 +202,7 @@ foreach ($grafik_member as $key => $value) {
 			labels: <?= json_encode($level_member) ?>,
 			datasets: [{
 				label: 'Grafik Analisis Member',
-				data: <?= json_encode($qty) ?>,
+				data: <?= json_encode($qty_member) ?>,
 				backgroundColor: [
 					'rgba(255, 99, 132, 0.80)',
 					'rgba(54, 162, 235, 0.80)',

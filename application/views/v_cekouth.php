@@ -165,6 +165,13 @@
                                     <input type="text" name="alamat" placeholder="" value="<?= $this->session->userdata('alamat'); ?>">
                                 </div>
                                 <div class="checkout__form__input">
+                                    <p>Pengambilan Ditempat <span>*</span></p>
+                                    <select name="ditempat" class="form-control">
+                                        <option value="">---Pilih Pengambilan Produk---</option>
+                                        <option value="ditempat">Ditempat</option>
+                                    </select>
+                                </div><br>
+                                <div class="checkout__form__input">
                                     <p>Province <span>*</span></p>
                                     <select name="provinsi" class="form-control"></select>
                                 </div>

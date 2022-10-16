@@ -15,6 +15,14 @@ class M_home extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function pelanggan()
+    {
+    $this->db->select('*');
+    $this->db->from('pelanggan');
+     $this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+     return $this->db->get()->result();
+    }
+
     public function produk_baru()
     {
         $this->db->select('*');

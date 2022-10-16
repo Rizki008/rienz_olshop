@@ -17,7 +17,8 @@ class Laporan extends CI_Controller
         $data = array(
             'title' => 'Data Laporan harian',
             'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
-            'isi' => 'pemilik/laporan/v_hari'
+            'laporan' => $this->m_laporan->lap_hari(),
+            'isi' => 'pemilik/laporan/data_laporan/v_lap_hari'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
     }
@@ -25,18 +26,24 @@ class Laporan extends CI_Controller
     public function bulan()
     {
         $data = array(
-            'title' => 'Data Laporan harian',
+            'title' => 'Data Laporan Perbulan',
+            // 'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
+            // 'isi' => 'pemilik/laporan/v_bulan'
+            'laporan' => $this->m_laporan->lap_bulan(),
             'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
-            'isi' => 'pemilik/laporan/v_bulan'
+            'isi' => 'pemilik/laporan/data_laporan/v_lap_bulan'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
     }
     public function tahun()
     {
         $data = array(
-            'title' => 'Data Laporan harian',
+            'title' => 'Data Laporan Pertahun',
+            // 'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
+            // 'isi' => 'pemilik/laporan/v_tahun'
+            'laporan' => $this->m_laporan->lap_tahun(),
             'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
-            'isi' => 'pemilik/laporan/v_tahun'
+            'isi' => 'pemilik/laporan/data_laporan/v_lap_tahun'
         );
         $this->load->view('pemilik/v_wrapper', $data, FALSE);
     }
