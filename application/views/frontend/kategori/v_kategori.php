@@ -31,14 +31,11 @@
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
+                                        <?php foreach ($produk as $value) : ?>
                                             <ul>
-                                                <li><a href="#">Coats</a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Jeans</a></li>
+                                                <li><a href="#"><?= $value->nama_produk ?></a></li>
                                             </ul>
+                                        <?php endforeach;?>
                                         </div>
                                     </div>
                                 </div>
@@ -48,14 +45,11 @@
                                     </div>
                                     <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
                                         <div class="card-body">
+                                        <?php foreach ($produk as $value) : ?>
                                             <ul>
-                                                <li><a href="#">Coats</a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Jeans</a></li>
+                                                <li><a href="#"><?= $value->nama_produk ?></a></li>
                                             </ul>
+                                        <?php endforeach;?>
                                         </div>
                                     </div>
                                 </div>
@@ -65,14 +59,11 @@
                                     </div>
                                     <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                         <div class="card-body">
+                                        <?php foreach ($produk as $value) : ?>
                                             <ul>
-                                                <li><a href="#">Coats</a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Jeans</a></li>
+                                                <li><a href="#"><?= $value->nama_produk ?></a></li>
                                             </ul>
+                                        <?php endforeach;?>
                                         </div>
                                     </div>
                                 </div>
@@ -82,14 +73,11 @@
                                     </div>
                                     <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                         <div class="card-body">
+                                        <?php foreach ($produk as $value) : ?>
                                             <ul>
-                                                <li><a href="#">Coats</a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Jeans</a></li>
+                                                <li><a href="#"><?= $value->nama_produk ?></a></li>
                                             </ul>
+                                        <?php endforeach;?>
                                         </div>
                                     </div>
                                 </div>
@@ -99,14 +87,11 @@
                                     </div>
                                     <div id="collapseFive" class="collapse" data-parent="#accordionExample">
                                         <div class="card-body">
+                                        <?php foreach ($produk as $value) : ?>
                                             <ul>
-                                                <li><a href="#">Coats</a></li>
-                                                <li><a href="#">Jackets</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">T-shirts</a></li>
-                                                <li><a href="#">Jeans</a></li>
+                                                <li><a href="#"><?= $value->nama_produk ?></a></li>
                                             </ul>
+                                        <?php endforeach;?>
                                         </div>
                                     </div>
                                 </div>
