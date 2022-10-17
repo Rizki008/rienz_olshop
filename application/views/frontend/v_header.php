@@ -60,11 +60,11 @@
                                 <a href="<?= base_url('pesanan_saya') ?>">Pesanan</a>
                                 <?php foreach ($pelanggan as $key => $value){?>
                                     <?php if($value->level_member == 1) {?>
-                                                                        <a href="#">Member Pelatinum</a>
+                                                                        <a href="#">Member Pelatinum Diskon 50%</a>
                                     <?php } elseif ($value->level_member == 2) {?>
-                                                                        <a href="#>">Member Gold</a>
+                                                                        <a href="#>">Member Gold Diskon 25%</a>
                                     <?php } elseif ($value->level_member == 3) {?>
-                                                                        <a href="#">Member Silver</a>
+                                                                        <a href="#">Member Silver Diskon 5%</a>
                                    <?php }?>
                                 <?php } ?>
                                 <a href="<?= base_url('pelanggan/logout') ?>">Logout</a>
