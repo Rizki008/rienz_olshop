@@ -24,6 +24,8 @@ class Pelanggan_login
             $alamat = $cek->alamat;
             $no_tlpn = $cek->no_tlpn;
             $kode_pos = $cek->kode_pos;
+            $point = $cek->point;
+            $level_member = $cek->level_member;
 
             $this->ci->session->set_userdata('id_pelanggan', $id_pelanggan);
             $this->ci->session->set_userdata('nama_pelanggan', $nama_pelanggan);
@@ -32,6 +34,8 @@ class Pelanggan_login
             $this->ci->session->set_userdata('alamat', $alamat);
             $this->ci->session->set_userdata('no_tlpn', $no_tlpn);
             $this->ci->session->set_userdata('kode_pos', $kode_pos);
+            $this->ci->session->set_userdata('point', $point);
+            $this->ci->session->set_userdata('level_member', $level_member);
 
             redirect('home');
         } else {
@@ -57,6 +61,8 @@ class Pelanggan_login
         $this->ci->session->unset_userdata('alamat');
         $this->ci->session->unset_userdata('no_tlpn');
         $this->ci->session->unset_userdata('kode_pos');
+        $this->ci->session->unset_userdata('point');
+        $this->ci->session->unset_userdata('level_member');
         $this->ci->session->set_flashdata('pesan', 'Berhasil Logout!!!');
         redirect('pelanggan/login');
     }
