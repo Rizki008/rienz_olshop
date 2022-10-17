@@ -14,14 +14,16 @@ class Pelanggan extends CI_Controller
     public function register()
     {
         $this->form_validation->set_rules('nama_pelanggan', 'Nama Pelanggan', 'required', array('required' => '%s Mohon untuk diisi!!!'));
-        $this->form_validation->set_rules('alamat', 'Alamat Pelanggan', 'required', array('required' => '%s Mohon untuk diisi!!!'));
+        $this->form_validation->set_rules('alamat', 'Alamat Pelanggan', 'required|min_length[8]', array(
+            'required' => '%s Mohon untuk diisi!!!',
+            'min_length' => '%s Mohon Diisi dengan Benar dan Lengkap',));
         $this->form_validation->set_rules('email', 'Email', 'required|is_unique[pelanggan.email]', array(
             'required' => '%s Mohon untuk diisi!!!',
             'is_unique' => '%s Email Sudah Terdaptar'
         ));
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]', array(
             'required' => '%s Mohon untuk diisi!!!',
-            'max_length' => '%s Password Minimal 8',
+            'min_length' => '%s Password Minimal 8',
             // 'regex_match' => '%s Password Harus Gabungan Huruf Besar, Angka Dan Hurup Kecil'
         ));
         $this->form_validation->set_rules('ulangi_password', 'Ulangi Password Pelanggan', 'required|matches[password]', array(
