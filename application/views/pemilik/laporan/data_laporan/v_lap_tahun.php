@@ -28,6 +28,7 @@
                                         <th>Nama Produk</th>
                                         <th>Size</th>
                                         <th>No Transaksi</th>
+                                        <th>Tanggal Order</th>
                                         <th>Harga</th>
                                         <th>Qty</th>
                                         <th>Total Harga</th>
@@ -46,9 +47,9 @@
                                             <td><?= $value->size ?></td>
                                             <td><?= $value->no_order ?></td>
                                             <td><?= $value->tgl_order ?></td>
-                                            <td><?= $value->harga ?></td>
+                                            <td>Rp. <?= number_format($value->harga, 0) ?></td>
                                             <td><?= $value->qty ?></td>
-                                            <td>Rp.<?= number_format($value->grand_total, 0) ?></td>
+                                            <td>Rp.<?= number_format($tot_harga, 0) ?></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
