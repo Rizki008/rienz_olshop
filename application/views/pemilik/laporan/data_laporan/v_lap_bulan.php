@@ -39,7 +39,7 @@
                                     $grand_total = 0;
                                     foreach ($laporan as $key => $value) {
                                         $tot_harga = $value->qty * $value->harga;
-                                        $grand_total = $grand_total + $value->grand_total;
+                                        $grand_total = $grand_total + $tot_harga;
                                     ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
