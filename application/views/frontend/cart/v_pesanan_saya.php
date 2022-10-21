@@ -51,30 +51,32 @@
                                 <tr>
                                     <td><?= $value->no_order ?></td>
                                     <td><?= $value->tgl_order ?></td>
-                                    <?php if ($value->ditempat == 'ditempat') { ?>
-                                        <td> - </td>
-                                        <td class="text-warning">Rp. 0<i class="mdi mdi-arrow-down"></i></td>
-                                        <td><b>Rp. <?= number_format($value->grand_total, 0) ?></b><br>
+                                    <td>
+                                        <?php if ($value->expedisi == 'ditempat') { ?>
+                                            <p>Pengambilan Ditempat</p>
+                                        <?php } else { ?>
+                                            <?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?>
+                                        <?php } ?>
+                                    </td>
+                                    <td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
+                                    <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                            <b>Rp. <?= number_format($value->grand_total, 0) ?></b><br>
                                             <?php if ($value->status_bayar == 0) { ?>
                                                 <span class="badge badge-warning">Belum bayar</span>
                                             <?php } else { ?>
                                                 <span class="badge badge-success">Sudah bayar</span><br>
                                                 <span class="badge badge-primary">Menunggu Verifikasi</span>
                                             <?php } ?>
-                                        </td>
-                                    <?php } else { ?>
-                                        <td><?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?></td>
-                                        <td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
-                                        <td><b>Rp. <?= number_format($value->total_bayar, 0) ?></b><br>
+                                        <?php } else { ?>
+                                            <b>Rp. <?= number_format($value->total_bayar, 0) ?></b><br>
                                             <?php if ($value->status_bayar == 0) { ?>
                                                 <span class="badge badge-warning">Belum bayar</span>
                                             <?php } else { ?>
                                                 <span class="badge badge-success">Sudah bayar</span><br>
                                                 <span class="badge badge-primary">Menunggu Verifikasi</span>
                                             <?php } ?>
-                                        </td>
-                                    <?php } ?>
-                                    <td></td>
+                                        <?php } ?>
+                                    </td>
                                     <td>
                                         <?php if ($value->status_bayar == 0) { ?>
                                             <a href="<?= base_url('pesanan_saya/bayar/' . $value->id_transaksi) ?>" class="btn btn-sm btn-flat btn-primary">Bayar</a>
@@ -105,19 +107,22 @@
                                 <tr>
                                     <td><a href="<?= base_url('transaksi/detail/' . $value->no_order) ?>"><?= $value->no_order ?></a></td>
                                     <td><?= $value->tgl_order ?></td>
-                                    <?php if ($value->ditempat == 'ditempat') { ?>
-                                        <td> - </td>
-                                        <td class="text-warning">Rp. 0<i class="mdi mdi-arrow-down"></i></td>
-                                        <td>Rp. <?= number_format($value->grand_total, 0) ?><br>
-                                            <label class="badge badge-info">Diproses</label>
-                                        </td>
-                                    <?php } else { ?>
-                                        <td><?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?></td>
-                                        <td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
-                                        <td>Rp. <?= number_format($value->total_bayar, 0) ?><br>
-                                            <label class="badge badge-info">Diproses</label>
-                                        </td>
-                                    <?php } ?>
+                                    <td>
+                                        <?php if ($value->expedisi == 'ditempat') { ?>
+                                            <p>Pengambilan Ditempat</p>
+                                        <?php } else { ?>
+                                            <?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?>
+                                        <?php } ?>
+                                    </td>
+                                    <td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
+                                    <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                            <b>Rp. <?= number_format($value->grand_total, 0) ?></b><br>
+                                            <label class="badge badge-info">Proses Pengambilan</label>
+                                        <?php } else { ?>
+                                            <b>Rp. <?= number_format($value->total_bayar, 0) ?></b><br>
+                                            <label class="badge badge-info">Proses Pengiriman</label>
+                                        <?php } ?>
+                                    </td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -143,21 +148,23 @@
                                 <tr>
                                     <td><?= $value->no_order ?></td>
                                     <td><?= $value->tgl_order ?></td>
-                                    <?php if ($value->ditempat == 'ditempat') { ?>
-                                        <td> - </td>
-                                        <td class="text-warning">Rp. 0<i class="mdi mdi-arrow-down"></i></td>
-                                        <td>Rp. <?= number_format($value->grand_total, 0) ?><br>
+                                    <td>
+                                        <?php if ($value->expedisi == 'ditempat') { ?>
+                                            <p>Pengambilan Ditempat</p>
+                                        <?php } else { ?>
+                                            <?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?>
+                                        <?php } ?>
+                                    </td>
+                                    <td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
+                                    <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                            <b>Rp. <?= number_format($value->grand_total, 0) ?></b><br>
+                                            <label class="badge badge-primary">Pengambilan</label>
+                                        <?php } else { ?>
+                                            <b>Rp. <?= number_format($value->total_bayar, 0) ?></b><br>
                                             <label class="badge badge-primary">Dikirim</label>
-                                        </td>
-                                        <td class="text-info"> - </td>
-                                    <?php } else { ?>
-                                        <td><?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?></td>
-                                        <td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
-                                        <td>Rp. <?= number_format($value->total_bayar, 0) ?><br>
-                                            <label class="badge badge-primary">Dikirim</label>
-                                        </td>
-                                        <td class="text-info"><?= $value->no_resi ?></td>
-                                    <?php } ?>
+                                        <?php } ?>
+                                    </td>
+                                    <td class="text-info"><?= $value->no_resi ?></td>
                                     <td>
                                         <?php echo form_open('pesanan_saya/diterima/' . $value->id_transaksi); ?>
                                         <input type="hidden" name="pelanggan" value="<?= $value->id_pelanggan ?>">
@@ -197,21 +204,23 @@
                                 <tr>
                                     <td><?= $value->no_order ?></td>
                                     <td><?= $value->tgl_order ?></td>
-                                    <?php if ($value->ditempat == 'ditempat') { ?>
-                                        <td> - </td>
-                                        <td class="text-warning">Rp. 0<i class="mdi mdi-arrow-down"></i></td>
-                                        <td>Rp. <?= number_format($value->grand_total, 0) ?><br>
+                                    <td>
+                                        <?php if ($value->expedisi == 'ditempat') { ?>
+                                            <p>Pengambilan Ditempat</p>
+                                        <?php } else { ?>
+                                            <?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?>
+                                        <?php } ?>
+                                    </td>
+                                    <td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
+                                    <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                            <b>Rp. <?= number_format($value->grand_total, 0) ?></b><br>
                                             <label class="badge badge-success">Selesai</label>
-                                        </td>
-                                        <td class="text-info"> - </td>
-                                    <?php } else { ?>
-                                        <td><?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?></td>
-                                        <td class="text-warning">Rp. <?= number_format($value->ongkir, 0) ?><i class="mdi mdi-arrow-down"></i></td>
-                                        <td>Rp. <?= number_format($value->total_bayar, 0) ?><br>
+                                        <?php } else { ?>
+                                            <b>Rp. <?= number_format($value->total_bayar, 0) ?></b><br>
                                             <label class="badge badge-success">Selesai</label>
-                                        </td>
-                                        <td class="text-info"><?= $value->no_resi ?></td>
-                                    <?php } ?>
+                                        <?php } ?>
+                                    </td>
+                                    <td class="text-info"><?= $value->no_resi ?></td>
                                     <td><a href="<?= base_url('pesanan_saya/detail_selesai/' . $value->no_order) ?>" class="btn btn-success btn-sm">Riviews</a></td>
                                 </tr>
                             <?php } ?>

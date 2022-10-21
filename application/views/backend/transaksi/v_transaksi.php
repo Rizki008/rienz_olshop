@@ -33,7 +33,13 @@
                                                 </td>
                                                 <td><?= $value->expedisi ?></td>
                                                 <td>Rp. <?= number_format($value->ongkir, 0) ?></td>
-                                                <td>Rp. <?= number_format($value->grand_total, 0) ?></td>
+                                                <td>
+                                                    <?php if ($value->expedisi == 'ditempat') { ?>
+                                                        Rp. <?= number_format($value->grand_total, 0) ?>
+                                                    <?php } else { ?>
+                                                        Rp. <?= number_format($value->total_bayar, 0) ?>
+                                                    <?php } ?>
+                                                </td>
                                                 <td><?php if ($value->status_bayar == 0) { ?>
                                                         <button class="ds-setting">Belum Bayar</button>
                                                     <?php } elseif ($value->status_bayar == 1) { ?>
@@ -81,13 +87,28 @@
                                                 </td>
                                                 <td><?= $value->expedisi ?></td>
                                                 <td>Rp. <?= number_format($value->ongkir, 0) ?></td>
-                                                <td>Rp. <?= number_format($value->grand_total, 0) ?></td>
-                                                <td><?php if ($value->status_order == 1) { ?>
-                                                        <button class="pd-setting">Di Proses</button>
+                                                <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                                        Rp. <?= number_format($value->grand_total, 0) ?>
+                                                    <?php } else { ?>
+                                                        Rp. <?= number_format($value->total_bayar, 0) ?>
+                                                    <?php } ?></td>
+                                                <td>
+                                                    <?php if ($value->expedisi == 'ditempat') { ?>
+                                                        <?php if ($value->status_order == 1) { ?>
+                                                            <button class="pd-setting">Proses Pengambilan</button>
+                                                        <?php } ?>
+                                                    <?php } else { ?>
+                                                        <?php if ($value->status_order == 1) { ?>
+                                                            <button class="pd-setting">Proses Pengiriman</button>
+                                                        <?php } ?>
                                                     <?php } ?>
                                                 </td>
                                                 <td>
-                                                    <a href="<?= base_url('transaksi/detail/' . $value->no_order) ?>" data-toggle="tooltip" title="Kirim" class="pd-setting-ed"><i class="fa fa-send" aria-hidden="true"></i></a>
+                                                    <?php if ($value->expedisi == 'ditempat') { ?>
+                                                        <a href="<?= base_url('transaksi/proses_ambil/' . $value->id_transaksi) ?>" data-toggle="tooltip" title="Proses Pengambilan" class="pd-setting-ed"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                    <?php } else { ?>
+                                                        <a href="<?= base_url('transaksi/detail/' . $value->no_order) ?>" data-toggle="tooltip" title="Kirim" class="pd-setting-ed"><i class="fa fa-send" aria-hidden="true"></i></a>
+                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -123,10 +144,25 @@
                                                 </td>
                                                 <td><?= $value->expedisi ?></td>
                                                 <td>Rp. <?= number_format($value->ongkir, 0) ?></td>
-                                                <td>Rp. <?= number_format($value->grand_total, 0) ?></td>
-                                                <td> <?= $value->no_resi ?></td>
-                                                <td><?php if ($value->status_order == 2) { ?>
-                                                        <button class="pd-setting">Di Kirim</button>
+                                                <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                                        Rp. <?= number_format($value->grand_total, 0) ?>
+                                                    <?php } else { ?>
+                                                        Rp. <?= number_format($value->total_bayar, 0) ?>
+                                                    <?php } ?></td>
+                                                <td> <?php if ($value->expedisi == 'ditempat') { ?>
+                                                        -
+                                                    <?php } else { ?>
+                                                        <?= $value->no_resi ?>
+                                                    <?php } ?></td>
+                                                <td>
+                                                    <?php if ($value->expedisi == 'ditempat') { ?>
+                                                        <?php if ($value->status_order == 2) { ?>
+                                                            <button class="pd-setting">Pengambilan</button>
+                                                        <?php } ?>
+                                                    <?php  } else { ?>
+                                                        <?php if ($value->status_order == 2) { ?>
+                                                            <button class="pd-setting">Di Kirim</button>
+                                                        <?php } ?>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
@@ -164,8 +200,17 @@
                                                 </td>
                                                 <td><?= $value->expedisi ?></td>
                                                 <td>Rp. <?= number_format($value->ongkir, 0) ?></td>
-                                                <td>Rp. <?= number_format($value->grand_total, 0) ?></td>
-                                                <td> <?= $value->no_resi ?></td>
+                                                <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                                        Rp. <?= number_format($value->grand_total, 0) ?>
+                                                    <?php } else { ?>
+                                                        Rp. <?= number_format($value->total_bayar, 0) ?>
+                                                    <?php } ?></td>
+                                                <td> <?php if ($value->expedisi == 'ditempat') { ?>
+                                                        -
+                                                    <?php } else { ?>
+                                                        <?= $value->no_resi ?>
+                                                    <?php } ?>
+                                                </td>
                                                 <td><?php if ($value->status_order == 3) { ?>
                                                         <button class="pd-setting">Di Terima</button>
                                                     <?php } ?>
