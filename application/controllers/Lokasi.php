@@ -96,6 +96,7 @@ class Lokasi extends CI_Controller
         echo '<option value="jne">JNE</option>';
         echo '<option value="tiki">TIKI</option>';
         echo '<option value="pos">Pos Indonesia</option>';
+        echo '<option value="ditempat">Pengambilan Ditempat</option>';
     }
 
     public function paket()
@@ -137,7 +138,7 @@ class Lokasi extends CI_Controller
             print_r($array_response['rajaongkir']['results'][0]['costs']);
             echo '<pre>';
             $data_paket = $array_response['rajaongkir']['results'][0]['costs'];
-            echo "<option value=''>---pilih paket---</option>";
+            echo "<option value='0'>---pilih paket---</option>";
             foreach ($data_paket as $key => $value) {
                 echo "<option value='" . $value['service'] . "' ongkir='" .  $value['cost'][0]['value'] . "' estimasi='" . $value['cost'][0]['etd'] . " Hari' >";
                 echo $value['service'] . " | Rp." . $value['cost'][0]['value'] . " | " . $value['cost'][0]['etd'] . " Hari";
