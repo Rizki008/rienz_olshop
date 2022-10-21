@@ -85,83 +85,83 @@ class Belanja extends CI_Controller
             $this->load->view('v_cekouth', $data, FALSE);
         } else {
 
-            $ditempat = 'ditempat';
-            $ditempat = $this->input->post('ditempat');
-            if ($ditempat == 'ditempat') {
+            // $ditempat = 'ditempat';
+            // $ditempat = $this->input->post('ditempat');
+            // if ($ditempat == 'ditempat') {
 
-                $data = array(
-                    'id_pelanggan' => $this->session->userdata('id_pelanggan'),
+            //     $data = array(
+            //         'id_pelanggan' => $this->session->userdata('id_pelanggan'),
+            //         'no_order' => $this->input->post('no_order'),
+            //         'tgl_order' => date('Y-m-d'),
+            //         // 'nama_depan' => $this->input->post('nama_depan'),
+            //         // 'nama_belakang' => $this->input->post('nama_belakang'),
+            //         'no_tlpn' => $this->session->userdata('no_tlpn'),
+            //         // 'ditempat' => $this->input->post('ditempat'),
+            //         'alamat' => $this->session->userdata('alamat'),
+            //         'kode_pos' => $this->session->userdata('kode_pos'),
+            //         'berat' => $this->input->post('berat'),
+            //         'grand_total' => $this->input->post('grand_total'),
+            //         'total_bayar' => $this->input->post('total_bayar'),
+            //         'status_bayar' => '0',
+            //         'status_order' => '0',
+            //     );
+            //     $this->m_transaksi->simpan_transaksi($data);
+
+            //     //simpan rinci transaksi
+            //     $i = 1;
+            //     foreach ($this->cart->contents() as $item) {
+            //         $data_rinci = array(
+            //             'no_order' => $this->input->post('no_order'),
+            //             'id_produk' => $item['id'],
+            //             'id_size' => $item['id_size'],
+            //             'id_diskon' => $item['id_diskon'],
+            //             'qty' => $this->input->post('qty' . $i++),
+            //         );
+            //         $this->m_transaksi->simpan_rinci_transaksi($data_rinci);
+            //     }
+            //     $this->session->set_flashdata('pesan', 'Pesanan Diproses');
+            //     $this->cart->destroy();
+            //     redirect('pesanan_saya');
+            // } else {
+            $data = array(
+                'id_pelanggan' => $this->session->userdata('id_pelanggan'),
+                'no_order' => $this->input->post('no_order'),
+                'tgl_order' => date('Y-m-d'),
+                // 'nama_depan' => $this->input->post('nama_depan'),
+                // 'nama_belakang' => $this->input->post('nama_belakang'),
+                'no_tlpn' => $this->session->userdata('no_tlpn'),
+                'provinsi' => $this->input->post('provinsi'),
+                'kota' => $this->input->post('kota'),
+                'paket' => $this->input->post('paket'),
+                'expedisi' => $this->input->post('expedisi'),
+                'estimasi' => $this->input->post('estimasi'),
+                'alamat' => $this->session->userdata('alamat'),
+                'kode_pos' => $this->session->userdata('kode_pos'),
+                'ongkir' => $this->input->post('ongkir'),
+                'berat' => $this->input->post('berat'),
+                'grand_total' => $this->input->post('grand_total'),
+                'total_bayar' => $this->input->post('total_bayar'),
+                'status_bayar' => '0',
+                'status_order' => '0',
+            );
+            $this->m_transaksi->simpan_transaksi($data);
+
+            //simpan rinci transaksi
+            $i = 1;
+            foreach ($this->cart->contents() as $item) {
+                $data_rinci = array(
                     'no_order' => $this->input->post('no_order'),
-                    'tgl_order' => date('Y-m-d'),
-                    // 'nama_depan' => $this->input->post('nama_depan'),
-                    // 'nama_belakang' => $this->input->post('nama_belakang'),
-                    'no_tlpn' => $this->session->userdata('no_tlpn'),
-                    'ditempat' => $this->input->post('ditempat'),
-                    'alamat' => $this->session->userdata('alamat'),
-                    'kode_pos' => $this->session->userdata('kode_pos'),
-                    'berat' => $this->input->post('berat'),
-                    'grand_total' => $this->input->post('grand_total'),
-                    'total_bayar' => $this->input->post('total_bayar'),
-                    'status_bayar' => '0',
-                    'status_order' => '0',
+                    'id_produk' => $item['id'],
+                    'id_size' => $item['id_size'],
+                    'id_diskon' => $item['id_diskon'],
+                    'qty' => $this->input->post('qty' . $i++),
                 );
-                $this->m_transaksi->simpan_transaksi($data);
-
-                //simpan rinci transaksi
-                $i = 1;
-                foreach ($this->cart->contents() as $item) {
-                    $data_rinci = array(
-                        'no_order' => $this->input->post('no_order'),
-                        'id_produk' => $item['id'],
-                        'id_size' => $item['id_size'],
-                        'id_diskon' => $item['id_diskon'],
-                        'qty' => $this->input->post('qty' . $i++),
-                    );
-                    $this->m_transaksi->simpan_rinci_transaksi($data_rinci);
-                }
-                $this->session->set_flashdata('pesan', 'Pesanan Diproses');
-                $this->cart->destroy();
-                redirect('pesanan_saya');
-            } else {
-                $data = array(
-                    'id_pelanggan' => $this->session->userdata('id_pelanggan'),
-                    'no_order' => $this->input->post('no_order'),
-                    'tgl_order' => date('Y-m-d'),
-                    // 'nama_depan' => $this->input->post('nama_depan'),
-                    // 'nama_belakang' => $this->input->post('nama_belakang'),
-                    'no_tlpn' => $this->session->userdata('no_tlpn'),
-                    'provinsi' => $this->input->post('provinsi'),
-                    'kota' => $this->input->post('kota'),
-                    'paket' => $this->input->post('paket'),
-                    'expedisi' => $this->input->post('expedisi'),
-                    'estimasi' => $this->input->post('estimasi'),
-                    'alamat' => $this->session->userdata('alamat'),
-                    'kode_pos' => $this->session->userdata('kode_pos'),
-                    'ongkir' => $this->input->post('ongkir'),
-                    'berat' => $this->input->post('berat'),
-                    'grand_total' => $this->input->post('grand_total'),
-                    'total_bayar' => $this->input->post('total_bayar'),
-                    'status_bayar' => '0',
-                    'status_order' => '0',
-                );
-                $this->m_transaksi->simpan_transaksi($data);
-
-                //simpan rinci transaksi
-                $i = 1;
-                foreach ($this->cart->contents() as $item) {
-                    $data_rinci = array(
-                        'no_order' => $this->input->post('no_order'),
-                        'id_produk' => $item['id'],
-                        'id_size' => $item['id_size'],
-                        'id_diskon' => $item['id_diskon'],
-                        'qty' => $this->input->post('qty' . $i++),
-                    );
-                    $this->m_transaksi->simpan_rinci_transaksi($data_rinci);
-                }
-                $this->session->set_flashdata('pesan', 'Pesanan Diproses');
-                $this->cart->destroy();
-                redirect('pesanan_saya');
+                $this->m_transaksi->simpan_rinci_transaksi($data_rinci);
             }
+            $this->session->set_flashdata('pesan', 'Pesanan Diproses');
+            $this->cart->destroy();
+            redirect('pesanan_saya');
+            // }
         }
     }
 }
