@@ -34,7 +34,7 @@
                                                 <td><?= $value->expedisi ?></td>
                                                 <td>Rp. <?= number_format($value->ongkir, 0) ?></td>
                                                 <td>
-                                                    <?php if ($value->expedisi == 'ditempat') { ?>
+                                                    <?php if ($value->ditempat == 'ditempat') { ?>
                                                         Rp. <?= number_format($value->grand_total, 0) ?>
                                                     <?php } else { ?>
                                                         Rp. <?= number_format($value->total_bayar, 0) ?>
@@ -87,7 +87,7 @@
                                                 </td>
                                                 <td><?= $value->expedisi ?></td>
                                                 <td>Rp. <?= number_format($value->ongkir, 0) ?></td>
-                                                <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                                <td><?php if ($value->ditempat == 'ditempat') { ?>
                                                         Rp. <?= number_format($value->grand_total, 0) ?>
                                                     <?php } else { ?>
                                                         Rp. <?= number_format($value->total_bayar, 0) ?>
@@ -144,7 +144,7 @@
                                                 </td>
                                                 <td><?= $value->expedisi ?></td>
                                                 <td>Rp. <?= number_format($value->ongkir, 0) ?></td>
-                                                <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                                <td><?php if ($value->ditempat == 'ditempat') { ?>
                                                         Rp. <?= number_format($value->grand_total, 0) ?>
                                                     <?php } else { ?>
                                                         Rp. <?= number_format($value->total_bayar, 0) ?>
@@ -200,7 +200,7 @@
                                                 </td>
                                                 <td><?= $value->expedisi ?></td>
                                                 <td>Rp. <?= number_format($value->ongkir, 0) ?></td>
-                                                <td><?php if ($value->expedisi == 'ditempat') { ?>
+                                                <td><?php if ($value->ditempat == 'ditempat') { ?>
                                                         Rp. <?= number_format($value->grand_total, 0) ?>
                                                     <?php } else { ?>
                                                         Rp. <?= number_format($value->total_bayar, 0) ?>
