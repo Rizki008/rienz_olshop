@@ -96,7 +96,7 @@ class Lokasi extends CI_Controller
         echo '<option value="jne">JNE</option>';
         echo '<option value="tiki">TIKI</option>';
         echo '<option value="pos">Pos Indonesia</option>';
-        echo '<option value="ditempat">Pengambilan Ditempat</option>';
+        // echo '<option value="ditempat">Pengambilan Ditempat</option>';
     }
 
     public function paket()

@@ -164,16 +164,16 @@
                                     <p>Address <span>*</span></p>
                                     <input type="text" name="alamat" placeholder="" value="<?= $this->session->userdata('alamat'); ?>">
                                 </div>
-                                <!-- <div class="checkout__form__input">
+                                <div class="checkout__form__input">
                                     <p>Pengambilan Ditempat <span>*</span></p>
-                                    <select name="ditempat" class="form-control">
-                                        <option value="">---Pilih Pengambilan Produk---</option>
+                                    <select name="ditempat" id="layout_select" class="form-control">
+                                        <option value="">---Pengambilan Produk Ditempat---</option>
                                         <option value="ditempat">Ditempat</option>
                                     </select>
-                                </div><br> -->
+                                </div><br>
                                 <div class="checkout__form__input">
                                     <p>Province <span>*</span></p>
-                                    <select name="provinsi" class="form-control"></select>
+                                    <select name="provinsi" id="column_select" class="form-control"></select>
                                 </div>
                                 <div class="checkout__form__input">
                                     <p>City <span>*</span></p>
@@ -478,6 +478,15 @@
                 $("input[name=total_bayar]").val(data_total_bayar);
             });
         });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#layout_select").children('option:gt(0)').hide();
+            $("#column_select").change(function() {
+                $("#layout_select").children('option').hide();
+                $("#layout_select").children("option[value^=" + $(this).val() + "]").show()
+            })
+        })
     </script>
 </body>
 
