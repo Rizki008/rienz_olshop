@@ -166,14 +166,14 @@
                                 </div>
                                 <div class="checkout__form__input">
                                     <p>Pengambilan Ditempat <span>*</span></p>
-                                    <select name="ditempat" id="layout_select" class="form-control">
+                                    <select name="ditempat" id="column_select" class="form-control">
                                         <option value="">---Pengambilan Produk Ditempat---</option>
                                         <option value="ditempat">Ditempat</option>
                                     </select>
                                 </div><br>
                                 <div class="checkout__form__input">
                                     <p>Province <span>*</span></p>
-                                    <select name="provinsi" id="column_select" class="form-control"></select>
+                                    <select name="provinsi" id="layout_select" class="form-control"></select>
                                 </div>
                                 <div class="checkout__form__input">
                                     <p>City <span>*</span></p>
@@ -480,13 +480,26 @@
         });
     </script>
     <script>
+        // $(document).ready(function() {
+        //     $("#layout_select").children('option:gt(0)').hide();
+        //     $("#column_select").change(function() {
+        //         $("#layout_select").children('option').hide();
+        //         $("#layout_select").children("option[value^=" + $(this).val() + "]").show()
+        //     })
+        // })
+
         $(document).ready(function() {
-            $("#layout_select").children('option:gt(0)').hide();
             $("#column_select").change(function() {
-                $("#layout_select").children('option').hide();
-                $("#layout_select").children("option[value^=" + $(this).val() + "]").show()
-            })
-        })
+                $("#layout_select")
+                    .find("option")
+                    .show()
+                    .not("option[value*='" + this.value + "']").hide();
+
+                $("#layout_select").val(
+                    $("#layout_select").find("option:visible:first").val());
+
+            }).change();
+        });
     </script>
 </body>
 
