@@ -11,7 +11,7 @@
 						<tr>
 							<th>Nama Produk</th>
 							<th>Nama Diskon</th>
-							<th>Harga Diskon</th>
+							<th>Besar Diskon</th>
 							<th>Tanggal Selesai</th>
 							<th>Level Member</th>
 							<th>Setting</th>
@@ -21,7 +21,7 @@
 								<td><?= $value->nama_produk ?></td>
 								<td><?= $value->nama_diskon ?></td>
 								<td>
-									<button class="pd-setting">Rp. <?= number_format($value->diskon, 0) ?></button>
+									<button class="pd-setting">Rp. <?= number_format($value->diskon, 0) ?> %</button>
 								</td>
 								<td><?= $value->tgl_selesai ?></td>
 								<td><?= $value->member ?></td>

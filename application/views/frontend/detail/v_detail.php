@@ -62,7 +62,7 @@
                         <i class="fa fa-star"></i>
                         <span>( 138 reviews )</span>
                     </div> -->
-                    <div class="product__details__price price-view">Rp. <?= number_format($data['produk']->harga - $data['produk']->diskon / 100 * $data['produk']->harga, 0) ?> <span>Rp. <?= number_format($data['produk']->harga, 0) ?></span></div>
+                    <div class="product__details__price price-view">Rp. <?= number_format($data['produk']->harga - ($data['produk']->diskon / 100 * $data['produk']->harga), 0) ?> <span>Rp. <?= number_format($data['produk']->harga, 0) ?></span></div>
                     <?php if ($data['produk']->diskon != 0) { ?>
                         <del class="diskon">Rp. <?= number_format($data['produk']->harga, 0) ?></del><span class="disc badge bg-warning">Disc <?= $data['produk']->diskon ?>%</span>
                     <?php } ?>
