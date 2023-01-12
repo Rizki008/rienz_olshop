@@ -182,11 +182,11 @@ foreach ($grafik_pelanggan as $key => $value) {
 <!-- level member -->
 <?php
 foreach ($grafik_member as $key => $value) {
-	if($value->level_member == '3'){
+	if ($value->level_member == '3') {
 		$member = 'Silver';
-	}else if($value->level_member == '2'){
+	} else if ($value->level_member == '2') {
 		$member = 'Gold';
-	}else if($value->level_member == '1'){
+	} else if ($value->level_member == '1') {
 		$member = 'Platinum';
 	}
 	$level_member[] = $member;
@@ -203,6 +203,218 @@ foreach ($grafik_member as $key => $value) {
 			datasets: [{
 				label: 'Grafik Analisis Member',
 				data: <?= json_encode($qty_member) ?>,
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.80)',
+					'rgba(54, 162, 235, 0.80)',
+					'rgba(255, 206, 86, 0.80)',
+					'rgba(75, 192, 192, 0.80)',
+					'rgba(153, 102, 255, 0.80)',
+					'rgba(255, 159, 64, 0.80)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)',
+					'rgba(255, 99, 132, 0.80)',
+					'rgba(54, 162, 235, 0.80)',
+					'rgba(255, 206, 86, 0.80)',
+					'rgba(75, 192, 192, 0.80)',
+					'rgba(153, 102, 255, 0.80)',
+					'rgba(255, 159, 64, 0.80)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)'
+				],
+				borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)',
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)'
+				],
+				fill: false,
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	});
+</script>
+
+
+
+<?php foreach ($grafik_kelamin as $key => $value) {
+	$jk[] = $value->jk;
+	$jumlah[] = $value->jumlah;
+} ?>
+<script>
+	var ctx = document.getElementById('kelamin');
+	var kelamin = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: <?= json_encode($jk) ?>,
+			datasets: [{
+				label: 'Grafik Analisis Jenis Kelamin',
+				data: <?= json_encode($jumlah) ?>,
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.80)',
+					'rgba(54, 162, 235, 0.80)',
+					'rgba(255, 206, 86, 0.80)',
+					'rgba(75, 192, 192, 0.80)',
+					'rgba(153, 102, 255, 0.80)',
+					'rgba(255, 159, 64, 0.80)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)',
+					'rgba(255, 99, 132, 0.80)',
+					'rgba(54, 162, 235, 0.80)',
+					'rgba(255, 206, 86, 0.80)',
+					'rgba(75, 192, 192, 0.80)',
+					'rgba(153, 102, 255, 0.80)',
+					'rgba(255, 159, 64, 0.80)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)'
+				],
+				borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)',
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)'
+				],
+				fill: false,
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	});
+</script>
+
+<?php foreach ($grafik_produk_laris as $key => $value) {
+	$nama_produk[] = $value->nama_produk;
+	$jlaris[] = $value->jlaris;
+} ?>
+<script>
+	var ctx = document.getElementById('laris');
+	var laris = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: <?= json_encode($nama_produk) ?>,
+			datasets: [{
+				label: 'Grafik Analisis Produk Laris',
+				data: <?= json_encode($jlaris) ?>,
 				backgroundColor: [
 					'rgba(255, 99, 132, 0.80)',
 					'rgba(54, 162, 235, 0.80)',
