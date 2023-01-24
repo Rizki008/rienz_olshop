@@ -18,6 +18,8 @@ class Master_produk extends CI_Controller
 			'title' => 'Data Kategori',
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'kategori' => $this->m_master_produk->kategori(),
 			'isi' => 'backend/kategori/v_kategori'
 		);
@@ -37,6 +39,8 @@ class Master_produk extends CI_Controller
 					'title' => 'Tambah Kategori',
 					'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 					'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+					'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+					'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 					'error_upload' => $this->upload->display_errors(),
 					'isi' => 'backend/kategori/v_add'
 				);
@@ -59,6 +63,8 @@ class Master_produk extends CI_Controller
 			'title' => 'Tambah Kategori',
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'isi' => 'backend/kategori/v_add'
 		);
 		$this->load->view('backend/v_wrapper', $data, FALSE);
@@ -77,6 +83,8 @@ class Master_produk extends CI_Controller
 					'title' => 'Edit Kategori',
 					'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 					'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+					'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+					'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 					'kategori' => $this->m_master_produk->detail_kategori($id_kategori),
 					'error_upload' => $this->upload->display_errors(),
 					'isi' => 'backend/kategori/v_edit'
@@ -113,6 +121,8 @@ class Master_produk extends CI_Controller
 			'title' => 'Edit Kategori',
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'kategori' => $this->m_master_produk->detail_kategori($id_kategori),
 			'isi' => 'backend/kategori/v_edit'
 		);
@@ -140,6 +150,8 @@ class Master_produk extends CI_Controller
 			'title' => 'Data Produk',
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'produk' => $this->m_master_produk->produk(),
 			'isi' => 'backend/produk/v_produk'
 		);
@@ -165,6 +177,8 @@ class Master_produk extends CI_Controller
 					'title' => 'Tambah Produk',
 					'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 					'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+					'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+					'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 					'kategori' => $this->m_master_produk->kategori(),
 					'error_upload' => $this->upload->display_errors(),
 					'isi' => 'backend/produk/v_add'
@@ -205,6 +219,8 @@ class Master_produk extends CI_Controller
 			'title' => 'Tambah Produk',
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'kategori' => $this->m_master_produk->kategori(),
 			'isi' => 'backend/produk/v_add'
 		);
@@ -231,6 +247,8 @@ class Master_produk extends CI_Controller
 					'kategori' => $this->m_master_produk->kategori(),
 					'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 					'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+					'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+					'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 					'produk' => $this->m_master_produk->detail_produk($id_produk),
 					'error_upload' => $this->upload->display_errors(),
 					'isi' => 'backend/produk/v_edit'
@@ -274,6 +292,8 @@ class Master_produk extends CI_Controller
 			'kategori' => $this->m_master_produk->kategori(),
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'produk' => $this->m_master_produk->detail_produk($id_produk),
 			'isi' => 'backend/produk/v_edit'
 		);
@@ -303,6 +323,8 @@ class Master_produk extends CI_Controller
 			'gambar' => $this->m_master_produk->gambar(),
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'isi' => 'backend/gambar/v_gambar'
 		);
 		$this->load->view('backend/v_wrapper', $data, FALSE);
@@ -323,6 +345,8 @@ class Master_produk extends CI_Controller
 					'error_upload' => $this->upload->display_errors(),
 					'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 					'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+					'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+					'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 					'produk' => $this->m_master_produk->detail_produk($id_produk),
 					'gambar' => $this->m_master_produk->detail_gambar($id_produk),
 					'isi' => 'backend/gambar/v_add'
@@ -349,6 +373,8 @@ class Master_produk extends CI_Controller
 			'produk' => $this->m_master_produk->detail_produk($id_produk),
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'gambar' => $this->m_master_produk->detail_gambar($id_produk),
 			'isi' => 'backend/gambar/v_add'
 		);
@@ -377,6 +403,8 @@ class Master_produk extends CI_Controller
 			'diskon' => $this->m_master_produk->diskon(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'isi' => 'backend/diskon/v_diskon'
 		);
 		$this->load->view('backend/v_wrapper', $data, FALSE);
@@ -396,6 +424,8 @@ class Master_produk extends CI_Controller
 				'produk' => $this->m_master_produk->produk_diskon(),
 				'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
 				'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
+				'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+				'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 				'isi' => 'backend/diskon/v_creact_diskon'
 			);
 			$this->load->view('backend/v_wrapper', $data, FALSE);
@@ -427,6 +457,8 @@ class Master_produk extends CI_Controller
 				'produk' => $this->m_master_produk->produk_diskon(),
 				'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
 				'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
+				'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+				'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 				'diskon' => $this->m_master_produk->edit_diskon($id),
 				'isi' => 'backend/diskon/v_edit'
 			);
@@ -470,6 +502,8 @@ class Master_produk extends CI_Controller
 				'size' => $this->m_master_produk->size($id),
 				'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 				'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+				'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+				'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 				'isi' => 'backend/size/v_size'
 			);
 			$this->load->view('backend/v_wrapper', $data, FALSE);
@@ -497,6 +531,8 @@ class Master_produk extends CI_Controller
 				'size' => $this->m_master_produk->size_detail($id),
 				'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
 				'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
+				'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+				'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 				'isi' => 'backend/size/v_edit'
 			);
 			$this->load->view('backend/v_wrapper', $data, FALSE);
