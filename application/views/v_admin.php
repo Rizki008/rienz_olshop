@@ -172,7 +172,7 @@
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<div class="caption pro-sl-hd">
-									<span class="caption-subject text-uppercase"><b>Analisis Jenis Kelamin</b></span>
+									<span class="caption-subject text-uppercase"><b>Analisis Produk Terlaris</b></span>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
