@@ -156,7 +156,7 @@ class M_transaksi extends CI_Model
 
 	public function grafik_kelamin()
 	{
-		return $this->db->query("SELECT SUM(qty) AS jumlah, jenis_kel, CASE WHEN jenis_kel=1 THEN 'perempuan' WHEN jenis_kel=2 THEN 'perempuan' END AS jk FROM rinci_transaksi JOIN transaksi ON transaksi.no_order=rinci_transaksi.no_order JOIN pelanggan ON pelanggan.id_pelanggan=transaksi.id_pelanggan GROUP BY pelanggan.jenis_kel")->result();
+		return $this->db->query("SELECT SUM(qty) AS jumlah, jenis_kel, CASE WHEN jenis_kel=1 THEN 'perempuan' WHEN jenis_kel=2 THEN 'laki-laki' END AS jk FROM rinci_transaksi JOIN transaksi ON transaksi.no_order=rinci_transaksi.no_order JOIN pelanggan ON pelanggan.id_pelanggan=transaksi.id_pelanggan GROUP BY pelanggan.jenis_kel")->result();
 	}
 
 	public function grafik_produk_laris()
