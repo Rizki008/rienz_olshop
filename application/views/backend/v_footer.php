@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="footer-copy-right">
-					<p>Copyright © 2022 <a href="https://colorlib.com/wp/templates/">Rienz Olshop</a> All rights reserved.</p>
+					<p>Copyright © 2022 <a href="#">Toko Thrift</a> All rights reserved.</p>
 				</div>
 			</div>
 		</div>

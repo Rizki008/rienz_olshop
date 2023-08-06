@@ -493,6 +493,7 @@ class Master_produk extends CI_Controller
 	{
 		$this->form_validation->set_rules('size', 'Size', 'required');
 		$this->form_validation->set_rules('stock', 'Stock', 'required');
+		$this->form_validation->set_rules('warna', 'Warna', 'required');
 		$this->form_validation->set_rules('harga', 'Harga', 'required');
 
 
@@ -511,6 +512,7 @@ class Master_produk extends CI_Controller
 			$data = array(
 				'id_produk' => $id,
 				'size' => $this->input->post('size'),
+				'warna' => $this->input->post('warna'),
 				'stock' => $this->input->post('stock'),
 				'harga' => $this->input->post('harga'),
 			);
@@ -523,6 +525,7 @@ class Master_produk extends CI_Controller
 	{
 		$this->form_validation->set_rules('size', 'Size', 'required');
 		$this->form_validation->set_rules('stock', 'Stock', 'required');
+		$this->form_validation->set_rules('warna', 'Warna', 'required');
 		$this->form_validation->set_rules('harga', 'Harga', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
@@ -540,6 +543,7 @@ class Master_produk extends CI_Controller
 			$data = array(
 				'size' => $this->input->post('size'),
 				'stock' => $this->input->post('stock'),
+				'warna' => $this->input->post('warna'),
 				'harga' => $this->input->post('harga'),
 			);
 			$this->m_master_produk->update_size($id, $data);
