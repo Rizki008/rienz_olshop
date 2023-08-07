@@ -21,6 +21,7 @@ class Laporan extends CI_Controller
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
 			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
 			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
+			'grafik_produk_merek' => $this->m_transaksi->grafik_produk_merek(),
 			'laporan' => $this->m_laporan->lap_hari(),
 			'isi' => 'pemilik/laporan/data_laporan/v_lap_hari'
 		);
@@ -38,6 +39,7 @@ class Laporan extends CI_Controller
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
 			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
 			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
+			'grafik_produk_merek' => $this->m_transaksi->grafik_produk_merek(),
 			'isi' => 'pemilik/laporan/data_laporan/v_lap_bulan'
 		);
 		$this->load->view('pemilik/v_wrapper', $data, FALSE);
@@ -53,6 +55,7 @@ class Laporan extends CI_Controller
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
 			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
 			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
+			'grafik_produk_merek' => $this->m_transaksi->grafik_produk_merek(),
 			'isi' => 'pemilik/laporan/data_laporan/v_lap_tahun'
 		);
 		$this->load->view('pemilik/v_wrapper', $data, FALSE);

@@ -171,6 +171,10 @@ class M_transaksi extends CI_Model
 		// $this->db->order_by('qty', 'desc');
 		return $this->db->query("SELECT SUM(qty) as jlaris, produk.nama_produk FROM `rinci_transaksi` JOIN produk ON produk.id_produk=rinci_transaksi.id_produk JOIN size ON size.id_produk=produk.id_produk GROUP BY rinci_transaksi.id_produk ORDER BY qty;")->result();
 	}
+	public function grafik_produk_merek()
+	{
+		return $this->db->query("SELECT SUM(qty) as laris, produk.merek FROM `rinci_transaksi` JOIN produk ON produk.id_produk=rinci_transaksi.id_produk JOIN size ON size.id_produk=produk.id_produk GROUP BY rinci_transaksi.id_produk ORDER BY qty;")->result();
+	}
 }
 
 /* End of file M_transaksi.php */
