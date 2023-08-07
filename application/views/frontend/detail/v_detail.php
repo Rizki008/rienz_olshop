@@ -119,8 +119,10 @@
 						<li class="nav-item">
 							<a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Description</a>
 						</li>
+						<?php foreach ($jml_ulasan as $key => $jml) { ?>
+						<?php } ?>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Reviews ( 2 )</a>
+							<a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Reviews (<?= $jml->jml ?>)</a>
 						</li>
 					</ul>
 					<div class="tab-content">
@@ -129,12 +131,12 @@
 							<p><?= $data['produk']->deskripsi ?></p>
 						</div>
 						<div class="tab-pane" id="tabs-3" role="tabpanel">
-							<?php foreach ($jml_ulasan as $key => $jml) { ?>
-							<?php } ?>
-							<h6>Reviews (<?= $jml->jml ?>)</h6>
+
 							<?php foreach ($ulasan as $key => $ulas) { ?>
-								<?php if ($ulas->status_ulasan == 1) { ?>
-									<p><?= $ulas->ulasan ?></p>
+								<h6>Nama : <?= $ulas->nama_pelanggan ?></h6>
+								<p>Tanggal Ulasan : <?= $ulas->tanggal ?></p>
+								<?php if ($ulas->status == '1') { ?>
+									<p><?= $ulas->isi ?></p>
 								<?php } ?>
 							<?php } ?>
 						</div>

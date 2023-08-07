@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 06, 2023 at 02:05 AM
+-- Generation Time: Aug 07, 2023 at 04:09 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -120,10 +120,10 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `gambar`) VALUES
-(2, 'Model Anak-anak', 'category-3.jpg'),
-(5, 'Accessories', 'category-5.jpg'),
-(6, 'Model Perempuan', '2ec2a93b-7e7c-4e69-9d7f-d438e260f8ae_169.jpeg'),
-(7, 'Model Laki-laki', 'kemeja-pria.jpeg');
+(2, 'kaos', 'category-3.jpg'),
+(5, 'topi', 'category-5.jpg'),
+(6, 'celana', '2ec2a93b-7e7c-4e69-9d7f-d438e260f8ae_169.jpeg'),
+(7, 'jaket', 'kemeja-pria.jpeg');
 
 -- --------------------------------------------------------
 
@@ -209,19 +209,19 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `berat`, `images`, `deskripsi`) VALUES
-(4, 6, 'Kemeja Linen', '500', '2130004-20211018214125-67885220249887884.jpg', 'Bahan adem'),
-(6, 5, 'Interior Kursi', '2000', 'g6-1170327fdf4896f574bff9fd355cbbaf.jpg', 'Nyaman dan Kokoh'),
-(7, 2, 'Baju daster anak', '300', '20210917-161420_fit-1631870060_model-1-410x470.jpg', 'Nyaman dipakai'),
-(8, 7, 'Kemeja Pria', '500', 'aeacba83bddf282f1fa3324a8a043e00527b385f_0.jpg', 'Bahan adem dan tidak menerawang'),
-(9, 6, 'Gwina Shirt', '400', '1-16.jpg', 'Wudlu Friendly'),
-(10, 6, 'ASHA BLOUSE', '350', 'ASHA_BLOUSE.JPG', 'Tali serut'),
-(11, 6, 'LUCIA KNITE', '400', 'LUCIA_KNITE.JPG', 'Kancing Hidup Rajut tebal'),
-(12, 6, 'ASTREED BLOUSE', '400', 'ASTREED_BLOUSE.JPG', '•Kancing Aktif •Busui Friendly •Wudlu Friendly'),
-(13, 2, 'GAMIS ANAK', '300', 'GAMIS_ANAK.JPG', 'MATERIAL SAKILLA'),
-(14, 2, 'KEMEJA ANAK', '300', 'KEMEJA_ANAK.JPG', 'Full Kancing hidup'),
-(15, 2, 'KAOS ANAK', '300', 'KAOS_ANAK.JPG', 'MATERIAL KAOS POLO'),
-(16, 2, 'BLOUSE ANAK', '350', 'BLOUSE_ANAK.JPG', 'MATERIAL KNITE'),
-(17, 7, 'kayu manis', '12', 'product-81.jpg', 'bahan ktun halus');
+(4, 6, 'Jaket Tebal', '500', 'img1.jpeg', 'Bahan adem'),
+(6, 5, 'Jaket Motor', '2000', 'img2.jpeg', 'Nyaman dan Kokoh'),
+(7, 2, 'Jaket Water Proof', '300', 'img3.jpeg', 'Nyaman dipakai'),
+(8, 7, 'Kemeja Pria', '500', 'img4.jpeg', 'Bahan adem dan tidak menerawang'),
+(9, 6, 'Jaket Harley', '400', 'img5.jpeg', 'Wudlu Friendly'),
+(10, 5, 'ASHA BLOUSE', '350', 'img28.jpeg', 'Tali serut'),
+(11, 5, 'LUCIA KNITE', '400', 'img29.jpeg', 'Kancing Hidup Rajut tebal'),
+(12, 5, 'Topi Bundar', '40', 'img30.jpeg', '•Kancing Aktif •Busui Friendly •Wudlu Friendly'),
+(13, 6, 'Celana Kolor', '300', 'img64.jpeg', 'MATERIAL SAKILLA'),
+(14, 6, 'Celana Lepis', '300', 'img65.jpeg', 'Full Kancing hidup'),
+(15, 2, 'KAOS ANAK', '300', 'img44.jpeg', 'MATERIAL KAOS POLO'),
+(16, 2, 'Kaos Polos Putih', '3', 'img45.jpeg', 'MATERIAL KNITE'),
+(17, 2, 'Kaos Polos', '1', 'img46.jpeg', 'bahan ktun halus');
 
 -- --------------------------------------------------------
 
@@ -362,22 +362,19 @@ CREATE TABLE `size` (
 INSERT INTO `size` (`id_size`, `id_produk`, `size`, `warna`, `stock`, `harga`) VALUES
 (1, 2, 'M', NULL, '2', '15000'),
 (2, 1, 'M', NULL, '12', '15000'),
-(6, 7, 'M', NULL, '50', '120000'),
-(7, 6, '2x2 M', NULL, '20', '350000'),
-(8, 4, 'M', NULL, '35', '125000'),
-(9, 8, 'L', NULL, '20', '150000'),
-(10, 16, 's', NULL, '10', '85000'),
-(12, 15, '6', NULL, '8', '70000'),
-(16, 14, 'S M L XL', NULL, '12', '90000'),
+(6, 7, 'M', 'abu hitam', '1', '120000'),
+(7, 6, '2x2 M', 'hitam', '1', '350000'),
+(8, 4, 'M', 'hitam', '1', '125000'),
+(9, 8, 'L', 'hitam', '1', '150000'),
+(12, 15, 'XL', 'coklat crame', '1', '70000'),
+(16, 14, 'XL', 'Coklat', '1', '90000'),
 (17, 13, '4 6 8 12 ', NULL, '11', '90000'),
-(18, 9, '14 16 18 20', NULL, '13', '162000'),
-(19, 10, '20 22 24 ', NULL, '15', '105000'),
-(20, 11, '1150/50', NULL, '10', '119000'),
-(21, 12, '126/68/75', NULL, '10', '135000'),
-(22, 16, 'm', NULL, '12', '1000'),
-(23, 16, 'xl', NULL, '65', '430000'),
-(24, 17, '12', 'merah', '50', '1210000'),
-(25, 17, '12', 'hitam', '50', '1210000');
+(18, 9, '14 16 18 20', 'hitam', '1', '162000'),
+(19, 10, '20 22 24 ', 'merah', '1', '105000'),
+(20, 11, '1150/50', 'Biru', '1', '119000'),
+(21, 12, '126/68/75', 'Coklat', '1', '135000'),
+(23, 16, 'xl', 'Putih', '1', '430000'),
+(24, 17, 'XL', 'merah', '1', '1210000');
 
 -- --------------------------------------------------------
 
