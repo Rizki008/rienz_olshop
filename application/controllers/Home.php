@@ -37,6 +37,8 @@ class Home extends CI_Controller
 			'data' => $this->m_home->detail_produk($id),
 			'gambar' => $this->m_home->gambar_produk($id),
 			'related_produk' => $this->m_home->related_produk($id),
+			'jml_ulasan' => $this->m_home->jml_ulasan($id),
+			'ulasan' => $this->m_home->ulasan($id),
 			'isi' => 'frontend/detail/v_detail'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);

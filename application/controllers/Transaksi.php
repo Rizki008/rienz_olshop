@@ -39,6 +39,8 @@ class Transaksi extends CI_Controller
 			'title' => 'Detail Pesanan Pembeli',
 			'grafik_pelanggan' => $this->m_transaksi->grafik_pelanggan(),
 			'grafik_member' => $this->m_transaksi->grafik_pelanggan_member(),
+			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
+			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'pesanan' => $this->m_transaksi->pesanan($no_order),
 			'pesanan_detail' => $this->m_transaksi->pesanan_detail($no_order),
 			'pesanan_diproses' => $this->m_pesanan_masuk->pesanan_diproses(),
