@@ -12,6 +12,7 @@ class Transaksi extends CI_Controller
 		parent::__construct();
 		$this->load->model('m_pesanan_masuk');
 		$this->load->model('m_transaksi');
+		$this->load->model('m_chatting');
 	}
 
 	// List all your items

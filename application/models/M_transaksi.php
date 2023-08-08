@@ -86,7 +86,7 @@ class M_transaksi extends CI_Model
 		// $this->db->join('size', 'produk.id_produk = size.id_produk', 'left');
 		// $this->db->where('transaksi.no_order', $no_order);
 		// return $this->db->get()->result();
-		return $this->db->query("SELECT * FROM `transaksi` JOIN rinci_transaksi ON transaksi.no_order=rinci_transaksi.no_order JOIN produk ON rinci_transaksi.id_produk=produk.id_produk JOIN size ON produk.id_produk=size.id_produk JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.id_pelanggan WHERE transaksi.no_order='" . $no_order . "'")->result();
+		return $this->db->query("SELECT *,transaksi.no_tlpn as hp FROM `transaksi` JOIN rinci_transaksi ON transaksi.no_order=rinci_transaksi.no_order JOIN produk ON rinci_transaksi.id_produk=produk.id_produk JOIN size ON produk.id_produk=size.id_produk JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.id_pelanggan WHERE transaksi.no_order='" . $no_order . "'")->result();
 	}
 
 	public function detail_pesanan($id_transaksi)
@@ -173,7 +173,7 @@ class M_transaksi extends CI_Model
 	}
 	public function grafik_produk_merek()
 	{
-		return $this->db->query("SELECT SUM(qty) as laris, produk.merek FROM `rinci_transaksi` JOIN produk ON produk.id_produk=rinci_transaksi.id_produk JOIN size ON size.id_produk=produk.id_produk GROUP BY rinci_transaksi.id_produk ORDER BY qty;")->result();
+		return $this->db->query("SELECT SUM(qty) as laris, produk.merek FROM `rinci_transaksi` JOIN produk ON produk.id_produk=rinci_transaksi.id_produk JOIN size ON size.id_produk=produk.id_produk GROUP BY produk.merek ORDER BY qty")->result();
 	}
 }
 

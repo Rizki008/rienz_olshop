@@ -5,7 +5,7 @@
 			<div class="col-lg-12">
 				<div class="breadcrumb__links">
 					<a href="<?= base_url() ?>"><i class="fa fa-home"></i> Home</a>
-					<span>Shop</span>
+					<span><?= $title ?></span>
 				</div>
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 								<?php foreach ($kategori as $key => $kate) { ?>
 									<div class="card">
 										<div class="card-heading active">
-											<a data-toggle="collapse" data-target="#collapseOne"><?= $kate->nama_kategori ?></a>
+											<a href="<?= base_url('home/kategori/' . $kate->id_kategori) ?>"><?= $kate->nama_kategori ?></a>
 										</div>
 										<div id="collapseOne" class="collapse show" data-parent="#accordionExample">
 											<!-- <div class="card-body">
