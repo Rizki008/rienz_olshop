@@ -83,7 +83,7 @@ foreach ($grafik_pelanggan as $key => $value) {
 <script>
 	var ctx = document.getElementById('myChartsa');
 	var myChartsa = new Chart(ctx, {
-		type: 'pie',
+		type: 'bar',
 		data: {
 			labels: <?= json_encode($nama_pelanggan) ?>,
 			datasets: [{
@@ -199,7 +199,7 @@ foreach ($grafik_member as $key => $value) {
 <script>
 	var ctx = document.getElementById('member');
 	var member = new Chart(ctx, {
-		type: 'doughnut',
+		type: 'bar',
 		data: {
 			labels: <?= json_encode($level_member) ?>,
 			datasets: [{
@@ -306,7 +306,7 @@ foreach ($grafik_member as $key => $value) {
 <script>
 	var ctx = document.getElementById('kelamin');
 	var kelamin = new Chart(ctx, {
-		type: 'line',
+		type: 'bar',
 		data: {
 			labels: <?= json_encode($jk) ?>,
 			datasets: [{
