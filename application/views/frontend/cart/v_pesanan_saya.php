@@ -53,7 +53,7 @@
 									<td><?= $value->tgl_order ?></td>
 									<td>
 										<?php if ($value->ditempat == 'ditempat') { ?>
-											<p>Pengambilan Ditempat</p>
+											<p>Di Ambil Ke Toko</p>
 										<?php } else { ?>
 											<?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?>
 										<?php } ?>
@@ -109,7 +109,7 @@
 									<td><?= $value->tgl_order ?></td>
 									<td>
 										<?php if ($value->ditempat == 'ditempat') { ?>
-											<p>Pengambilan Ditempat</p>
+											<p>Di Ambil Ke Toko</p>
 										<?php } else { ?>
 											<?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?>
 										<?php } ?>
@@ -150,7 +150,7 @@
 									<td><?= $value->tgl_order ?></td>
 									<td>
 										<?php if ($value->ditempat == 'ditempat') { ?>
-											<p>Pengambilan Ditempat</p>
+											<p>Di Ambil Ke Toko</p>
 										<?php } else { ?>
 											<?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?>
 										<?php } ?>
@@ -206,7 +206,7 @@
 									<td><?= $value->tgl_order ?></td>
 									<td>
 										<?php if ($value->ditempat == 'ditempat') { ?>
-											<p>Pengambilan Ditempat</p>
+											<p>Di Ambil Ke Toko</p>
 										<?php } else { ?>
 											<?= $value->expedisi ?><br><?= $value->paket ?><br><?= $value->estimasi ?>
 										<?php } ?>
