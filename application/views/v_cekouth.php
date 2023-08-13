@@ -147,46 +147,10 @@
 					<div class="col-lg-8">
 						<h5>Detail Pembayaran</h5>
 						<div class="row">
-							<div class="col-lg-12 col-md-6 col-sm-6">
+							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="checkout__form__input">
 									<p>Nama <span>*</span></p>
 									<input type="text" name="id_pelanggan" name="id_pelanggan" value="<?= $this->session->userdata('nama_pelanggan'); ?>">
-								</div>
-							</div>
-							<!-- <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="checkout__form__input">
-                                    <p>Alamat Lengkap<span>*</span></p>
-                                    <input type="text" name="alamat" value="<?= $this->session->userdata('alamat'); ?>">
-                                </div>
-                            </div> -->
-							<div class="col-lg-12">
-								<div class="checkout__form__input">
-									<p>Alamat <span>*</span></p>
-									<input type="text" name="alamat" placeholder="" value="<?= $this->session->userdata('alamat'); ?>">
-								</div>
-								<div class="checkout__form__input">
-									<p>Pengiriman Produk <span>*</span></p>
-									<select name="ditempat" id="column_select" class="form-control">
-										<option>---Pengirimab Produk---</option>
-										<option value="diantar">Diantarakan Kurir</option>
-										<option value="ditempat">Di Ambil Ke Toko</option>
-									</select>
-								</div>
-								<br>
-								<div class="checkout__form__input">
-									<p>Provinsi <span>*</span></p>
-									<select name="provinsi" id="layout_select" class="form-control"></select>
-								</div>
-								<div class="checkout__form__input">
-									<p>Kota <span>*</span></p>
-									<select name="kota" class="form-control"></select>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="checkout__form__input">
-									<p>Kode Post <span>*</span></p>
-									<input type="text" name="kode_pos" value="<?= $this->session->userdata('kode_pos'); ?>">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6">
@@ -195,13 +159,42 @@
 									<input type="number" name="no_tlpn" value="<?= $this->session->userdata('no_tlpn'); ?>">
 								</div>
 							</div>
+
+							<div class="col-lg-12">
+								<div class="checkout__form__input">
+									<p>Alamat Legkap<span>*</span></p>
+									<input type="text" name="alamat" placeholder="" value="<?= $this->session->userdata('alamat'); ?>">
+								</div>
+							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="checkout__form__input">
+									<p>Kode Post <span>*</span></p>
+									<input type="text" name="kode_pos" value="<?= $this->session->userdata('kode_pos'); ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="checkout__form__input">
+									<p>Pengiriman Produk <span>*</span></p>
+									<select name="ditempat" id="type" class="form-control">
+										<option>---Pengirimab Produk---</option>
+										<option value="diantar">Diantarakan Kurir</option>
+										<option value="ditempat">Di Ambil Ke Toko</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-6 col-sm-6" id="row_dim">
+								<div class="checkout__form__input">
+									<p>Provinsi <span>*</span></p>
+									<select name="provinsi" id="layout_select" class="form-control"></select>
+								</div>
+								<div class="checkout__form__input">
+									<p>Kota <span>*</span></p>
+									<select name="kota" class="form-control"></select>
+								</div>
 								<div class="checkout__form__input">
 									<p>Expedisi <span>*</span></p>
 									<select name="expedisi" class="form-control"></select>
 								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="checkout__form__input">
 									<p>Paket <span>*</span></p>
 									<select name="paket" class="form-control"></select>
@@ -495,6 +488,14 @@
 					$("#layout_select").find("option:visible:first").val());
 
 			}).change();
+		});
+	</script>
+
+	<script>
+		$(function() {
+			$('#type').change(function() {
+				$('#row_dim')[($("option[value='diantar']").is(":checked")) ? "show" : "hide"]();
+			});
 		});
 	</script>
 </body>
