@@ -194,7 +194,7 @@
                                         </div>
                                         <div class="breadcomb-ctn">
                                             <h2><?= $title ?></h2>
-                                            <p>Welcome to Rienz Olshop <span class="bread-ntd"></span></p>
+                                            <p>Welcome Pasla Second Store <span class="bread-ntd"></span></p>
                                         </div>
                                     </div>
                                 </div>

@@ -6,7 +6,7 @@
 				<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-1.jpg">
 					<div class="instagram__text">
 						<i class="fa fa-instagram"></i>
-						<a href="#">@ ashion_shop</a>
+						<a href="#">@pasla_second_store</a>
 					</div>
 				</div>
 			</div>
@@ -14,7 +14,7 @@
 				<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-2.jpg">
 					<div class="instagram__text">
 						<i class="fa fa-instagram"></i>
-						<a href="#">@ ashion_shop</a>
+						<a href="#">@pasla_second_store</a>
 					</div>
 				</div>
 			</div>
@@ -22,7 +22,7 @@
 				<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-3.jpg">
 					<div class="instagram__text">
 						<i class="fa fa-instagram"></i>
-						<a href="#">@ ashion_shop</a>
+						<a href="#">@pasla_second_store</a>
 					</div>
 				</div>
 			</div>
@@ -30,7 +30,7 @@
 				<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-4.jpg">
 					<div class="instagram__text">
 						<i class="fa fa-instagram"></i>
-						<a href="#">@ ashion_shop</a>
+						<a href="#">@pasla_second_store</a>
 					</div>
 				</div>
 			</div>
@@ -38,7 +38,7 @@
 				<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-5.jpg">
 					<div class="instagram__text">
 						<i class="fa fa-instagram"></i>
-						<a href="#">@ ashion_shop</a>
+						<a href="#">@pasla_second_store</a>
 					</div>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 				<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-6.jpg">
 					<div class="instagram__text">
 						<i class="fa fa-instagram"></i>
-						<a href="#">@ ashion_shop</a>
+						<a href="#">@pasla_second_storep</a>
 					</div>
 				</div>
 			</div>
@@ -63,8 +63,10 @@
 					<div class="footer__logo">
 						<a href="<?= base_url() ?>"><img src="<?= base_url() ?>frontend/img/store.png" alt=""></a>
 					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-						cilisis.</p>
+					<p>Pasla Second Store beridir pada tahun 2018, Usaha ini bergerak pada bidang penjualan pakaian bekas dan berlokasi
+						Jl.Pajawan Kidul No.116, Mandalajaya, Garawangi, Kuningan.
+
+						.</p>
 					<!-- <div class="footer__payment">
                         <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-1.png" alt=""></a>
                         <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-2.png" alt=""></a>
@@ -76,7 +78,7 @@
 			</div>
 			<div class="col-lg-2 col-md-3 col-sm-5">
 				<div class="footer__widget">
-					<h6>Quick links</h6>
+					<h6>Tentang Kami</h6>
 					<ul>
 						<li><a href="#">About</a></li>
 						<li><a href="#">Blogs</a></li>
@@ -87,12 +89,12 @@
 			</div>
 			<div class="col-lg-2 col-md-3 col-sm-4">
 				<div class="footer__widget">
-					<h6>Account</h6>
+					<h6>Akun</h6>
 					<ul>
-						<li><a href="#">My Account</a></li>
-						<li><a href="#">Orders Tracking</a></li>
-						<li><a href="#">Checkout</a></li>
-						<li><a href="#">Wishlist</a></li>
+						<li><a href="#">Akun</a></li>
+						<li><a href="#">Pesanan</a></li>
+						<li><a href="#">Beli</a></li>
+						<li><a href="#">Keranjang</a></li>
 					</ul>
 				</div>
 			</div>
@@ -119,7 +121,7 @@
 				<div class="footer__copyright__text">
 					<p>Copyright &copy; <script>
 							document.write(new Date().getFullYear());
-						</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="<?= base_url() ?>" target="_blank">Toko Thrift</a></p>
+						</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="<?= base_url() ?>" target="_blank">Pasla Second Store</a></p>
 				</div>
 				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 			</div>

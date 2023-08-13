@@ -15,6 +15,7 @@ class Pelanggan extends CI_Controller
 	public function register()
 	{
 		$this->form_validation->set_rules('nama_pelanggan', 'Nama Pelanggan', 'required', array('required' => '%s Mohon untuk diisi!!!'));
+		$this->form_validation->set_rules('jenis_kel', 'Jenis Kelamin', 'required', array('required' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('alamat', 'Alamat Pelanggan', 'required|min_length[8]', array(
 			'required' => '%s Mohon untuk diisi!!!',
 			'min_length' => '%s Mohon Diisi dengan Benar dan Lengkap',
@@ -41,6 +42,7 @@ class Pelanggan extends CI_Controller
 		} else {
 			$data = array(
 				'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+				'jenis_kel' => $this->input->post('jenis_kel'),
 				'email' => $this->input->post('email'),
 				'password' => $this->input->post('password'),
 				'kode_pos' => $this->input->post('kode_pos'),

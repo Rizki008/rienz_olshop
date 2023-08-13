@@ -18,12 +18,12 @@
 				</a></li>
 		</ul>
 		<div class="offcanvas__logo">
-			<a href="<?= base_url() ?>"><img src="img/store.png" alt=""></a>
+			<a href="<?= base_url() ?>"><img src="img/logo2.png" alt=""></a>
 		</div>
 		<div id="mobile-menu-wrap"></div>
 		<div class="offcanvas__auth">
-			<a href="#">Login</a>
-			<a href="#">Register</a>
+			<a href="#">Masuk</a>
+			<a href="#">Buat Akun</a>
 		</div>
 	</div>
 	<!-- Offcanvas Menu End -->
@@ -41,7 +41,7 @@
 					<nav class="header__menu">
 						<?php $kategori = $this->m_home->kategori_produk(); ?>
 						<ul>
-							<li class="active"><a href="<?= base_url() ?>">Home</a></li>
+							<li class="active"><a href="<?= base_url() ?>">Beranda</a></li>
 							<?php foreach ($kategori as $key => $value) { ?>
 								<li><a href="<?= base_url('home/kategori/' . $value->id_kategori) ?>"><?= $value->nama_kategori ?></a></li>
 							<?php } ?>
@@ -53,8 +53,8 @@
 						<?php $pelanggan = $this->m_home->pelanggan() ?>
 						<div class="header__right__auth">
 							<?php if ($this->session->userdata('email') == "") { ?>
-								<a href="<?= base_url('pelanggan/login') ?>">Login</a>
-								<a href="<?= base_url('pelanggan/register') ?>">Register</a>
+								<a href="<?= base_url('pelanggan/login') ?>">Masuk</a>
+								<a href="<?= base_url('pelanggan/register') ?>">Buat Akun</a>
 							<?php } else { ?>
 								<a href="#"><?= $this->session->userdata('nama_pelanggan'); ?></a>
 								<a href="<?= base_url('pesanan_saya') ?>">Pesanan</a>
@@ -67,7 +67,7 @@
 										<a href="#">Member Silver Diskon 5%</a>
 									<?php } ?>
 								<?php } ?>
-								<a href="<?= base_url('pelanggan/logout') ?>">Logout</a>
+								<a href="<?= base_url('pelanggan/logout') ?>">Keluar</a>
 							<?php } ?>
 						</div>
 						<?php $keranjang = $this->cart->contents();

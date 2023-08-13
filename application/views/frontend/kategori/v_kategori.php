@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="breadcrumb__links">
-					<a href="<?= base_url() ?>"><i class="fa fa-home"></i> Home</a>
+					<a href="<?= base_url() ?>"><i class="fa fa-home"></i> Beranda</a>
 					<span><?= $title ?></span>
 				</div>
 			</div>
@@ -21,7 +21,7 @@
 				<div class="shop__sidebar">
 					<div class="sidebar__categories">
 						<div class="section-title">
-							<h4>Categories</h4>
+							<h4>Kategori</h4>
 						</div>
 						<?php $kategori = $this->m_home->kategori_produk(); ?>
 						<div class="categories__accordion">

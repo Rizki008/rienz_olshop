@@ -1,7 +1,7 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a href="<?= base_url('pemilik') ?>"><img class="main-logo" src="<?= base_url() ?>backend/img/logo/ngewe.png" alt="" /></a>
+            <a href="<?= base_url('pemilik') ?>"><img class="main-logo" src="<?= base_url() ?>backend/img/logo/sayang.png" alt="" /></a>
             <strong><img src="<?= base_url() ?>backend/img/logo/logosn.png" alt="" /></strong>
         </div>
         <div class="nalika-profile">
@@ -23,11 +23,11 @@
                     <li class="">
                         <a class="has-arrow" href="<?= base_url('pemilik') ?>">
                             <i class="icon nalika-home icon-wrap"></i>
-                            <span class="mini-click-non">Ecommerce</span>
+                            <span class="mini-click-non">Dashboad</span>
                         </a>
                     </li>
                     <li>
-                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-mail icon-wrap"></i> <span class="mini-click-non">Master Laporan</span></a>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-mail icon-wrap"></i> <span class="mini-click-non">Data Laporan</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="Inbox" href="<?= base_url('laporan/hari') ?>"><span class="mini-sub-pro">Laporan Hari</span></a></li>
                             <li><a title="View Mail" href="<?= base_url('laporan/bulan') ?>"><span class="mini-sub-pro">Laporan Bulan</span></a></li>

@@ -48,8 +48,8 @@
 		</div>
 		<div id="mobile-menu-wrap"></div>
 		<div class="offcanvas__auth">
-			<a href="#">Login</a>
-			<a href="#">Register</a>
+			<a href="#">Masuk</a>
+			<a href="#">Buat Akun</a>
 		</div>
 	</div>
 	<!-- Offcanvas Menu End -->
@@ -67,7 +67,7 @@
 					<nav class="header__menu">
 						<?php $kategori = $this->m_home->kategori_produk(); ?>
 						<ul>
-							<li class="active"><a href="<?= base_url() ?>">Home</a></li>
+							<li class="active"><a href="<?= base_url() ?>">Beranda</a></li>
 							<?php foreach ($kategori as $key => $value) { ?>
 								<li><a href="<?= base_url('home/kategori/' . $value->id_kategori) ?>"><?= $value->nama_kategori ?></a></li>
 							<?php } ?>
@@ -78,11 +78,11 @@
 					<div class="header__right">
 						<div class="header__right__auth">
 							<?php if ($this->session->userdata('email') == "") { ?>
-								<a href="<?= base_url('pelanggan/login') ?>">Login</a>
-								<a href="<?= base_url('pelanggan/register') ?>">Register</a>
+								<a href="<?= base_url('pelanggan/login') ?>">Masuk</a>
+								<a href="<?= base_url('pelanggan/register') ?>">Buat Akun</a>
 							<?php } else { ?>
 								<a href="#"><?= $this->session->userdata('nama_pelanggan'); ?></a>
-								<a href="<?= base_url('pelanggan/logout') ?>">Logout</a>
+								<a href="<?= base_url('pelanggan/logout') ?>">Keluar</a>
 							<?php } ?>
 						</div>
 						<?php $keranjang = $this->cart->contents();
@@ -114,8 +114,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb__links">
-						<a href="<?= base_url() ?>"><i class="fa fa-home"></i> Home</a>
-						<span>Shopping cart</span>
+						<a href="<?= base_url() ?>"><i class="fa fa-home"></i> Beranda</a>
+						<span>Keranjang Belanja</span>
 					</div>
 				</div>
 			</div>
@@ -145,11 +145,11 @@
 			<form action="<?= base_url('belanja/cekout') ?>" method="POST" class="checkout__form">
 				<div class="row">
 					<div class="col-lg-8">
-						<h5>Billing detail</h5>
+						<h5>Detail Pembayaran</h5>
 						<div class="row">
 							<div class="col-lg-12 col-md-6 col-sm-6">
 								<div class="checkout__form__input">
-									<p>First Name <span>*</span></p>
+									<p>Nama <span>*</span></p>
 									<input type="text" name="id_pelanggan" name="id_pelanggan" value="<?= $this->session->userdata('nama_pelanggan'); ?>">
 								</div>
 							</div>
@@ -161,35 +161,37 @@
                             </div> -->
 							<div class="col-lg-12">
 								<div class="checkout__form__input">
-									<p>Address <span>*</span></p>
+									<p>Alamat <span>*</span></p>
 									<input type="text" name="alamat" placeholder="" value="<?= $this->session->userdata('alamat'); ?>">
 								</div>
 								<div class="checkout__form__input">
-									<p>Pengambilan Ditempat <span>*</span></p>
+									<p>Pengiriman Produk <span>*</span></p>
 									<select name="ditempat" id="column_select" class="form-control">
-										<option value="">---Pengambilan Produk Ditempat---</option>
-										<option value="ditempat">Ditempat</option>
+										<option>---Pengirimab Produk---</option>
+										<option value="diantar">Diantarakan Kurir</option>
+										<option value="ditempat">Di Ambil Ke Toko</option>
 									</select>
-								</div><br>
+								</div>
+								<br>
 								<div class="checkout__form__input">
-									<p>Province <span>*</span></p>
+									<p>Provinsi <span>*</span></p>
 									<select name="provinsi" id="layout_select" class="form-control"></select>
 								</div>
 								<div class="checkout__form__input">
-									<p>City <span>*</span></p>
+									<p>Kota <span>*</span></p>
 									<select name="kota" class="form-control"></select>
 								</div>
 							</div>
 
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="checkout__form__input">
-									<p>Postcode/Zip <span>*</span></p>
+									<p>Kode Post <span>*</span></p>
 									<input type="text" name="kode_pos" value="<?= $this->session->userdata('kode_pos'); ?>">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="checkout__form__input">
-									<p>Phone <span>*</span></p>
+									<p>No HP <span>*</span></p>
 									<input type="number" name="no_tlpn" value="<?= $this->session->userdata('no_tlpn'); ?>">
 								</div>
 							</div>
@@ -209,11 +211,11 @@
 					</div>
 					<div class="col-lg-4">
 						<div class="checkout__order">
-							<h5>Your order</h5>
+							<h5>Orderan Anda</h5>
 							<div class="checkout__order__product">
 								<ul>
 									<li>
-										<span class="top__text">Product</span>
+										<span class="top__text">Produk</span>
 										<span class="top__text__right">Total</span>
 									</li>
 									<?php $i = 1; ?>
@@ -248,7 +250,7 @@
 								echo form_hidden('qty' . $i++, $items['qty']);
 							}
 							?>
-							<button type="submit" class="site-btn">Place oder</button>
+							<button type="submit" class="site-btn">Pesan</button>
 						</div>
 					</div>
 				</div>
@@ -264,7 +266,7 @@
 					<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-1.jpg">
 						<div class="instagram__text">
 							<i class="fa fa-instagram"></i>
-							<a href="#">@ ashion_shop</a>
+							<a href="#">@pasla_second_store</a>
 						</div>
 					</div>
 				</div>
@@ -272,7 +274,7 @@
 					<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-2.jpg">
 						<div class="instagram__text">
 							<i class="fa fa-instagram"></i>
-							<a href="#">@ ashion_shop</a>
+							<a href="#">@pasla_second_store</a>
 						</div>
 					</div>
 				</div>
@@ -280,7 +282,7 @@
 					<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-3.jpg">
 						<div class="instagram__text">
 							<i class="fa fa-instagram"></i>
-							<a href="#">@ ashion_shop</a>
+							<a href="#">@pasla_second_store</a>
 						</div>
 					</div>
 				</div>
@@ -288,7 +290,7 @@
 					<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-4.jpg">
 						<div class="instagram__text">
 							<i class="fa fa-instagram"></i>
-							<a href="#">@ ashion_shop</a>
+							<a href="#">@pasla_second_store</a>
 						</div>
 					</div>
 				</div>
@@ -296,7 +298,7 @@
 					<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-5.jpg">
 						<div class="instagram__text">
 							<i class="fa fa-instagram"></i>
-							<a href="#">@ ashion_shop</a>
+							<a href="#">@pasla_second_store</a>
 						</div>
 					</div>
 				</div>
@@ -304,7 +306,7 @@
 					<div class="instagram__item set-bg" data-setbg="<?= base_url() ?>frontend/img/instagram/insta-6.jpg">
 						<div class="instagram__text">
 							<i class="fa fa-instagram"></i>
-							<a href="#">@ ashion_shop</a>
+							<a href="#">@pasla_second_storep</a>
 						</div>
 					</div>
 				</div>
@@ -319,22 +321,24 @@
 				<div class="col-lg-4 col-md-6 col-sm-7">
 					<div class="footer__about">
 						<div class="footer__logo">
-							<a href="<?= base_url() ?>"><img src="<?= base_url() ?>frontend/img/ngewe.png" alt=""></a>
+							<a href="<?= base_url() ?>"><img src="<?= base_url() ?>frontend/img/store.png" alt=""></a>
 						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-							cilisis.</p>
+						<p>Pasla Second Store beridir pada tahun 2018, Usaha ini bergerak pada bidang penjualan pakaian bekas dan berlokasi
+							Jl.Pajawan Kidul No.116, Mandalajaya, Garawangi, Kuningan.
+
+							.</p>
 						<!-- <div class="footer__payment">
-                            <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-1.png" alt=""></a>
-                            <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-2.png" alt=""></a>
-                            <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-3.png" alt=""></a>
-                            <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-4.png" alt=""></a>
-                            <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-5.png" alt=""></a>
-                        </div> -->
+                        <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-1.png" alt=""></a>
+                        <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-2.png" alt=""></a>
+                        <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-3.png" alt=""></a>
+                        <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-4.png" alt=""></a>
+                        <a href="#"><img src="<?= base_url() ?>frontend/img/payment/payment-5.png" alt=""></a>
+                    </div> -->
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-3 col-sm-5">
 					<div class="footer__widget">
-						<h6>Quick links</h6>
+						<h6>Tentang Kami</h6>
 						<ul>
 							<li><a href="#">About</a></li>
 							<li><a href="#">Blogs</a></li>
@@ -345,30 +349,30 @@
 				</div>
 				<div class="col-lg-2 col-md-3 col-sm-4">
 					<div class="footer__widget">
-						<h6>Account</h6>
+						<h6>Akun</h6>
 						<ul>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Orders Tracking</a></li>
-							<li><a href="#">Checkout</a></li>
-							<li><a href="#">Wishlist</a></li>
+							<li><a href="#">Akun</a></li>
+							<li><a href="#">Pesanan</a></li>
+							<li><a href="#">Beli</a></li>
+							<li><a href="#">Keranjang</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-8 col-sm-8">
-					<div class="footer__newslatter">
-						<h6>NEWSLETTER</h6>
-						<form action="#">
-							<input type="text" placeholder="Email">
-							<button type="submit" class="site-btn">Subscribe</button>
-						</form>
-						<!-- <div class="footer__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div> -->
-					</div>
+					<!-- <div class="footer__newslatter">
+                    <h6>NEWSLETTER</h6>
+                    <form action="#">
+                        <input type="text" placeholder="Email">
+                        <button type="submit" class="site-btn">Subscribe</button>
+                    </form>
+                    <div class="footer__social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div> -->
 				</div>
 			</div>
 			<div class="row">
@@ -377,7 +381,7 @@
 					<div class="footer__copyright__text">
 						<p>Copyright &copy; <script>
 								document.write(new Date().getFullYear());
-							</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="<?= base_url() ?>" target="_blank">Toko Thrift</a></p>
+							</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="<?= base_url() ?>" target="_blank">Pasla Second Store</a></p>
 					</div>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</div>
@@ -480,14 +484,6 @@
 		});
 	</script>
 	<script>
-		// $(document).ready(function() {
-		//     $("#layout_select").children('option:gt(0)').hide();
-		//     $("#column_select").change(function() {
-		//         $("#layout_select").children('option').hide();
-		//         $("#layout_select").children("option[value^=" + $(this).val() + "]").show()
-		//     })
-		// })
-
 		$(document).ready(function() {
 			$("#column_select").change(function() {
 

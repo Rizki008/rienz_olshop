@@ -162,6 +162,6 @@ class M_home extends CI_Model
 	public function ulasan($id)
 	{
 
-		return $this->db->query("SELECT * FROM `riview` LEFT JOIN `produk` ON `produk`.`id_produk` = `riview`.`id_produk` LEFT JOIN `rinci_transaksi` ON `rinci_transaksi`.`id_produk` = `produk`.`id_produk` LEFT JOIN `transaksi` ON `transaksi`.`no_order` = `rinci_transaksi`.`no_order` LEFT JOIN `pelanggan` ON `pelanggan`.`id_pelanggan` = `transaksi`.`id_pelanggan` WHERE `riview`.id_produk='" . $id . "' GROUP BY riview.`status`=0 DESC;")->result();
+		return $this->db->query("SELECT * FROM `riview` LEFT JOIN `produk` ON `produk`.`id_produk` = `riview`.`id_produk` LEFT JOIN `pelanggan` ON `pelanggan`.`id_pelanggan` = `riview`.`id_pelanggan` WHERE `riview`.id_produk='" . $id . "'")->result();
 	}
 }

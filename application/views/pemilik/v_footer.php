@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="footer-copy-right">
-					<p>Copyright © 2021 <a href="https://colorlib.com/wp/templates/">Rienz Olshop</a> All rights reserved.</p>
+					<p>Copyright © 2021 <a href="https://colorlib.com/wp/templates/">Pasla Second Store</a> All rights reserved.</p>
 				</div>
 			</div>
 		</div>
@@ -83,7 +83,7 @@ foreach ($grafik_pelanggan as $key => $value) {
 <script>
 	var ctx = document.getElementById('myChartsa');
 	var myChartsa = new Chart(ctx, {
-		type: 'bar',
+		type: 'pie',
 		data: {
 			labels: <?= json_encode($nama_pelanggan) ?>,
 			datasets: [{
@@ -169,15 +169,15 @@ foreach ($grafik_pelanggan as $key => $value) {
 				borderWidth: 1
 			}]
 		},
-		options: {
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero: true
-					}
-				}]
-			}
-		}
+		// options: {
+		// 	scales: {
+		// 		yAxes: [{
+		// 			ticks: {
+		// 				beginAtZero: true
+		// 			}
+		// 		}]
+		// 	}
+		// }
 	});
 </script>
 
@@ -199,7 +199,7 @@ foreach ($grafik_member as $key => $value) {
 <script>
 	var ctx = document.getElementById('member');
 	var member = new Chart(ctx, {
-		type: 'bar',
+		type: 'doughnut',
 		data: {
 			labels: <?= json_encode($level_member) ?>,
 			datasets: [{
@@ -285,15 +285,15 @@ foreach ($grafik_member as $key => $value) {
 				borderWidth: 1
 			}]
 		},
-		options: {
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero: true
-					}
-				}]
-			}
-		}
+		// options: {
+		// 	scales: {
+		// 		yAxes: [{
+		// 			ticks: {
+		// 				beginAtZero: true
+		// 			}
+		// 		}]
+		// 	}
+		// }
 	});
 </script>
 
@@ -306,7 +306,7 @@ foreach ($grafik_member as $key => $value) {
 <script>
 	var ctx = document.getElementById('kelamin');
 	var kelamin = new Chart(ctx, {
-		type: 'bar',
+		type: 'line',
 		data: {
 			labels: <?= json_encode($jk) ?>,
 			datasets: [{
@@ -522,6 +522,110 @@ foreach ($grafik_member as $key => $value) {
 			datasets: [{
 				label: 'Grafik Analisis Merek Produk Laris',
 				data: <?= json_encode($laris) ?>,
+				backgroundColor: [
+					'rgba(255, 99, 132, 0.80)',
+					'rgba(54, 162, 235, 0.80)',
+					'rgba(255, 206, 86, 0.80)',
+					'rgba(75, 192, 192, 0.80)',
+					'rgba(153, 102, 255, 0.80)',
+					'rgba(255, 159, 64, 0.80)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)',
+					'rgba(255, 99, 132, 0.80)',
+					'rgba(54, 162, 235, 0.80)',
+					'rgba(255, 206, 86, 0.80)',
+					'rgba(75, 192, 192, 0.80)',
+					'rgba(153, 102, 255, 0.80)',
+					'rgba(255, 159, 64, 0.80)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)'
+				],
+				borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)',
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)',
+					'rgba(201, 76, 76, 0.3)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(0, 140, 162, 1)',
+					'rgba(158, 109, 8, 1)',
+					'rgba(201, 76, 76, 0.8)',
+					'rgba(0, 129, 212, 1)',
+					'rgba(201, 77, 201, 1)',
+					'rgba(255, 207, 207, 1)',
+					'rgba(201, 77, 77, 1)',
+					'rgba(128, 98, 98, 1)',
+					'rgba(0, 0, 0, 1)',
+					'rgba(128, 128, 128, 1)'
+				],
+				fill: false,
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	});
+</script>
+<?php foreach ($grafik_kategori_laris as $key => $value) {
+	$nama_kategori[] = $value->nama_kategori;
+	$kategori_laris[] = $value->kategori_laris;
+} ?>
+<script>
+	var ctx = document.getElementById('kategori');
+	var kategori_laris = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: <?= json_encode($nama_kategori) ?>,
+			datasets: [{
+				label: 'Grafik Analisis Kategori Laris',
+				data: <?= json_encode($kategori_laris) ?>,
 				backgroundColor: [
 					'rgba(255, 99, 132, 0.80)',
 					'rgba(54, 162, 235, 0.80)',

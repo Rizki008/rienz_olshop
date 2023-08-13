@@ -98,21 +98,21 @@
 					<div class="banner__item">
 						<div class="banner__text">
 							<span>Koleksi Di Toko Kami</span>
-							<h1>Pembuatan Gamis</h1>
+							<h1>Barang Bekas Berkualitas</h1>
 							<a href="#">Shop now</a>
 						</div>
 					</div>
 					<div class="banner__item">
 						<div class="banner__text">
 							<span>Koleksi Di Toko Kami</span>
-							<h1>Pembuatan Gamis</h1>
+							<h1>Produk Brand Terkenal</h1>
 							<a href="#">Shop now</a>
 						</div>
 					</div>
 					<div class="banner__item">
 						<div class="banner__text">
 							<span>Koleksi Di Toko Kami</span>
-							<h1>Pembuatan Gamis</h1>
+							<h1>Produk Original</h1>
 							<a href="#">Shop now</a>
 						</div>
 					</div>
@@ -197,14 +197,14 @@
 		<div class="row">
 			<div class="col-lg-6 p-0">
 				<div class="discount__pic">
-					<img src="<?= base_url() ?>frontend/img/discount.jpg" alt="">
+					<img src="<?= base_url() ?>frontend/img/discount1.jpg" alt="">
 				</div>
 			</div>
 			<div class="col-lg-6 p-0">
 				<div class="discount__text">
 					<div class="discount__text__title">
 						<span>Discount</span>
-						<h2>Hari Kemerdekaan 2022</h2>
+						<h2>Hari Kemerdekaan 2023</h2>
 						<h5><span>Diskon Sampai</span> 50%</h5>
 					</div>
 					<div class="discount__countdown" id="countdown-time">
@@ -240,29 +240,29 @@
 			<div class="col-lg-3 col-md-4 col-sm-6">
 				<div class="services__item">
 					<i class="fa fa-car"></i>
-					<h6>Free Shipping</h6>
-					<p>For all oder over $99</p>
+					<h6>Bebas Biaya Kirim</h6>
+					<p>Untuk Semua Pesanan</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-4 col-sm-6">
 				<div class="services__item">
 					<i class="fa fa-money"></i>
-					<h6>Money Back Guarantee</h6>
-					<p>If good have Problems</p>
+					<h6>Garansi Uang Kembali</h6>
+					<p>Jika Barang Memiliki Masalah</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-4 col-sm-6">
 				<div class="services__item">
 					<i class="fa fa-support"></i>
-					<h6>Online Support 24/7</h6>
-					<p>Dedicated support</p>
+					<h6>Online 24 Jam</h6>
+					<p>Dukungan Khusus</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-4 col-sm-6">
 				<div class="services__item">
 					<i class="fa fa-headphones"></i>
-					<h6>Payment Secure</h6>
-					<p>100% secure payment</p>
+					<h6>Pembayaran Aman</h6>
+					<p>100% Pembayaran Aman</p>
 				</div>
 			</div>
 		</div>

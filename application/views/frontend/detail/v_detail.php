@@ -4,9 +4,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="breadcrumb__links">
-					<a href="<?= base_url() ?>"><i class="fa fa-home"></i> Home</a>
-					<a href="#">Women’s </a>
-					<span>Essential structured blazer</span>
+					<a href="<?= base_url() ?>"><i class="fa fa-home"></i> Beranda</a>
+					<!-- <a href="#">Women’s </a>
+					<span>Essential structured blazer</span> -->
 				</div>
 			</div>
 		</div>
@@ -83,9 +83,9 @@
 					<div class="product__details__widget">
 						<ul>
 							<li>
-								<span>Availability:</span>
+								<span>Ketersedian:</span>
 								<div class="stock__checkbox">
-									In Stock
+									Tersedia
 								</div>
 							</li>
 							<li>
@@ -97,7 +97,7 @@
 							<li></li>
 							<br>
 							<li>
-								<span>Available size:</span>
+								<span>Ukuran:</span>
 								<div class="size__btn">
 									<select name="id" id="produk">
 										<?php foreach ($data['size'] as $key => $value) { ?>
@@ -117,7 +117,7 @@
 				<div class="product__details__tab">
 					<ul class="nav nav-tabs" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Description</a>
+							<a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Deskripsi</a>
 						</li>
 						<?php foreach ($jml_ulasan as $key => $jml) { ?>
 						<?php } ?>
@@ -147,7 +147,7 @@
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<div class="related__title">
-					<h5>RELATED PRODUCTS</h5>
+					<h5>PRODUK LAINNYA</h5>
 				</div>
 			</div>
 			<?php if (count($related_produk) > 0) : ?>
@@ -174,13 +174,6 @@
 							</div>
 							<div class="product__item__text">
 								<h6><a href="#"><?= $product->nama_produk ?></a></h6>
-								<div class="rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
 								<div class="product__price">Rp. <?= number_format($product->harga) ?></div>
 							</div>
 						</div>

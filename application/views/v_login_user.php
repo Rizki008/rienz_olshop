@@ -80,7 +80,7 @@
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
 			<div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
 				<div class="text-center m-b-md custom-login">
-					<h3>PLEASE LOGIN TO TOKO THRIFT</h3>
+					<h3>MOHON UNTU MASUK KE TOKO THRIFT</h3>
 					<p><?= $title ?></p>
 				</div>
 				<div class="hpanel">
@@ -129,7 +129,7 @@
 								<input type="password" name="password" title="Please enter your password" placeholder="Input Password" required="" value="" name="password" id="password" class="form-control">
 								<span class="help-block small"></span>
 							</div>
-							<button class="btn btn-success btn-block loginbtn">Login</button>
+							<button class="btn btn-success btn-block loginbtn">Masuk</button>
 						</form>
 					</div>
 				</div>

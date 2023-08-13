@@ -1,13 +1,13 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a href="<?= base_url('admin') ?>"><img class="main-logo" src="<?= base_url() ?>backend/img/logo/ngewe.png" alt="" /></a>
+            <a href="<?= base_url('admin') ?>"><img class="main-logo" src="<?= base_url() ?>backend/img/logo/sayang.png" alt="" /></a>
             <strong><img src="<?= base_url() ?>backend/img/logo/logosn.png" alt="" /></strong>
         </div>
         <div class="nalika-profile">
             <div class="profile-dtl">
                 <a href="#"><img src="<?= base_url() ?>backend/img/notification/avatar2.png" alt="" /></a>
-                <h2><?= $this->session->userdata('username'); ?> <span class="min-dtn">Das</span></h2>
+                <h2><?= $this->session->userdata('username'); ?> <span class="min-dtn">Dashboard</span></h2>
             </div>
             <div class="profile-social-dtl">
                 <ul class="dtl-social">
@@ -23,11 +23,11 @@
                     <li class="">
                         <a class="has-arrow" href="<?= base_url('admin') ?>">
                             <i class="icon nalika-home icon-wrap"></i>
-                            <span class="mini-click-non">Ecommerce</span>
+                            <span class="mini-click-non">Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-mail icon-wrap"></i> <span class="mini-click-non">Master Produk</span></a>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-mail icon-wrap"></i> <span class="mini-click-non">Data Produk</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="Inbox" href="<?= base_url('master_produk/kategori') ?>"><span class="mini-sub-pro">Kategori</span></a></li>
                             <li><a title="View Mail" href="<?= base_url('master_produk/produk') ?>"><span class="mini-sub-pro">Produk</span></a></li>
@@ -36,7 +36,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non">Master Transaksi</span></a>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non">Data Transaksi</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="Google Map" href="<?= base_url('transaksi') ?>"><span class="mini-sub-pro">Transaksi</span></a></li>
                         </ul>

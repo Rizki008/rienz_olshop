@@ -550,7 +550,7 @@ $daftar_chat = $this->m_chatting->daftar_chat();
 										</div>
 										<div class="breadcomb-ctn">
 											<h2><?= $title ?></h2>
-											<p>Welcome to Nalika <span class="bread-ntd">Admin Template</span></p>
+											<p>Welcome to Pasla Second Store <span class="bread-ntd">Admin</span></p>
 										</div>
 									</div>
 								</div>

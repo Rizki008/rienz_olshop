@@ -20,6 +20,7 @@ class Pemilik extends CI_Controller
 			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
 			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'grafik_produk_merek' => $this->m_transaksi->grafik_produk_merek(),
+			'grafik_kategori_laris' => $this->m_transaksi->grafik_kategori_laris(),
 			'isi' => 'v_pemilik'
 		);
 		$this->load->view('pemilik/v_wrapper', $data, FALSE);
@@ -36,6 +37,7 @@ class Pemilik extends CI_Controller
 			'grafik_kelamin' => $this->m_transaksi->grafik_kelamin(),
 			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'grafik_produk_merek' => $this->m_transaksi->grafik_produk_merek(),
+			'grafik_kategori_laris' => $this->m_transaksi->grafik_kategori_laris(),
 			'isi' => 'pemilik/user/v_user'
 		);
 		$this->load->view('pemilik/v_wrapper', $data, FALSE);
