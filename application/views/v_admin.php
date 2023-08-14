@@ -79,37 +79,6 @@
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<div class="caption pro-sl-hd">
-									<span class="caption-subject text-uppercase"><b>Pelanggan Loyal</b></span>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-								<div class="actions graph-rp">
-									<div class="btn-group" data-toggle="buttons">
-										<label class="btn btn-grey active">
-											<!-- <input type="radio" name="options" class="toggle" id="option1" checked="">Today</label> -->
-											<label class="btn btn-grey">
-												<!-- <input type="radio" name="options" class="toggle" id="option2">Week</label> -->
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<canvas id="myChartsa" height="100" style="height: 100px;"></canvas>
-					<!-- <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic"></div> -->
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="product-sales-area mg-tb-30">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="product-sales-chart">
-					<div class="portlet-title">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-								<div class="caption pro-sl-hd">
 									<span class="caption-subject text-uppercase"><b>Level Member</b></span>
 								</div>
 							</div>
@@ -117,16 +86,13 @@
 								<div class="actions graph-rp">
 									<div class="btn-group" data-toggle="buttons">
 										<label class="btn btn-grey active">
-											<!-- <input type="radio" name="options" class="toggle" id="option1" checked="">Today</label> -->
 											<label class="btn btn-grey">
-												<!-- <input type="radio" name="options" class="toggle" id="option2">Week</label> -->
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<canvas id="member" height="100" style="height: 100px;"></canvas>
-					<!-- <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic"></div> -->
 				</div>
 			</div>
 		</div>
@@ -135,7 +101,7 @@
 <div class="product-sales-area mg-tb-30">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
 				<div class="product-sales-chart">
 					<div class="portlet-title">
 						<div class="row">
@@ -156,14 +122,71 @@
 							</div>
 						</div>
 					</div>
-					<canvas id="kelamin" height="100" style="height: 100px;"></canvas>
-					<!-- <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic"></div> -->
+					<div id="jenis_kelamin" class="flot-chart-sts flot-chart curved-chart-statistic"></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="product-sales-area mg-tb-30">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="product-sales-chart">
+					<div class="portlet-title">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="caption pro-sl-hd">
+									<span class="caption-subject text-uppercase"><b>Pelanggan Loyal</b></span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="actions graph-rp">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-grey active">
+											<label class="btn btn-grey">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <canvas id="myChartsa" height="100" style="height: 100px;"></canvas> -->
+					<div id="pelanggan" class="flot-chart-sts flot-chart curved-chart-statistic"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="product-sales-area mg-tb-30">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="product-sales-chart">
+					<div class="portlet-title">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="caption pro-sl-hd">
+									<span class="caption-subject text-uppercase"><b>Analisis Kategori Terlaris</b></span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="actions graph-rp">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-grey active">
+											<label class="btn btn-grey">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div id="kategoris"></div> -->
+					<div id="kategoris" class="flot-chart-sts flot-chart curved-chart-statistic"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div class="product-sales-area mg-tb-30">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -179,21 +202,18 @@
 								<div class="actions graph-rp">
 									<div class="btn-group" data-toggle="buttons">
 										<label class="btn btn-grey active">
-											<!-- <input type="radio" name="options" class="toggle" id="option1" checked="">Today</label> -->
 											<label class="btn btn-grey">
-												<!-- <input type="radio" name="options" class="toggle" id="option2">Week</label> -->
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<canvas id="laris" height="100" style="height: 100px;"></canvas>
-					<!-- <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic"></div> -->
+					<div id="container"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 <div class="product-sales-area mg-tb-30">
 	<div class="container-fluid">
 		<div class="row">
@@ -210,15 +230,13 @@
 								<div class="actions graph-rp">
 									<div class="btn-group" data-toggle="buttons">
 										<label class="btn btn-grey active">
-											<!-- <input type="radio" name="options" class="toggle" id="option1" checked="">Today</label> -->
 											<label class="btn btn-grey">
-												<!-- <input type="radio" name="options" class="toggle" id="option2">Week</label> -->
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<canvas id="larissa" height="100" style="height: 100px;"></canvas>
+					<div id="larissa"></div>
 					<!-- <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic"></div> -->
 				</div>
 			</div>
