@@ -21,6 +21,12 @@ class Pemilik extends CI_Controller
 			'grafik_produk_laris' => $this->m_transaksi->grafik_produk_laris(),
 			'grafik_produk_merek' => $this->m_transaksi->grafik_produk_merek(),
 			'grafik_kategori_laris' => $this->m_transaksi->grafik_kategori_laris(),
+			'bulan' => $this->m_transaksi->bulan(),
+			'produk' => $this->m_transaksi->produk(),
+			'merek' => $this->m_transaksi->merek(),
+			'kategori' => $this->m_transaksi->kategori(),
+			'pelanggan' => $this->m_transaksi->pelanggan(),
+			'jeniskelamin' => $this->m_transaksi->jeniskelamin(),
 			'isi' => 'v_pemilik'
 		);
 		$this->load->view('pemilik/v_wrapper', $data, FALSE);

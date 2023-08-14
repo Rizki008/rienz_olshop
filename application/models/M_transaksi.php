@@ -153,6 +153,44 @@ class M_transaksi extends CI_Model
 	{
 		return $this->db->query("SELECT SUM(qty) as laris, produk.merek FROM `rinci_transaksi` JOIN produk ON produk.id_produk=rinci_transaksi.id_produk JOIN size ON size.id_produk=produk.id_produk GROUP BY produk.merek ORDER BY qty")->result();
 	}
+
+	// GRAFIK BARU
+	public function bulan()
+	{
+		$sql = 'SELECT tgl_order FROM `transaksi` GROUP BY tgl_order ORDER BY tgl_order';
+		$qry = $this->db->query($sql);
+		return $qry->result_array();
+	}
+	public function produk()
+	{
+		$sql = 'SELECT nama_produk FROM `rinci_transaksi` LEFT JOIN produk ON produk.id_produk=rinci_transaksi.id_produk GROUP BY rinci_transaksi.id_produk ORDER BY rinci_transaksi.id_produk;';
+		$qry = $this->db->query($sql);
+		return $qry->result_array();
+	}
+	public function merek()
+	{
+		$sql = 'SELECT merek FROM `rinci_transaksi` LEFT JOIN produk ON produk.id_produk=rinci_transaksi.id_produk GROUP BY rinci_transaksi.id_produk ORDER BY rinci_transaksi.id_produk;';
+		$qry = $this->db->query($sql);
+		return $qry->result_array();
+	}
+	public function kategori()
+	{
+		$sql = 'SELECT nama_kategori FROM `kategori` GROUP BY nama_kategori ORDER BY nama_kategori;';
+		$qry = $this->db->query($sql);
+		return $qry->result_array();
+	}
+	public function pelanggan()
+	{
+		$sql = 'SELECT nama_pelanggan FROM `pelanggan` GROUP BY nama_pelanggan ORDER BY nama_pelanggan;';
+		$qry = $this->db->query($sql);
+		return $qry->result_array();
+	}
+	public function jeniskelamin()
+	{
+		$sql = 'SELECT jenis_kel FROM `pelanggan` GROUP BY jenis_kel ORDER BY jenis_kel;';
+		$qry = $this->db->query($sql);
+		return $qry->result_array();
+	}
 }
 
 /* End of file M_transaksi.php */

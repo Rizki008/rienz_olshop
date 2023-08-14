@@ -55,8 +55,8 @@
 							<br>
 							<select name="jenis_kel" class="form-control">
 								<option>---Pilih Jenis Kelamin---</option>
-								<option value="1">Perempuan</option>
-								<option value="2">Laki-Laki</option>
+								<option value="perempuan">Perempuan</option>
+								<option value="laki-laki">Laki-Laki</option>
 							</select>
 							<br>
 							<input type="text" name="alamat" value="<?= set_value('alamat') ?>" placeholder="Alamat Lengkap">
