@@ -75,7 +75,7 @@
 										<ul class="product__hover">
 											<li><a href="<?= base_url('assets/produk/' . $value->images) ?>" class="image-popup"><span class="arrow_expand"></span></a></li>
 											<li><a href="<?= base_url('home/detail_produk/' . $value->id_produk) ?>"><span class="icon_heart_alt"></span></a></li>
-											<li><button type="submit" data-size="<? $value->size ?>" data-stock="<?= $value->stock ?>" data-netto="<?= $value->berat ?>" data-name="<?= $value->nama_produk ?>" data-price="<?= $value->harga ?>" data-id="<?= $value->id_produk ?>"><span class="icon_bag_alt"></span></button></li>
+											<li><button type="submit" data-size="<?= $value->size ?>" data-stock="<?= $value->stock ?>" data-netto="<?= $value->berat ?>" data-name="<?= $value->nama_produk ?>" data-price="<?= $value->harga ?>" data-id="<?= $value->id_produk ?>"><span class="icon_bag_alt"></span></button></li>
 										</ul>
 									</div>
 									<div class="product__item__text">
